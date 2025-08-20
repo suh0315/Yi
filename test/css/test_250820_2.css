@@ -87,20 +87,16 @@ ol, li, ul {
     color: #1d1d1d;
     margin: 0 0 23px 0;
 }
-.cyc h1 strong {
-    color: #16909b;
-    font-weight: 700;
-}
-.cyc p strong {
-    color: #16909b;
-    text-decoration: underline;
-}
 .cyc h2 {
     font-size: 32px;
     font-weight: 700;
     color: #1d1d1d;
     margin: 63px 0 15px 0;
 }
-.cyc h2 strong {
+.cyc strong {
     color: #16909b;
+}
+.cyc p strong {
+    font-weight: 700;
+    text-decoration: underline;
 }
