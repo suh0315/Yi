@@ -50,6 +50,24 @@ ol, li, ul {
     width: 1260px;
     margin: 0 auto;
 }
+.nat {
+    margin: 186px 0 0 0;
+}
+.vil {
+    margin: 159px 0 0 0;
+    text-align: center;
+}
+.vil img {
+    margin: 31px 0 0 0;
+}
+.cyc {
+    margin: 167px 0 0 0;
+    text-align: end;
+}
+.luc {
+    margin: 71px 0 0 0;
+    text-align: end;
+}
 .nat h1, .vil h1, .cyc h1 {
     font-size: 40px;
     font-weight: 700;
@@ -62,4 +80,20 @@ ol, li, ul {
 .vil h1 strong {
     color: #26b170;
     font-weight: 700;
+}
+.cyc h1 strong {
+    color: #16909b;
+    font-weight: 700;
+}
+.cyc p strong, .luc p strong {
+    color: #16909b;
+    text-decoration: underline;
+}
+.luc h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.luc h1 strong {
+    color: #16909b;
 }
