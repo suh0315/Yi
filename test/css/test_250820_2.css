@@ -57,43 +57,50 @@ ol, li, ul {
     margin: 159px 0 0 0;
     text-align: center;
 }
-.vil img {
-    margin: 31px 0 0 0;
-}
 .cyc {
-    margin: 167px 0 0 0;
-    text-align: end;
+    margin: 167px 0 200px 0;
+    text-align: right;
 }
-.luc {
-    margin: 71px 0 0 0;
-    text-align: end;
-}
-.nat h1, .vil h1, .cyc h1 {
+.nat h1 {
     font-size: 40px;
     font-weight: 700;
     color: #1d1d1d;
+    margin: 0 0 26px 0;
 }
 .nat h1 strong, .nat p strong {
     font-weight: 700;
     color: #0078b7;
 }
+.vil h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 30px 0;
+}
 .vil h1 strong {
     color: #26b170;
     font-weight: 700;
+}
+.cyc h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 23px 0;
 }
 .cyc h1 strong {
     color: #16909b;
     font-weight: 700;
 }
-.cyc p strong, .luc p strong {
+.cyc p strong {
     color: #16909b;
     text-decoration: underline;
 }
-.luc h1 {
+.cyc h2 {
     font-size: 32px;
     font-weight: 700;
     color: #1d1d1d;
+    margin: 63px 0 15px 0;
 }
-.luc h1 strong {
+.cyc h2 strong {
     color: #16909b;
 }
