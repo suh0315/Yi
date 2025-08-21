@@ -1,0 +1,28 @@
+@import url(common.css);
+.biz strong, .ship strong {
+    font-weight: 700;
+    margin: 0 0 11px 0;
+    display: block;
+}
+.biz h1, .ship h2, .global h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.biz {
+    margin: 124px 0 0 0;
+    text-align: center;
+}
+.biz strong {
+    color: #002f87;
+}
+.biz h1, .global h2 {
+    color: #1d1d1d;
+}
+.ship {
+    margin: 102px 0 0 0;
+    background: url(../images/hd_bg.jpg) no-repeat center center / cover;
+    height: 516px;
+    color: #fff;
+    padding: 125px 0 0 0;
+}
