@@ -26,3 +26,29 @@
     color: #fff;
     padding: 125px 0 0 0;
 }
+.ship p {
+    margin: 13px 0 31px 0;
+}
+.ship a {
+    border: 1px solid #fff;
+    padding: 13px 32px 13px 32px;
+    display: inline-block;
+    border-radius: 28px;
+}
+.global {
+    margin: 153px 0 100px 0;
+    text-align: center;
+}
+.global .photo {
+    margin: 40px 0 0 0;
+    width: 822px;
+    height: 353px;
+    overflow: hidden;
+    border-radius: 20px;
+    display: inline-block;
+}
+.global .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
