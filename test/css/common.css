@@ -22,6 +22,7 @@ body {
     font-weight: 400;
     color: #555;
     line-height: 1.5;
+    word-break: keep-all;
 }
 /* html태그의 기본 스타일을 리셋 
     body에서 선언한 기본 스타일로 적용 */
