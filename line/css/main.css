@@ -1,0 +1,41 @@
+@import url(common.css);
+.line h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin: 113px 0 17px 0;
+}
+.line h2 {
+    color: #00b900;
+    margin: 0 0 7px 0;
+}
+.line a {
+    color: #00b900;
+    border: 1px solid #00b900;
+    padding: 5px 30px 5px 30px;
+    display: inline-block;
+    margin: 28px 0 40px 0;
+}
+.line .photo {
+    display: inline-block;
+    margin: 0 0 96px 0;
+}
+.market {
+    text-align: center;
+    background: url(../images/bg3.jpg) no-repeat center center / cover; 
+    height: 641px;
+    color: #fff;
+}
+.market h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    padding: 113px 0 21px 0;
+}
+.market a {
+    border: 1px solid #fff;
+    padding: 5px 30px 5px 30px;
+    display: inline-block;
+    margin: 27px 0 42px 0;
+}
