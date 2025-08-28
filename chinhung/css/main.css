@@ -108,3 +108,15 @@ footer {
     background-color: #ededed;
     padding: 94px 0 104px 0;
 }
+footer .f_nav ul {
+    display: flex;
+    gap: 0 54px;
+}
+footer .f_nav ul li strong {
+    font-weight: 700;
+}
+footer .f_info {
+    margin: 8px 0 8px 0;
+    display: flex;
+    gap: 0 21px;
+}
