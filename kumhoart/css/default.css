@@ -17,6 +17,16 @@ a {
     color: inherit;
     text-decoration: none;
 }
+button {
+    border: none;
+    background-color: transparent;
+    font-weight: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    line-height: inherit;
+    cursor: pointer; /* 오버 시 마우스 포인터 변경 */
+}
 * {
     padding: 0;
     margin: 0;
