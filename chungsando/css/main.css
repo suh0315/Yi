@@ -1,0 +1,73 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+
+header {
+    position: absolute; /* wrap을 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: 100; /* header는 맨 위에 배치 */
+    width: 100%;
+    height: 100px;
+    color: #fff;
+}
+header .wrapper {
+    display: flex; /* logo-gnb-utli 좌우 배치 */
+    justify-content: space-between;
+    align-items: center;
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul li a {
+    display: block;
+    font-size: 23px;
+    line-height: 100px; /* header와 같은 값 */
+    padding: 0 26px 0 26px;
+}
+
+.visual {
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    border-radius: 0 0 200px 0;
+}
+.visual .wrapper {
+    height: 100vh;
+    min-height: 580px;
+    position: relative; /* life 정렬의 기준 */
+}
+.visual h2 {
+    padding: 28vh 0 0 373px;
+}
+.visual .life {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #003396;
+    color: #fff;
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    padding: 96px 0 0 0;
+    box-shadow: -4px 3px 4px 0 rgba(0, 0, 0, 0.1);
+    position: absolute; /* before 정렬의 기준 */
+    right: -100px;
+    bottom: -100px;
+}
+.visual .life::before {
+    content: "";
+    position: absolute; /* life를 기준으로 정렬 */
+    left: 0;
+    top: 47px;
+    width: 100%;
+    height: 42px;
+    background: url(../images/life_ico.svg) no-repeat center top ;
+}
+.visual .life:hover {
+    background-color: #73B9ED;
+    box-shadow: -5px 5px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+footer {
+    margin: 1000px 0 0 0;
+}
