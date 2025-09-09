@@ -9,4 +9,8 @@ $(document).ready(function(){
      $('.tour .list ul li').removeClass('on')
      $(this).addClass('on')
     })
+    $('footer .right_area .family_site button.family_open').on('click', function(){
+        //console.log('oo')
+        $('footer .right_area .family_site').addClass('open')
+    })
 })
