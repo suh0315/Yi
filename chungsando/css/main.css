@@ -243,16 +243,21 @@ header .util .flow::before {
 .tour .list ul {
     display: flex;
     justify-content: space-between;
+    gap: 0 12px;
 }
 .tour .list ul li {
-    width: 15.87%;
+    /* width: 15.87%; */
     /* li 한 칸의 넓이 a px / ul의 칸의 넓이 b px * 100 = */
+    transition: 0.3s;
+    overflow: hidden;
+    flex: 1 1 0%;
 }
 .tour .list ul li a {
     display: flex; /* h3-p 하단 정렬 */
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    border-radius: 20px;
     padding: 0 0 61px 0;
     height: 463px;
     /* li의 사이즈와 a의 사이즈를 같게 하려면?
@@ -281,10 +286,12 @@ header .util .flow::before {
 }
 .tour .list ul li a p {
     display: none;
+    white-space: nowrap;
 }
 /* li에 on클래스가 들어갔을 때 */
 .tour .list ul li.on {
-    width: 49.6%;
+    /* width: 49.6%; */
+    flex: 3 1 0%;
 }
 .tour .list ul li.on a {
     align-items: flex-start;

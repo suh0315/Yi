@@ -1,0 +1,14 @@
+@import url(common.css);
+.box {
+    width: 500px;
+    height: 200px;
+    background-color: burlywood;
+    color: #fff;
+    align-content: center;
+    text-align: center;
+    font-size: 64px;
+    font-weight: 700;
+}
+.box.on {
+    background-color: black;
+}
