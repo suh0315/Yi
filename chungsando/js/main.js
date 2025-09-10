@@ -13,4 +13,19 @@ $(document).ready(function(){
         //console.log('oo')
         $('footer .right_area .family_site').addClass('open')
     })
+    $('footer .right_area .family_site button.family_close').on('click', function(){
+        //console.log('oo')
+        $('footer .right_area .family_site').removeClass('open')
+    })
+    
+    /* footer .right_area .top을 클릭하면
+        브라우저가 상단으로 스크롤 */
+        $('footer .right_area .top').on('click', function(){
+            var scrolling = $(window).scrollTop()
+            console.log(scrolling)
+            //$(window).scrollTop(0)
+            $('html, body').animate({
+                scrollTop : 0
+            }, 500)
+        })
 })
