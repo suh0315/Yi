@@ -2,10 +2,10 @@
 $(document).ready(function(){
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
-        // autoplay: {  /* 팝업 자동 실행 */
-        //     delay: 1000,
-        //     disableOnInteraction: true,
-        // },
+        autoplay: {  /* 팝업 자동 실행 */
+            delay: 1000,
+            disableOnInteraction: true,
+        },
 
         //effect: "fade", /* fade 효과 */
 
@@ -31,8 +31,10 @@ $(document).ready(function(){
     //  swiper.autoplay.start();  /* 재생 기능 */
     $('.visual .btn_wrap .btn_play').on('click', function(){
         console.log('ffff')
+        visual_swiper.autoplay.start();  /* 재생 기능 */
     })
     $('.visual .btn_wrap .btn_stop').on('click', function(){
         console.log('qqqq')
+        visual_swiper.autoplay.stop();  /* 일시정지 기능 */
     })  
 })//$(document).ready
