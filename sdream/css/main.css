@@ -2,6 +2,90 @@
 @import url(fonts.css);
 @import url(common.css);
 
+header {
+    height: 100px;
+    position: absolute; /* wrap을 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    color: #fff;
+    display: flex; /* logo - gnb - util 좌우배치 */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px 0 30px;
+}
+header .logo a {
+    display: block;
+    width: 139px;
+    height: 54px;
+    background: url(../images/logo.svg) no-repeat center center / contain;
+    /* contain -> 이미지를 잘리지 않게 함 */
+}
+header .gnb .gnb_open,
+header .gnb .gnb_close {
+    display: none;
+}
+@media screen and (max-width:768px){
+    header .logo a {
+        display: block;
+        width: 61px;
+        height: 24px;
+    }
+}/* @media */
+header .gnb .gnb_wrap ul {
+    display: flex;
+}
+header .gnb .gnb_wrap ul li a {
+    display: block;
+    line-height: 100px;
+    font-size: 24px;
+    padding: 0 40px 0 40px;
+}
+header .util {
+    display: flex;
+    gap: 0 8px;
+}
+header .util .mypage,
+header .util .lang .lang_open {
+    width: 40px;
+    height: 40px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+header .util .mypage {
+    background-image: url(../images/utill_mypage.svg);
+}
+header .util .lang .lang_open {
+    background-image: url(../images/util_lang.svg);
+}
+@media screen and (max-width:768px){
+    header .logo a {
+        display: block;
+        width: 61px;
+        height: 24px;
+    }
+}/* @media */
+
+@media screen and (max-width:768px){
+    header {
+        height: 60px;
+        padding: 0 0 0 16px;
+    }
+    header .gnb .gnb_open {
+        display: block; /* 모바일에서만 나옴 */
+        width: 60px;
+        height: 60px;
+        background: url(../images/gnb_open.svg) no-repeat center center;
+    }
+    header .gnb .gnb_wrap {
+        display: none; /* 모바일에서 숨김 */
+    }
+    header .util {
+        display: none;
+    }
+}/* @media */
+
 .visual {
     position: relative; /* btn_wrap 정렬의 기준 */
 }
@@ -111,6 +195,7 @@
     display: flex; /* tit-list 좌우 배치 */
     justify-content: space-between;
     align-items: flex-start;
+    padding: 0 0 100px 0;
 }
 .biz .tit {
     font-size: 40px;
@@ -178,7 +263,7 @@
     transition: 0.5s;
 }
 
-@media screen and (max-width:769px) { /* 769이상에서 */
+@media screen and (min-width:769px) { /* 769이상에서 */
     /* a의 오버 스타일 */
     .biz .list ul li a:hover .photo::before {
         opacity: 0.8
@@ -259,6 +344,178 @@
         display: none;
     }
 } /* @media */
+
+.notice {
+    margin: 90px 0 0 0;
+    background-color: #F3F6F9;
+    padding: 143px 0 160px 0;
+}
+.notice .wrapper {
+    position: relative; /* more 정렬의 기준 */
+}
+.notice .tit h2 {
+    font-size: 40px;
+}
+.notice .list {
+    margin: 32px 0 0 0;
+}
+.notice .list ul li {
+    margin: 0 0 12px 0;
+}
+.notice .list ul li:last-child {
+    margin-bottom: 0; /* 하단 여백만 0처리 */
+}
+.notice .list ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px 0 rgba(255, 255, 255, 0.1);
+    padding: 21px 48px 21px 24px;
+}
+.notice .list ul li a .inner {
+    font-size: 24px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0 18px;
+    width: calc(100% - 217px);
+}
+.notice .list ul li a .inner h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.notice .list ul li a .inner strong {
+    display: block;
+    padding: 6px 16px 2px 16px;
+    background-color: #009FE3;
+    border-radius: 10px;
+    color: #fff;
+}
+.notice .list ul li.cate_sch a .inner strong {
+    background-color: #223A5C;
+}
+.notice .list ul li a span {
+    font-size: 22px;
+    color: rgba(29, 29, 29, 0.8);
+}
+/* 오버스타일 */
+.notice .list ul li a:hover {
+    background-color: #223A5C;
+    color: #fff;
+}
+.notice .list ul li a:hover strong {
+    background-color: #fff;
+    color: #223A5C;
+}
+.notice .list ul li.cate_sch a:hover .inner strong {
+    background-color: #fff;
+}
+.notice .list ul li a:hover span {
+    color: rgba(255, 255, 255, 0.8);
+}
+.notice .more {
+    position: absolute; /* wrapper를 기준으로 */
+    right: 48px;
+    top: 52px;
+}
+.notice .more a {
+    display: block;
+    padding: 0 0 0 29px;
+}
+.notice .more a::before {
+    content: "";
+    position: absolute; /* more를 기준으로 정렬 */
+    left: 9px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    background: url(../images/notice_more.svg) no-repeat center center;
+    transition: 0.3s;
+}
+.notice .more a:hover::before {
+    transform: rotate(45deg);
+}
+@media screen and (max-width:768px){
+    .notice {
+        margin: 62px 0 0 0;
+        padding: 72px 0 72px 0;
+    }
+    .notice .tit {
+        width: calc(100% - 57px); /* 오른쪽 more를 둘 자리 확보 */
+    }
+     .notice .tit h2 {
+        font-size: 28px;
+    }
+    .notice .list {
+        margin: 24px 0 0 0;
+    }
+    .notice .list ul li {
+        margin: 0 0 16px 0;
+    }
+    .notice .list ul li:nth-last-child(2),
+    .notice .list ul li:last-child {
+        display: none;
+    }
+    .notice .list ul li a {
+        display: block;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 16px 16px 16px 16px;
+    }
+    .notice .list ul li a .inner {
+        display: block;
+        font-size: 16px;
+        width: auto;
+    }
+    .notice .list ul li a .inner h3 {
+        margin: 12px 0 0 0;
+    }
+    .notice .list ul li a .inner strong {
+        display: inline-block;
+        padding: 7px 8px 2px 8px;
+        background-color: #009FE3;
+        border-radius: 10px;
+    }
+    .notice .list ul li a span {
+        font-size: 16px;
+    }
+    /* 오버스타일 */
+    .notice .list ul li a:hover {
+        background-color: #223A5C;
+        color: #fff;
+    }
+    .notice .list ul li a:hover strong {
+        background-color: #fff;
+        color: #223A5C;
+    }
+    .notice .list ul li.cate_sch a:hover .inner strong {
+        background-color: #fff;
+    }
+    .notice .list ul li a:hover span {
+        color: rgba(255, 255, 255, 0.8);
+    }
+    .notice .more {
+        right: 14px; /* ??? */
+        top: 34px;   /* ??? */
+    }
+    .notice .more a {
+        width: 24px;
+        height: 24px;
+        padding: 0 0 0 0;
+    }
+    .notice .more a::before {
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+    }
+    .notice .more a span {
+        display: none;
+    }
+}/* @media */
 
 footer {    
     margin: 1500px 0 0 0;
