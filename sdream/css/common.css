@@ -13,8 +13,9 @@ body {
     margin: 0 auto;
 }
 #wrap {
-    min-width: 1320px; /* 1260 + 30 + 30 = 1320 */
+    min-width: 1320px; /* 1260 + 30 + 30 = 1320 */ 
     position: relative; /* header 정렬의 기준 */
+    /* overflow: hidden; */
 }
 /* html 문서 구조상 글자를 써야하지만 
    글자를 가리고 싶을 때 blind 클래스 부여 */
