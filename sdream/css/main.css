@@ -765,24 +765,18 @@ header .util .lang .lang_open {
         width: auto;
         /*  100 / 한 줄에 들어가는 li의 갯수 = 100 / 3 = 33.33% 
             한 줄 여백의 합 / 한줄에 들어가는 li의 갯수 = 48 / 3 = 16 */
+        border-bottom: 1px solid rgba(102, 102, 102, 0.2);
+        padding: 0 0 8px 0;
+    }
+    .service .list ul li:last-child {
+        border-bottom: none;
     }
     .service .list ul li a {
         display: block;
-        padding: 10px 16px 10px 16px;
+        padding: 0 16px 10px 16px;
         background-color: transparent;
         color: #1d1d1d;
         border-radius: 0;
-    }
-    .service .list ul li a::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -10px;
-        border-bottom: 1px solid rgba(102, 102, 102, 0.2);
-        width: 100%;
-    }
-    .service .list ul li a::before:last-child {
-        border-bottom: none;
     }
     .service .list ul li a::after {
         right: 14px;
@@ -812,5 +806,93 @@ header .util .lang .lang_open {
 }
 
 footer {    
-    margin: 1500px 0 0 0;
+    margin: 165px 0 0 0;
+    padding: 51px 0 52px 0;
+    background-color: #F3F6F9;
+    color: #666;
 }
+footer .wrapper {
+    position: relative; /* top 정렬의 기준*/
+}
+footer .top {
+    position: absolute;
+    right: 40px;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    background-color: #004289;
+    border-radius: 50%;
+}
+footer .top span {
+    display: none;
+}
+footer .top::before {
+    content: "";
+    position: absolute; /* top을 기준으로 정렬 */
+    left: 7px;
+    top: 8px;
+    width: 17px;
+    height: 17px;
+    background: url(../images/top.svg) no-repeat center center;
+}
+footer .top:hover {
+    background-color: #009FE3;
+}
+footer .f_nav ul {
+    display: flex;
+    gap: 0 47px;
+    flex-wrap: wrap;
+}
+footer .f_nav ul li {
+    position: relative; /* after 정렬의 기준 */
+}
+footer .f_nav ul li.edu {
+    font-weight: 700;
+}
+footer .f_nav ul li::after {
+    content: "";
+    position: absolute; /* li를 기준으로 정렬 */
+    right: -26px;
+    top: 7px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(102, 102, 102, 0.2);
+}
+footer .f_nav ul li:last-child::after {
+    display: none; /* 숨김 */
+}
+footer .f_nav ul li a:hover {
+    text-decoration: underline;
+}
+footer .f_info {
+    margin: 8px 0 8px 0;
+    display: flex;
+    flex-wrap: wrap; /* 여러 줄 허용 */
+    gap: 5 45px;
+}
+footer .copyright {
+    color: rgba(102, 102, 102, 0.8);
+}
+@media screen and (max-width:768px){
+    footer {    
+    margin: 52px 0 0 0;
+    padding: 36px 0 0 0;
+    font-size: 12px;
+    }
+    footer .top {
+        right: 14px;
+        top: -25px;
+        width: 20px;
+        height: 20px;
+    }
+    footer .top::before {
+        left: 5px;
+        top: 5px;
+        width: 11px;
+        height: 11px;
+        background: url(../images/top_mo.svg) no-repeat center center;
+    }
+    footer .f_nav {
+        margin: 20px 0 0 0;
+    }    
+} /* @media */
