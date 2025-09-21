@@ -746,6 +746,70 @@ header .util .lang .lang_open {
 .service .list ul li:hover a::after {
     background-image: url(../images/service_more_over.svg);
 }
+@media screen and (max-width:768px){
+    .service {
+        margin: 72px 0 0 0
+    }
+    .service h2 {
+        font-size: 28px;
+        margin: 4px 0 0 0;
+    }
+    .service .list {
+        margin: 16px 0 0 0;
+    }
+    .service .list ul {
+        flex-direction: column;
+        gap: 16px 0;
+    }
+    .service .list ul li {
+        width: auto;
+        /*  100 / 한 줄에 들어가는 li의 갯수 = 100 / 3 = 33.33% 
+            한 줄 여백의 합 / 한줄에 들어가는 li의 갯수 = 48 / 3 = 16 */
+    }
+    .service .list ul li a {
+        display: block;
+        padding: 10px 16px 10px 16px;
+        background-color: transparent;
+        color: #1d1d1d;
+        border-radius: 0;
+    }
+    .service .list ul li a::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        border-bottom: 1px solid rgba(102, 102, 102, 0.2);
+        width: 100%;
+    }
+    .service .list ul li a::before:last-child {
+        border-bottom: none;
+    }
+    .service .list ul li a::after {
+        right: 14px;
+        top: 52px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #fff url(../images/biz_more.svg) no-repeat center center;
+    }
+    .service .list ul li a strong {
+        font-size: 16px;
+    }
+    .service .list ul li a h3 {
+        margin: 5px 0 0 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    /* 오버스타일 */
+    .service .list ul li:hover a {
+        background-color: #009FE3;
+        transform: translate(0, -20px);
+    }
+    .service .list ul li:hover a::after {
+        background-image: url(../images/service_more_over.svg);
+    }   
+}
 
 footer {    
     margin: 1500px 0 0 0;
