@@ -53,4 +53,36 @@ $(document).ready(function(){
             scrollTop: 0
         }, 500)
     })
+
+    $('header').on('mouseenter', function(){
+        $(this).addClass('fixed')
+        // console.log('qqqqq')
+    })
+    $('header').on('mouseleave', function(){
+        //브라우저 스크롤 값이 0보다 크면 작동 할 수 없게.
+        //0이거나 0보다 작을 때만 작동
+        if(scrolling <= 0){
+            $(this).removeClass('fixed')
+            console.log('good') 
+        }
+    })
+    //문서가 로딩된 이후 단 1번만 실행
+    let scrolling = $(window).scrollTop()
+    scroll_chk()
+
+    function scroll_chk(){
+        scrolling = $(window).scrollTop()
+        //스크롤 값이 0보다 크면 header에 fixed 클래스 부여
+        if(scrolling > 0){
+            //console.log('우와아앙')
+            $('header').addClass('fixed')
+        }else {
+            //console.log('제ㅔㅔㅔ로')
+            $('header').removeClass('fixed')
+        }
+    }
+    //console.log(scrolling)
+    $(window).scroll(function(){
+        scroll_chk()
+    })
 })//$(document).ready
