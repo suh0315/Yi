@@ -763,6 +763,7 @@ header.fixed .util .lang .lang_open {
 }
 /* 오버스타일 */
 .service .list ul li:hover a {
+    color: #fff;
     background-color: #009FE3;
     transform: translate(0, -20px);
 }
