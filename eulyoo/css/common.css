@@ -1,0 +1,43 @@
+/* 모든페이지에서 중복되는 스타일 */
+body {
+    font-family: "PT";
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #171614;
+    word-break: keep-all;
+    word-wrap: break-word; /* 단어가 너무 길 때 강제 줄바꿈 */
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+#wrap {
+    min-width: 1320px; /* 1260 + 30 + 30 = 1320 */ 
+    position: relative; /* header 정렬의 기준 */
+    /* overflow: hidden; */
+}
+/* html 문서 구조상 글자를 써야하지만 
+   글자를 가리고 싶을 때 blind 클래스 부여 */
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+@media screen and (max-width:768px){
+    body {
+        font-size: 16px;
+    }
+    .wrapper {
+    width: auto; /* block요소니까 꽉차게 나옴 */
+    margin: 0 16px;
+    }
+    #wrap {
+    min-width: 0; /* 최소 넓이 없음 */
+    position: relative; /* header 정렬의 기준 */
+    }
+}/*@media*/
