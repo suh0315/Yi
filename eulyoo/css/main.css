@@ -308,9 +308,18 @@ header.fixed .util .search .search_open {
     margin: 146px 0 0 0;
 }
 .book .book_wrap {
-    background-color: aqua;
     width: calc(50% + 630px);
     margin-left: calc((100% - 1260px) / 2);
+    display: flex;
+    justify-content: space-between;
+}
+.book .book_wrap .tit {
+
+}
+.book .book_wrap .list {
+    height: 200px;
+    border: 1px solid red;
+    width: calc(100% - 321px);
 }
 
 
