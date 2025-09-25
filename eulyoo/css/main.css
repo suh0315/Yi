@@ -453,6 +453,8 @@ header.fixed .util .search .search_open {
     background-color: #FAECDF;
     margin: 141px 0 0 0;
     padding: 111px 0 273px 0;
+    position: relative; /* more 정렬의 기준 */
+
 }
 .interview .tit {
     text-align: center;
@@ -501,14 +503,21 @@ header.fixed .util .search .search_open {
     height: 100%;
     object-fit: cover;
     filter: grayscale(100%);
+    transition: 0.3s;
 }
 .interview .list ul li a .text {
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -72px;
     color: #fff;
     z-index: 3;
-    padding: 0 0 43px 23px;
+    padding: 30px 30px 45px 30px;
+    width: calc(100% - 83px);
+    border-radius: 50px 15px 50px 15px;
+    transition: 0.3s;
+}
+.interview .list ul li:nth-child(2) a .text {
+    border-radius: 15px 50px 15px 50px;
 }
 .interview .list ul li a .text h3 {
     font-size: 24px;
@@ -517,11 +526,53 @@ header.fixed .util .search .search_open {
     display: none;
 }
 .interview .list ul li a .text p {
-    display: none;
+    opacity: 0;
+    transition: 0.3;
+    margin: 11px 0 0 0;
 }
 .interview .list ul li a .text span {
     display: none;
 }
+/* 오버 스타일 */
+.interview .list ul li a:hover .photo::before {
+    display: none;
+}
+.interview .list ul li a:hover .photo img {
+    filter: grayscale(0);
+}
+.interview .list ul li a:hover .text {
+    z-index: 3;
+    width: calc(100% - 83px);
+    background-color: #372821;
+    padding-bottom: 30px;
+}
+.interview .list ul li a:hover .text::after {
+    content: "";
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 22px;
+    height: 22px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.1974 12.1124L10.2761 19.0337C9.99358 19.3162 9.85821 19.6458 9.86998 20.0225C9.88175 20.3991 10.0289 20.7287 10.3114 21.0112C10.5939 21.2702 10.9235 21.4056 11.3002 21.4173C11.6768 21.4291 12.0064 21.2937 12.2889 21.0112L21.6116 11.6886C21.7528 11.5474 21.8529 11.3943 21.9117 11.2295C21.9706 11.0647 22 10.8882 22 10.6998C22 10.5115 21.9706 10.3349 21.9117 10.1701C21.8529 10.0054 21.7528 9.85233 21.6116 9.71108L12.2889 0.388443C12.03 0.129481 11.7063 0 11.3178 0C10.9294 0 10.5939 0.129481 10.3114 0.388443C10.0289 0.670947 9.88764 1.00642 9.88764 1.39486C9.88764 1.78331 10.0289 2.11878 10.3114 2.40128L17.1974 9.28732H1.41252C1.0123 9.28732 0.67683 9.42269 0.406097 9.69342C0.135365 9.96415 -1.90735e-06 10.2996 -1.90735e-06 10.6998C-1.90735e-06 11.1001 0.135365 11.4355 0.406097 11.7063C0.67683 11.977 1.0123 12.1124 1.41252 12.1124H17.1974Z' fill='white'/%3E%3C/svg%3E%0A");
+    transform: rotate(-45deg);
+}
+.interview .list ul li a:hover .text h3 br {
+    display: block;
+}
+.interview .list ul li a:hover .text p {
+    opacity: 1;
+}
+.interview .more {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin: 0 0 164px 0;
+}
+
+
+
 
 footer {
     margin: 500px 0 0 0;
