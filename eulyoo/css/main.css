@@ -472,9 +472,6 @@ header.fixed .util .search .search_open {
        여백의 합 / 한 줄에 나오는 li의 갯수 = y 
         width = x - y */       
 }
-.interview .list ul li:nth-child(2) {
-    margin: 70px 0 0 0;
-} 
 .interview .list ul li a {
     display: block;
     position: relative;
@@ -495,9 +492,6 @@ header.fixed .util .search .search_open {
     background: linear-gradient(0deg, #000, rgba(0, 0, 0, 0));
     z-index: 1;
 }
-.interview .list ul li:nth-child(2) a .photo {
-    border-radius: 15px 50px 15px 50px;
-}
 .interview .list ul li a .photo img {
     width: 100%;
     height: 100%;
@@ -516,9 +510,6 @@ header.fixed .util .search .search_open {
     border-radius: 50px 15px 50px 15px;
     transition: 0.3s;
 }
-.interview .list ul li:nth-child(2) a .text {
-    border-radius: 15px 50px 15px 50px;
-}
 .interview .list ul li a .text h3 {
     font-size: 24px;
 }
@@ -533,45 +524,135 @@ header.fixed .util .search .search_open {
 .interview .list ul li a .text span {
     display: none;
 }
-/* 오버 스타일 */
-.interview .list ul li a:hover .photo::before {
-    display: none;
-}
-.interview .list ul li a:hover .photo img {
-    filter: grayscale(0);
-}
-.interview .list ul li a:hover .text {
-    z-index: 3;
-    width: calc(100% - 83px);
-    background-color: #372821;
-    padding-bottom: 30px;
-}
-.interview .list ul li a:hover .text::after {
-    content: "";
-    position: absolute;
-    right: 30px;
-    top: 30px;
-    width: 22px;
-    height: 22px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.1974 12.1124L10.2761 19.0337C9.99358 19.3162 9.85821 19.6458 9.86998 20.0225C9.88175 20.3991 10.0289 20.7287 10.3114 21.0112C10.5939 21.2702 10.9235 21.4056 11.3002 21.4173C11.6768 21.4291 12.0064 21.2937 12.2889 21.0112L21.6116 11.6886C21.7528 11.5474 21.8529 11.3943 21.9117 11.2295C21.9706 11.0647 22 10.8882 22 10.6998C22 10.5115 21.9706 10.3349 21.9117 10.1701C21.8529 10.0054 21.7528 9.85233 21.6116 9.71108L12.2889 0.388443C12.03 0.129481 11.7063 0 11.3178 0C10.9294 0 10.5939 0.129481 10.3114 0.388443C10.0289 0.670947 9.88764 1.00642 9.88764 1.39486C9.88764 1.78331 10.0289 2.11878 10.3114 2.40128L17.1974 9.28732H1.41252C1.0123 9.28732 0.67683 9.42269 0.406097 9.69342C0.135365 9.96415 -1.90735e-06 10.2996 -1.90735e-06 10.6998C-1.90735e-06 11.1001 0.135365 11.4355 0.406097 11.7063C0.67683 11.977 1.0123 12.1124 1.41252 12.1124H17.1974Z' fill='white'/%3E%3C/svg%3E%0A");
-    transform: rotate(-45deg);
-}
-.interview .list ul li a:hover .text h3 br {
-    display: block;
-}
-.interview .list ul li a:hover .text p {
-    opacity: 1;
-}
 .interview .more {
     position: absolute;
     left: 50%;
     bottom: 0;
     margin: 0 0 164px 0;
 }
-
-
+@media screen and (min-width:769px){
+    .interview .list ul li:nth-child(2) {
+        margin: 70px 0 0 0;
+    } 
+    .interview .list ul li:nth-child(2) a .photo {
+        border-radius: 15px 50px 15px 50px;
+    }
+    .interview .list ul li:nth-child(2) a .text {
+        border-radius: 15px 50px 15px 50px;
+    }
+    /* 오버 스타일 */
+    .interview .list ul li a:hover .photo::before {
+        display: none;
+    }
+    .interview .list ul li a:hover .photo img {
+        filter: grayscale(0);
+    }
+    .interview .list ul li a:hover .text {
+        z-index: 3;
+        width: calc(100% - 83px);
+        background-color: #372821;
+        padding-bottom: 30px;
+    }
+    .interview .list ul li a:hover .text::after {
+        content: "";
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        width: 22px;
+        height: 22px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.1974 12.1124L10.2761 19.0337C9.99358 19.3162 9.85821 19.6458 9.86998 20.0225C9.88175 20.3991 10.0289 20.7287 10.3114 21.0112C10.5939 21.2702 10.9235 21.4056 11.3002 21.4173C11.6768 21.4291 12.0064 21.2937 12.2889 21.0112L21.6116 11.6886C21.7528 11.5474 21.8529 11.3943 21.9117 11.2295C21.9706 11.0647 22 10.8882 22 10.6998C22 10.5115 21.9706 10.3349 21.9117 10.1701C21.8529 10.0054 21.7528 9.85233 21.6116 9.71108L12.2889 0.388443C12.03 0.129481 11.7063 0 11.3178 0C10.9294 0 10.5939 0.129481 10.3114 0.388443C10.0289 0.670947 9.88764 1.00642 9.88764 1.39486C9.88764 1.78331 10.0289 2.11878 10.3114 2.40128L17.1974 9.28732H1.41252C1.0123 9.28732 0.67683 9.42269 0.406097 9.69342C0.135365 9.96415 -1.90735e-06 10.2996 -1.90735e-06 10.6998C-1.90735e-06 11.1001 0.135365 11.4355 0.406097 11.7063C0.67683 11.977 1.0123 12.1124 1.41252 12.1124H17.1974Z' fill='white'/%3E%3C/svg%3E%0A");
+        transform: rotate(-45deg);
+    }
+    .interview .list ul li a:hover .text h3 br {
+        display: block;
+    }
+    .interview .list ul li a:hover .text p {
+        opacity: 1;
+    }
+}
+@media screen and (max-width:768px){
+    .interview {
+        margin: 46px 0 0 0;
+        padding: 78px 0 78px 0;    
+    }
+    .interview .tit {
+        text-align: left;
+    }
+    .interview .list {
+        margin: 22px 0 0 0;
+    }
+    .interview .list ul {
+        gap:8px;
+    }
+    .interview .list ul li {
+        width: calc(50% + 8px);
+        /* 100% / 한 줄에 나오는 li의 갯수 = x 
+           여백의 합 / 한 줄에 나오는 li의 갯수 = y 
+            width = x - y */       
+    }
+    .interview .list ul li:nth-child(3) {
+        display: none;
+    } 
+    .interview .list ul li a .photo {
+        height: 277px;
+        border-radius: 25px 5px 25px 5px;
+    }
+    .interview .list ul li a .photo::before {
+        display: none;
+    }
+    .interview .list ul li a .photo img {
+        filter: grayscale(0);
+        transition: 0;
+    }
+    .interview .list ul li a .text {
+        bottom: -41px;
+        padding: 16px;
+        width: calc(100% - 41px);
+        border-radius: 25px 5px 25px 5px;
+        background-color: #372821;
+    }
+    .interview .list ul li a .text::after {
+        content: "";
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        width: 17px;
+        height: 17px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.2889 9.35955L7.94061 14.7079C7.72231 14.9262 7.61771 15.1808 7.62681 15.4719C7.6359 15.763 7.7496 16.0177 7.9679 16.236C8.1862 16.4361 8.44088 16.5407 8.73194 16.5498C9.02301 16.5589 9.27769 16.4543 9.49599 16.236L16.6998 9.0321C16.809 8.92295 16.8863 8.80471 16.9318 8.67737C16.9773 8.55003 17 8.41359 17 8.26806C17 8.12253 16.9773 7.98609 16.9318 7.85875C16.8863 7.73141 16.809 7.61316 16.6998 7.50401L9.49599 0.300161C9.29588 0.100054 9.04575 0 8.74559 0C8.44543 0 8.1862 0.100054 7.9679 0.300161C7.7496 0.518459 7.64045 0.777689 7.64045 1.07785C7.64045 1.37801 7.7496 1.63724 7.9679 1.85554L13.2889 7.17657H1.09149C0.782236 7.17657 0.523006 7.28117 0.313805 7.49037C0.104601 7.69957 0 7.9588 0 8.26806C0 8.57731 0.104601 8.83654 0.313805 9.04575C0.523006 9.25495 0.782236 9.35955 1.09149 9.35955H13.2889Z' fill='white'/%3E%3C/svg%3E%0A");
+        transform: rotate(-45deg);
+    }
+    .interview .list ul li a .text h3 {
+        font-size: 19px;
+    }
+    .interview .list ul li a .text h3 br {
+        display: block;
+    }
+    .interview .list ul li a .text p {
+        opacity: 1;
+        margin: 8px 0 0 0;
+    }
+    .interview .more span {
+        display: none;
+    }
+}
+@media screen and (max-width:432px){
+    .interview .list ul {
+        display: block;
+    }
+    .interview .list ul li {
+        width: auto;
+        /* 100% / 한 줄에 나오는 li의 갯수 = x 
+        여백의 합 / 한 줄에 나오는 li의 갯수 = y 
+            width = x - y */       
+    }
+    .interview .list ul li:nth-child(2) {
+        display: none;
+    } 
+}
 
 
 footer {

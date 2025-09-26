@@ -1,0 +1,167 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+
+section h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.notice {
+    margin: 171px 0 0 0;
+}
+.notice .wrapper {
+    position: relative; /* more 정렬의 기준 */
+}
+.notice .tit strong {
+    color: #004EA2;
+}
+.notice .tit h2 {
+    color: #1d1d1d;
+    margin: 13px 0 46px 0;
+}
+.notice .list ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 0 24px;
+}
+.notice .list ul li {
+    width: calc(33.33% + 16px );
+    max-width: 404px;
+}
+.notice .list ul li a {
+    display: block;
+}
+.notice .list ul li a .photo {
+    height: 250px;
+    overflow: hidden;
+}
+.notice .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.notice .list ul li a h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 14px 0 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.notice .list ul li a p {
+    max-height: 3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.notice .list .more {
+    position: absolute;
+    right: 18px;
+    top: 77px;
+    color: #004EA2;
+}
+.notice .list .more a {
+    display: block;
+}
+.notice .list .more a::after {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    right: -15px;
+    top: 7px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='9' height='9' viewBox='0 0 9 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.875 5.125H0.75C0.572917 5.125 0.424479 5.0651 0.304688 4.94531C0.184896 4.82552 0.125 4.67708 0.125 4.5C0.125 4.32292 0.184896 4.17448 0.304688 4.05469C0.424479 3.9349 0.572917 3.875 0.75 3.875H3.875V0.75C3.875 0.572917 3.9349 0.424479 4.05469 0.304688C4.17448 0.184896 4.32292 0.125 4.5 0.125C4.67708 0.125 4.82552 0.184896 4.94531 0.304688C5.0651 0.424479 5.125 0.572917 5.125 0.75V3.875H8.25C8.42708 3.875 8.57552 3.9349 8.69531 4.05469C8.8151 4.17448 8.875 4.32292 8.875 4.5C8.875 4.67708 8.8151 4.82552 8.69531 4.94531C8.57552 5.0651 8.42708 5.125 8.25 5.125H5.125V8.25C5.125 8.42708 5.0651 8.57552 4.94531 8.69531C4.82552 8.8151 4.67708 8.875 4.5 8.875C4.32292 8.875 4.17448 8.8151 4.05469 8.69531C3.9349 8.57552 3.875 8.42708 3.875 8.25V5.125Z' fill='%23004EA2'/%3E%3C/svg%3E%0A");
+}
+
+@media screen and (max-width:768px){
+    .notice {
+        margin: 97px 0 0 0;
+    }
+    .notice .tit h2 {
+        font-size: 24px;
+        color: #1d1d1d;
+        margin: 8px 0 46px 0;
+    }
+    .notice .list ul {
+        display: block;
+    }
+    .notice .list ul li {
+        width: auto;
+        border-top: 1px solid #ededed;
+    }
+    .notice .list ul li:last-child {
+        border-bottom: 1px solid #ededed;
+    }
+    .notice .list ul li a {
+        display: block;
+        padding: 17px 0 17px 0;
+    }
+    .notice .list ul li a .photo {
+        display: none;
+    }
+    .notice .list ul li a h3 {
+        font-size: 18px;
+        font-weight: 400;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .notice .list ul li a p {
+        display: none;
+    }
+    .notice .list .more {
+        position: absolute;
+        right: auto;
+        left: calc(50% - 45px);
+        top: auto;
+        bottom: -47px;
+        color: #004EA2;
+    }
+    .notice .list .more a {
+        border: 1px solid #004EA2;
+        border-radius: 18.5px;
+        padding: 4px 38px 5px 22px;
+        margin: 47px 0 0 0;
+    }
+    .notice .list .more a::after {
+        content: "";
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        right: 18px;
+        top: 58px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg width='9' height='9' viewBox='0 0 9 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.875 5.125H0.75C0.572917 5.125 0.424479 5.0651 0.304688 4.94531C0.184896 4.82552 0.125 4.67708 0.125 4.5C0.125 4.32292 0.184896 4.17448 0.304688 4.05469C0.424479 3.9349 0.572917 3.875 0.75 3.875H3.875V0.75C3.875 0.572917 3.9349 0.424479 4.05469 0.304688C4.17448 0.184896 4.32292 0.125 4.5 0.125C4.67708 0.125 4.82552 0.184896 4.94531 0.304688C5.0651 0.424479 5.125 0.572917 5.125 0.75V3.875H8.25C8.42708 3.875 8.57552 3.9349 8.69531 4.05469C8.8151 4.17448 8.875 4.32292 8.875 4.5C8.875 4.67708 8.8151 4.82552 8.69531 4.94531C8.57552 5.0651 8.42708 5.125 8.25 5.125H5.125V8.25C5.125 8.42708 5.0651 8.57552 4.94531 8.69531C4.82552 8.8151 4.67708 8.875 4.5 8.875C4.32292 8.875 4.17448 8.8151 4.05469 8.69531C3.9349 8.57552 3.875 8.42708 3.875 8.25V5.125Z' fill='%23004EA2'/%3E%3C/svg%3E%0A");
+    }
+}
+
+.service {
+    margin: 96px 0 0 0;
+    background: url(../images/service_bg.jpg);
+    padding: 154px 0 133px 0;
+}
+.service .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.service .tit {
+    width: calc(50% - 70px);
+    color: #fff;
+}
+.service .list {
+    width: calc(50% + 70px);
+}
+.service .list ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 20px;
+}
+.service .list ul li {
+    width: 150px;
+}
