@@ -31,6 +31,7 @@ body {
     color: #555; /* 555555 => 6글자가 같으면 3개만 써도됨 */
     line-height: 1.5;
     word-break: keep-all;
+    word-wrap: break-word; /* 단어가 너무 길 때 강제 줄바꿈 */
 }
 /* html태그의 기본스타일을 리셋 시킴
    body에서 선언한 기본 스타일로 적용 */
@@ -70,16 +71,10 @@ button {
     width: 1260px;
     margin: 0 auto;
 }
-@media screen and (max-width:768px){
-    body {
-        font-size: 16px;
-    }
-    .wrapper {
-        width: auto;
-        margin: 0 16px;
-    }
-
-}/*@media*/
+#wrap {
+    position: relative; /* header 정렬의 기준 */
+    /* overflow: hidden; */
+}
 
 /* html문서 구조상 써야하지만 
    디자인에서는 구현이 안되는 글자를 숨길때 사용 */
@@ -91,3 +86,38 @@ button {
     margin: -1px;
     overflow: hidden;
 }
+.photo {
+    overflow: hidden;
+}
+.photo img {
+     width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*
+    계속 (태블릿, 모바일) 좌우여백을 16px을 적용
+    1260 + 16 + 16 = 1292
+
+    좌우의 여백을 가변 %로 적용
+    1260*0.1(5% + 5% = 10%) = 126
+    1260 + 126 = 1386
+
+    1260*0.06(3% + 3% = 10%) = 75.6
+    1260 + 75.6 = 1335.6 > 1336
+*/
+@media screen and (max-width:1336px){
+    .wrapper {
+        width: auto;
+        margin: 0 3%;
+    }
+}/*@media*/
+
+
+@media screen and (max-width:768px){
+    body {
+        font-size: 16px;
+    }
+    .wrapper {
+        margin: 0 16px;
+    }
+}/*@media*/
