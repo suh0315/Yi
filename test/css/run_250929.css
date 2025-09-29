@@ -328,6 +328,13 @@
     }
 }/* @media */
 @media screen and (max-width:768px){
+    .sdi {
+        margin: 81px 0 0 0;
+    }
+    .sdi .tit h2 {
+        font-size: 28px;
+        margin: 0 0 8px 0;
+    }
     .sdi .inner {
         flex-wrap: wrap;
         gap: 16px 16px;
@@ -339,6 +346,14 @@
     }
     .sdi .inner .item.career {
         width: 100%;
+    }
+    .sdi .inner .item h3 {
+        font-size: 22px;
+        margin: 0 0 8px 0;
+    }
+    .sdi .inner .career .career_tit {
+        border-radius: 10px 10px 0 0;
+        padding: 16px 16px 16px 16px;
     }
 }/* @media */
 
