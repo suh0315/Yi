@@ -1,0 +1,266 @@
+@import url(common.css);
+
+:root {
+    --header-h: 100px
+}
+@media screen and (max-width:768px){
+    :root {
+        --header-h: 56px
+    }
+}/* @media */
+
+header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: var(--header-h);
+    color: #fff;
+    padding: 0 30px 0 30px;
+    display: flex; /* logo - gnb - util 좌우 배치 */
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo a {
+    display: block;
+    width: 33px;
+    height: 33px;
+    background: url(../images/menu_logo_w.svg) no-repeat center center / contain;
+    /* 로고나 아이콘처럼 배경에 넣더라도 짤리지 않고 모두 보여야 하는 배경은 contain */
+}
+header .util {
+    display: flex; /* lang-search 좌우 배치 */
+}
+header .util .lang .lang_open {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .util .lang .lang_open i {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+header .util .search .search_open {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .util .search .search_open i {
+    display: block;
+    width: 19px;
+    height: 19px;
+}
+
+@media screen and (min-width:1025px){
+    /* 769px 이상일 때 - pc버전 일 때만 적용 */
+    header .gnb .gnb_open,
+    header .gnb .gnb_close {
+        display: none;
+    }
+    header .gnb .gnb_wrap ul.depth_1 {
+        display: flex; /* li 좌우 배치 */
+    }
+    header .gnb .gnb_wrap ul.depth_1 > li {
+        position: relative; /* depth_2 정렬의 기준 */
+    }
+    header .gnb .gnb_wrap ul.depth_1 > li > a {
+        display: block;
+        font-size: 22px;
+        font-weight: 800;
+        line-height: var(--header-h);
+        padding: 0 24px 0 24px;
+    }
+    header .gnb .gnb_wrap ul.depth_1 > li > ul.depth_2 {
+        /* 2차 메뉴는 absolute로 처리 */
+        position: absolute; /* depth_1 li를 기준으로 정렬 */
+        left: 0;
+        top: var(--header-h); /* 정확하게 1차 메뉴의 높이와 같아야 함 */
+        width: 100%; /* li 넓이의 100% */
+        padding: 19px 0 0 0;
+        display: none;
+    }
+    header .gnb .gnb_wrap ul.depth_1 > li > ul.depth_2 > li > a {
+        display: block;
+        padding: 7px 0 7px 0;
+        text-align: center;
+        color: #555;
+    }
+
+    /* 메뉴 열렸을 때, header에 menu_over 클래스 부여했을 때 */
+    header.menu_over {
+        color: #1d1d1d;
+    }
+    header.menu_over::before {
+        content: "";
+        position: absolute; /* header를 기준으로 정렬 */
+        left: 0;
+        top: 0;
+        z-index: -1;
+        /* header 내부 요소 중 맨 아래, header 밖으로 나갈 수 없음 */
+        width: 100%;
+        height: 295px;
+        background-color: #fff;
+    }
+    header.menu_over::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: var(--header-h);
+        width: 100%;
+        height: 1px;
+        background-color: #ededed;
+    }
+    header.menu_over .logo a {
+        background-image: url(../images/menu_logo.svg);
+    }
+    header.menu_over .gnb .gnb_wrap ul.depth_1 > li.over > a {
+        color: #FF9700;
+    }
+    header.menu_over .gnb .gnb_wrap ul.depth_1 > li.over > a > span {
+        position: relative; /* after 정렬의 기준 */
+    }
+    header.menu_over .gnb .gnb_wrap ul.depth_1 > li.over > a > span::after {
+        content: "";
+        position: absolute; /* span을 기준으로 정렬 */
+        left: 0;
+        bottom: -38px;
+        z-index: 10;
+        width: 100%;
+        height: 3px;
+        border-radius: 2px;
+        background-color: #FF9700;
+    }
+    header.menu_over .gnb .gnb_wrap ul.depth_1 > li > ul.depth_2 {
+        display: block;
+    }
+    header.menu_over .gnb .gnb_wrap ul.depth_1 > li > ul.depth_2 > li > a:hover {
+        text-decoration: underline;
+        color: #FF9700;
+    }
+    header.menu_over .util .lang .lang_open i svg path {
+        fill: #2d2d2d;
+    }
+    header.menu_over .util .search .search_open i svg path {
+        fill: #2d2d2d;
+    }
+}/* @media */
+@media screen and (max-width:1024px){
+    /* 1024이하일 때 - 즉 메뉴가 모바일 버전으로 변경 */
+    header {
+        padding: 0 0 0 16px;
+    }
+    header .logo a {
+        width: 24px;
+        height: 24px;
+    }
+    header .gnb .gnb_open {
+        width: var(--header-h);
+        height: var(--header-h);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    header .gnb .gnb_open i {
+        display: block;
+        width: 21px;
+        height: 16px;
+    }
+    header .gnb .gnb_wrap {
+        display: none;
+        position: absolute; /* header를 기준으로 정렬 */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100dvh;
+        background-color: #fff;
+        color: #555;
+        padding: 63px 0 0 0; /* 2차 메뉴 상단 여백 */
+    }
+    header .gnb .gnb_wrap ul.depth_1 > li > a {
+        display: block;
+        padding: 16px 56px 16px 16px; /* 오른쪽 아이콘과 글자가 겹치지 않기 위해서 */
+        font-size: 22px;
+        font-weight: 800;
+        color: #1d1d1d;
+        position: relative; /* after 정렬의 기준 */
+    }
+    header .gnb .gnb_wrap ul.depth_1 > li > a::after {
+        content: "";
+        position: absolute; /* a를 기준으로 정렬 */
+        right: 20px;
+        top: 29px;
+        width: 15px;
+        height: 8px;
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='9' viewBox='0 0 16 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.77519 6.08892L13.402 0.46213C13.5934 0.270742 13.8167 0.178238 14.0718 0.184617C14.327 0.190997 14.5503 0.289881 14.7417 0.481268C14.9331 0.672655 15.0288 0.895941 15.0288 1.15112C15.0288 1.40631 14.9331 1.62959 14.7417 1.82098L8.8661 7.71572C8.71299 7.86883 8.54074 7.98366 8.34935 8.06022C8.15796 8.13677 7.96657 8.17505 7.77519 8.17505C7.5838 8.17505 7.39241 8.13677 7.20102 8.06022C7.00964 7.98366 6.83739 7.86883 6.68428 7.71572L0.789539 1.82098C0.598152 1.62959 0.505648 1.40312 0.512027 1.14156C0.518407 0.879993 0.617291 0.653518 0.808678 0.46213C1.00007 0.270742 1.22335 0.175049 1.47853 0.175049C1.73372 0.175049 1.957 0.270742 2.14839 0.46213L7.77519 6.08892Z' fill='%233D3D3D'/%3E%3C/svg%3E%0A");
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    header .gnb .gnb_wrap ul.depth_1 > li > ul.depth_2 {
+        background-color: #f4f4f4;
+        padding: 15px 32px 17px 32px;
+        display: none; /* 1차 메뉴를 클릭하면 열림 */
+    }
+    header .gnb .gnb_wrap ul.depth_1 > li > ul.depth_2 > li > a {
+        display: block;
+        padding: 5px 0 5px 0;
+    }
+    header .gnb .gnb_close {
+        display: none;
+        position: absolute; /* header를 기준으로 정렬 */
+        right: 0;
+        top: 0;
+        width: var(--header-h);
+        height: var(--header-h);
+        /* 메뉴가 열리면 flex 줄 예정 */
+        justify-content: center;
+        align-items: center;
+    }
+    header .gnb .gnb_close i {
+        display: block;
+        width: 15px;
+        height: 15px;
+    }
+    header .util {
+        position: absolute; /* header를 기준으로 정렬 */
+        right: var(--header-h);
+        top: 0;
+    }
+    header .util .lang {
+        display: none;
+    }
+    header .util .search .search_open {
+        width: 27px;
+        height: var(--header-h);
+    }
+    header .util .search .search_open i {
+        display: block;
+        width: 17px;
+        height: 17px;
+    }
+
+    /* header에 menu_open이 있을 때 - 메뉴가 열렸을 때 */
+    header.menu_open .gnb .gnb_wrap {
+        display: block;
+    }
+    header.menu_open .gnb .gnb_close {
+        display: flex;
+    }
+    header .gnb .gnb_wrap ul.depth_1 > li.open > a::after {
+        transform: rotate(180deg);
+    }
+    header .gnb .gnb_wrap ul.depth_1 > li.open > ul.depth_2 {
+        display: block;
+    }
+}/* @media */
+
+
+.visual {
+    height: 100dvh;
+    background: url(../images/menu_visual.jpg) no-repeat center center / cover;
+}
