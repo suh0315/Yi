@@ -51,10 +51,11 @@ $(document).ready(function(){
         header .gnb .gnb_close를 클릭하면 메뉴가 닫힘
                     header에 menu_open 클래스 삭제
     */
-   $('header .gnb .gnb_open').on('click', function(){
+    $('header .gnb .gnb_open').on('click', function(){
         $('header').addClass('menu_open')
-   })
-   $('header .gnb .gnb_open').on('click', function(){
-    $('header').removeClass('menu_open')
     })
+    $('header .gnb .gnb_close').on('click', function(){
+        $('header').removeClass('menu_open')
+    })
+
 })//document
