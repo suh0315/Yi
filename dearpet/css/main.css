@@ -2,6 +2,9 @@
 @import url(fonts.css);
 @import url(common.css);
 
+.visual{
+    position: relative; /* ctrl_btn 정렬의 기준 */
+}
 .visual .swiper-slide {
     height: 100dvh; /* 브라우저 높이와 동일 */
     background-position: center center;
@@ -26,6 +29,35 @@
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
     margin: 0 0 16dvh 0;
+}
+.visual .ctrl_btn {
+    position: absolute; /* visual을 기준으로 정렬 */
+    left: 50%;
+    bottom: 10%;
+    z-index: 10;
+    display: flex;
+}
+.visual .ctrl_btn .paging {
+    display: flex;
+    align-items: center;
+    gap: 0 6px;
+    color: #fff;
+    font-weight: var(--font-weight-bold);
+}
+.visual .ctrl_btn .paging .bar {
+    width: 70px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: relative; /* before 정렬의 기준 */
+}
+.visual .ctrl_btn .paging .bar::before {
+    content: "";
+    position: absolute; /* bar를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
 }
 
 footer {
