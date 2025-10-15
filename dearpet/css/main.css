@@ -29,6 +29,14 @@
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
     margin: 0 0 16dvh 0;
+    transition: 0.4s;
+    transition-delay: 0.3s;
+    transform: translate(0, 50px);
+    opacity: 0;
+}
+.visual .swiper-slide.swiper-slide-active p {
+    transform: translate(0, 0);
+    opacity: 1;
 }
 .visual .ctrl_btn {
     position: absolute; /* visual을 기준으로 정렬 */
@@ -81,6 +89,54 @@
     display: block;
     width: 11px;
 }
+
+@media screen and (max-width:1335.6px){
+    .visual .ctrl_btn {
+        left: 3%
+    }
+}
+@media screen and (max-width:768px){
+    .visual .swiper-slide {
+    height: 400px; /* 브라우저 높이와 동일 */
+    }
+    .visual .swiper-slide p {
+        font-size: var(--font-size-visual);
+        font-weight: var(--font-weight-bold);
+        line-height: var(--line-height-tit);
+        margin: 0 0 76px 0;
+        transform: translate(0, 30px);
+    }
+    .visual .ctrl_btn {
+        left: 16px;
+        bottom: 45px;
+    }
+    
+    .visual .ctrl_btn .paging .bar {
+        width: 48px;
+        height: 2px;
+    }
+    .visual .ctrl_btn .stop,
+    .visual .ctrl_btn .play {
+        display: block;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .visual .ctrl_btn .play {
+        display: none;
+    }
+    .visual .ctrl_btn .stop i {
+        display: block;
+        width: 14px;
+    }
+    .visual .ctrl_btn .play i {
+        display: block;
+        width: 11px;
+    }
+}
+
 footer {
     margin: 300px 0 0 0;
 }
