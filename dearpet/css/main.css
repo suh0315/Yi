@@ -8,6 +8,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
+
+    display: flex;
+    align-items: flex-end;
 }
 .visual .swiper-slide.pop1 {
     background-image: url(../images/visual_bg1.jpg);
@@ -22,6 +25,7 @@
     font-size: var(--font-size-visual);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
+    margin: 0 0 16dvh 0;
 }
 
 footer {
