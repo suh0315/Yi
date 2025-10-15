@@ -2,6 +2,28 @@
 @import url(fonts.css);
 @import url(common.css);
 
-.wrapper {
-    border: 1px solid rebeccapurple;
+.visual .swiper-slide {
+    height: 100dvh; /* 브라우저 높이와 동일 */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+.visual .swiper-slide.pop1 {
+    background-image: url(../images/visual_bg1.jpg);
+}
+.visual .swiper-slide.pop2 {
+    background-image: url(../images/visual_bg2.jpg);
+}
+.visual .swiper-slide.pop3 {
+    background-image: url(../images/visual_bg3.jpg);
+}
+.visual .swiper-slide p {
+    font-size: var(--font-size-visual);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+}
+
+footer {
+    margin: 300px 0 0 0;
 }
