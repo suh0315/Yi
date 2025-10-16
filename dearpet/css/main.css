@@ -148,10 +148,12 @@ header .util .mypage i {
 @media screen and (max-width:1024px) {
     header {
         padding-right: 0;
+        height: clamp(56px, 9vw, 90px);
     }
     header .logo a {
-        width: 113.87px;
-        height: 20px;
+        /* width: 113.87px;
+        height: 20px; */
+        width: clamp(113.87px, 18vw, 205.75px); /* 최소, 평소, 최대 */
     }
     header .util {
         display: none;
@@ -160,18 +162,31 @@ header .util .mypage i {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: var(--header-h);
-        height: var(--header-h);
+        width: clamp(56px, 9vw, 90px);
+        height: clamp(56px, 9vw, 90px);
     }
     header .gnb .gnb_open i {
         display: block;
-        width: 18px;
+        width: 32.14%;
     }
     header .gnb .gnb_wrap {
         display: none;
+        position: absolute; /* header를 기준으로 정렬 */
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100dvh;
+        background-color: #fff;
+        color: #1d1d1d;
+        fill: #1d1d1d;
+    }
+
+
+    /* 메뉴가 열렸을 때 */
+    header.menu_mo .gnb .gnb_wrap {
+        display: block;
     }
 }
-
 
 
 .visual{
@@ -197,7 +212,7 @@ header .util .mypage i {
     background-image: url(../images/visual_bg3.jpg);
 }
 .visual .swiper-slide p {
-    font-size: var(--font-size-visual);
+    font-size: clamp(28px, 5vw, 60px);
     font-weight: var(--font-weight-bold);
     line-height: var(--line-height-tit);
     margin: 0 0 16dvh 0;
@@ -275,7 +290,6 @@ header .util .mypage i {
     height: 400px; /* 브라우저 높이와 동일 */
     }
     .visual .swiper-slide p {
-        font-size: var(--font-size-visual);
         font-weight: var(--font-weight-bold);
         line-height: var(--line-height-tit);
         margin: 0 0 76px 0;
