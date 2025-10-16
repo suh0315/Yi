@@ -64,7 +64,7 @@ header .util .mypage i {
     }
     header .gnb .gnb_wrap ul.depth1 > li {
         position: relative; /* depth2 정렬의 기준 */
-    }
+    }   
     header .gnb .gnb_wrap ul.depth1 > li > a {
         display: block;
         font-size: var(--font-size-tit2);
@@ -74,6 +74,7 @@ header .util .mypage i {
         white-space: nowrap; /* 행간이 높아서 2줄이 되면 이상함 */
     }
     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+        display: none;
         position: absolute;
         left: 50%; /* li 넓이의 50% */
         transform: translateX(-50%); /* depth2 넓이의 50% */
@@ -111,6 +112,25 @@ header .util .mypage i {
     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover {
         color: var(--color-sub-02);
     }
+
+    /* 메뉴에 오버했을 때 */
+    header.menu_pc {
+        background-color: #fff;
+        color: #1d1d1d;
+        fill: #1d1d1d;
+        box-shadow: 0 4px 4px 0 var(--color-black10);
+    }
+    header.menu_pc .logo a {
+        background-image: url(../images/logo.svg);
+    }
+
+    header .gnb .gnb_wrap ul.depth1 > li.over > a {
+        color: var(--color-sub-02);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 {
+        display: block;
+    }
+
 }/* @media */
 /* 1025이상 - 1280이하 그 사이값에서 적용 */
 @media screen and (min-width:1025px) and (max-width:1280px){
@@ -202,6 +222,7 @@ header .util .mypage i {
     align-items: center;
     width: 24px;
     height: 24px;
+    margin: 2px 0 0 0;
 }
 .visual .ctrl_btn .play {
     display: none;

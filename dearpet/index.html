@@ -16,7 +16,9 @@
 </head>
 <body>
     <div id="wrap">
-        <header>
+        <!-- pc 버전에서 메뉴에 오버하면 menu_pc 클래스 부여 
+             mobile 버전에서 메뉴를 열면 menu_mo 클래스 부여 -->
+        <header class="menu_pc">
             <h1 class="logo"><a href="index.html"><span class="blind">Dearpet</span></a></h1>
             <nav class="gnb">
                 <button class="gnb_open">
@@ -30,7 +32,9 @@
                 <div class="gnb_wrap">
                     <div class="gnb_logo"><span>Dearpet</span></div><!--gnb_logo-->
                     <ul class="depth1">
-                        <li>
+                        <!-- pc버전 : 오버한 li에 over 클래스 부여 
+                             mobile버전 : 메뉴 열리면 li에 open 클래스 부여 -->
+                        <li class="over">
                             <a href="#n"><span>찾습니다</span></a>
                             <ul class="depth2">
                                 <li><a href="#n"><span>반려동물 실종신고</span></a></li>

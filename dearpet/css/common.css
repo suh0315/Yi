@@ -19,7 +19,9 @@
     --color-black80 : rgba(0, 0, 0, 0.8);
     --color-black60 : rgba(0, 0, 0, 0.6);
     --color-black40 : rgba(0, 0, 0, 0.4);
+    --color-black30 : rgba(0, 0, 0, 0.3);
     --color-black20 : rgba(0, 0, 0, 0.2);
+    --color-black10 : rgba(0, 0, 0, 0.1);
     --header-h : 90px;
     --wrapper-m : 3%;
 }
