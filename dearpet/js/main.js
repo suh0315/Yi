@@ -1,4 +1,26 @@
 $(document).ready(function(){
+
+    //시작 :: device 체크 (메뉴상태)
+    let mobile_size = 1024
+    let window_w
+    let device_status // pc, mobile 구분
+
+    function device_chk(){ //함수 정의
+        window_w = $(window).width()
+        if(window_w > mobile_size){ // 브라우저 넓이가 1024보다 클 때 = pc버전일 때
+            device_status = 'pc'
+        }else{
+            device_status = 'mobile'
+        }
+        console.log(device_status)
+    }
+
+    device_chk() //html 로딩이 완료된 이 후 단 1번 실행
+    $(window).resize(function(){ //브라우저가 리사이즈 될 때마다 실행
+        device_chk()
+    })
+
+    //끝 :: device 체크 (메뉴상태)
     
     //시작 :: visual swiper 
     let visual_time = 5000
@@ -49,5 +71,24 @@ $(document).ready(function(){
         updateCurrent();
     });
     //끝 :: visual swiper
+
+    // 시작 :: pc버전 메뉴 오버
+    /* 메뉴에 마우스를 오버 했을 때, header에 menu_pc 클래스 부여 (header .gnb)
+       마우스를 오버한 메뉴 1차 메뉴 li에 over 클래스 부여 (header .gnb .gnb_wrap ul.depth1 > li)
+       **pc버전에서만** / 메뉴를 오버해서 바뀐 색상의 영역 내부에선 오버 유지, 밖에 나가면 아웃 */
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
+        // console.log('oveeeeerrrrrrrrr')
+        $('header').addClass('menu_pc')
+        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+        $(this).addClass('over')
+    })
+
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
+        $(this).removeClass('over');
+    });
+
+
+
+    // 끝 :: pc버전 메뉴 오버
 
 })//맨끝
