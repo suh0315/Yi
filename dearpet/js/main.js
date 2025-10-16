@@ -76,16 +76,29 @@ $(document).ready(function(){
     /* 메뉴에 마우스를 오버 했을 때, header에 menu_pc 클래스 부여 (header .gnb)
        마우스를 오버한 메뉴 1차 메뉴 li에 over 클래스 부여 (header .gnb .gnb_wrap ul.depth1 > li)
        **pc버전에서만** / 메뉴를 오버해서 바뀐 색상의 영역 내부에선 오버 유지, 밖에 나가면 아웃 */
-    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
-        // console.log('oveeeeerrrrrrrrr')
-        $('header').addClass('menu_pc')
-        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
-        $(this).addClass('over')
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
+        if(device_status == 'pc'){
+            // console.log('oveeeeerrrrrrrrr')
+            $('header').addClass('menu_pc')
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+            $(this).addClass('over')
+        }
     })
 
     $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
         $(this).removeClass('over');
     });
+    $('header').on('mouseleave', function(){
+        $(this).removeClass('menu_pc');
+    });
+
+    $('header .util .search .sch_open').on('focusin', function(){
+        $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+    })
+    $('header .util .mypage').on('focusout', function(){
+        $('header').removeClass('menu_pc')
+    })
+    
 
 
 

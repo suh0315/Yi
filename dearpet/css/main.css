@@ -144,6 +144,35 @@ header .util .mypage i {
 /***** 끝 :: pc 버전 *****/
 
 
+/***** 시작 :: mobile 버전 *****/
+@media screen and (max-width:1024px) {
+    header {
+        padding-right: 0;
+    }
+    header .logo a {
+        width: 113.87px;
+        height: 20px;
+    }
+    header .util {
+        display: none;
+    }
+    header .gnb .gnb_open {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: var(--header-h);
+        height: var(--header-h);
+    }
+    header .gnb .gnb_open i {
+        display: block;
+        width: 18px;
+    }
+    header .gnb .gnb_wrap {
+        display: none;
+    }
+}
+
+
 
 .visual{
     position: relative; /* ctrl_btn 정렬의 기준 */
