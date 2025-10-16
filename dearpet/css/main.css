@@ -2,6 +2,130 @@
 @import url(fonts.css);
 @import url(common.css);
 
+header {
+    position: fixed; /* fixed :: 무조건 body를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    height: var(--header-h);
+    color: #fff;
+    fill: #fff; /* svg 아이콘 색상 */
+    display: flex; /* logo - gnb - util 좌우 배치 */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--wrapper-m); /* 위아래 - 좌우 */
+}
+header .logo a {
+    display: block;
+    width: 205.75px;
+    height: 36.01px;
+    background: url(../images/logo_w.svg) no-repeat center center / contain;
+}
+header .util {
+    display: flex;
+}
+header .util .search .sch_open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+}
+header .util .search .sch_open i {
+    display: block;
+    width: 17.58px;
+}
+header .util .mypage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+}
+header .util .mypage i {
+    display: block;
+    width: 20px;
+}
+/***** 시작 :: pc 버전 *****/
+/* 1024이하는 메뉴를 접음 */
+@media screen and (min-width:1025px){
+    header .gnb .gnb_open {
+        display: none; /* 모바일에서만 보임 */
+    }
+    header .gnb .gnb_wrap .gnb_logo {
+        display: none;
+    }
+    header .gnb .gnb_wrap .gnb_close {
+        display: none;
+    }
+    header .gnb .gnb_wrap ul.depth1 {
+        display: flex; /* li를 좌우로 배치 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li {
+        position: relative; /* depth2 정렬의 기준 */
+        border: 1px solid blue;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a {
+        display: block;
+        font-size: var(--font-size-tit2);
+        font-weight: var(--font-weight-bold);
+        line-height: var(--header-h);
+        padding: 0 1.3636em;
+        white-space: nowrap; /* 행간이 높아서 2줄이 되면 이상함 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+        position: absolute;
+        left: 50%; /* li 넓이의 50% */
+        transform: translateX(-50%); /* depth2 넓이의 50% */
+        top: calc(var(--header-h) - 20px);
+        background-color: #fff;
+        color: #1d1d1d;
+        border: 1px solid #1B609B;
+        border-radius: 15px;
+        min-width: 100%; /* li 넓이의 100% */
+        padding: 20px 25px;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+        display: block;
+        padding: 4px 0;
+        white-space: nowrap; /* 줄바꿈 금지 */
+        text-align: center;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a > span {
+        position: relative; /* before 정렬의 기준 */
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a > span::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 1px;
+        background-color: var(--color-sub-02);
+        transition: 0.3s;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover > span::before {
+        width: 100%;
+    }
+
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover {
+        color: var(--color-sub-02);
+    }
+}/* @media */
+/* 1025이상 - 1280이하 그 사이값에서 적용 */
+@media screen and (min-width:1025px) and (max-width:1280px){
+    header .logo a {
+        width: 185.75px;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a {
+        font-size: 22px;
+    }
+}
+/***** 끝 :: pc 버전 *****/
+
+
+
 .visual{
     position: relative; /* ctrl_btn 정렬의 기준 */
 }
@@ -74,7 +198,9 @@
 }
 .visual .ctrl_btn .stop,
 .visual .ctrl_btn .play {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 24px;
     height: 24px;
 }
@@ -130,6 +256,7 @@
     .visual .ctrl_btn .stop i {
         display: block;
         width: 14px;
+        margin: 2px 0 0 0;
     }
     .visual .ctrl_btn .play i {
         display: block;
@@ -138,5 +265,5 @@
 }
 
 footer {
-    margin: 300px 0 0 0;
+    margin: 3000px 0 0 0;
 }
