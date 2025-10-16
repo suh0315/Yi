@@ -64,7 +64,6 @@ header .util .mypage i {
     }
     header .gnb .gnb_wrap ul.depth1 > li {
         position: relative; /* depth2 정렬의 기준 */
-        border: 1px solid blue;
     }
     header .gnb .gnb_wrap ul.depth1 > li > a {
         display: block;
