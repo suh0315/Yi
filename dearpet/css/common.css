@@ -23,6 +23,7 @@
     --color-black20 : rgba(0, 0, 0, 0.2);
     --color-black10 : rgba(0, 0, 0, 0.1);
     --header-h : 90px;
+    --header-var : clamp(56px, 9vw, 90px);
     --wrapper-m : 3%;
 }
 @media screen and (max-width:768px){

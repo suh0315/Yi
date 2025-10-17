@@ -81,12 +81,15 @@ $(document).ready(function(){
             // console.log('oveeeeerrrrrrrrr')
             $('header').addClass('menu_pc')
             $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
+            $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp()
             $(this).addClass('over')
+            $(this).find('.depth2').slideDown()
         }
     })
 
     $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
         $(this).removeClass('over');
+        $(this).find('.depth2').slideUp()
     });
     $('header').on('mouseleave', function(){
         $(this).removeClass('menu_pc');
@@ -99,9 +102,32 @@ $(document).ready(function(){
         $('header').removeClass('menu_pc')
     })
     
-
-
-
     // 끝 :: pc버전 메뉴 오버
+
+    // 시작 :: mobile 버전 1차 메뉴 클릭     
+    /* 
+        ＊닫힌 메뉴를 클릭하면 기존에 열려있던 다른 메뉴 닫고 선택 메뉴만 열기 (li open 클래스 부여)
+        ＊열린 메뉴를 클릭하면 선택 메뉴만 닫고 끝남 (open 클래스 제거) 
+        ＊열린 메뉴, 닫힌 메뉴를 구분하는 방법 -- open 클래스 존재 여부
+        ＊1차 메뉴 a의 링크를 삭제
+    */
+    $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
+        if(device_status == 'mobile'){
+            e.preventDefault();
+            if($(this).parent().hasClass('open') == true){ //열려있는 메뉴를 다시 클릭했을 떄
+                $(this).parent().removeClass('open')
+                $(this).next().slideUp() //2차메뉴를 슬라이드로 닫기
+            }else{ //열려있지 않은 다른 메뉴를 클릭했을 때
+                $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open') // 모든 li의 클래스 삭제
+                $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp() //모든 2차 메뉴 닫기
+                $(this).parent().addClass('open')
+                $(this).next().slideDown() // 2차메뉴를 슬라이드로 열기
+            }
+        }
+
+        
+    })
+
+    // 끝 :: mobile 버전 1차 메뉴 클릭 
 
 })//맨끝
