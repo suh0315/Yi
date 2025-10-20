@@ -2,8 +2,8 @@
 :root {
     --font-size-basic : 17px;
     --font-size-visual : 60px;
-    --font-size-tit : 40px;
-    --font-size-tit2 : 24px; 
+    --font-size-tit : clamp(24px, 3vw, 40px);
+    --font-size-tit2 : clamp(20px, 2vw, 24px);
     --font-weight-basic : 400;
     --font-weight-bold : 700;
     --line-height-basic : 1.5;
@@ -30,8 +30,6 @@
     :root {
         --font-size-basic : 16px; 
         --font-size-visual : 28px;
-        --font-size-tit : 24px;
-        --font-size-tit2 : 20px; 
         --header-h : 56px;
         --wrapper-m : 16px;
     }

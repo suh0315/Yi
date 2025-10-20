@@ -414,12 +414,12 @@ header.fixed .logo a {
 .find {
     background-color: var(--color-main);
     color: #fff;
-    padding: 141px 0 141px 0;
+    padding: clamp(75px, 11vw, 141px) 0 clamp(53px, 10vw, 131px) 0;
 }
 .find h2 {
     font-size: var(--font-size-tit);
     font-weight: var(--font-weight-bold);
-    line-height: var(--line-height-title);
+    line-height: var(--line-height-tit);
     text-align: center;
 }
 .find .tab_list {
@@ -432,7 +432,7 @@ header.fixed .logo a {
 }
 .find .tab_list ul li button {
     display: block;
-    padding: 6px 26px 7px 26px;
+    padding: 0.25em 1.0833em 0.2916em 1.0833em;
     border: 1px solid var(--color-white60);
     border-radius: 30px;
     color: var(--color-white60);
@@ -442,13 +442,17 @@ header.fixed .logo a {
 .find .tab_list ul li.active button {
     background-color: var(--color-sub-01);
     border-color: var(--color-sub-01);
-    color: var(--color-white);
+    color: #fff;
 }
 .find .tab_content {
     margin: 22px 0 0 0;
 }
 .find .tab_content .tab_item {
     position: relative; /* 버튼 정렬의 기준 */
+    display: none; /* active 클래스가 있는 요소만 보임 */
+}
+.find .tab_content .tab_item.active {
+    display: block; /* active 클래스가 있는 요소만 보임 */
 }
 .find .tab_content .tab_item .ctrl_btn {
     position: absolute;
@@ -468,7 +472,52 @@ header.fixed .logo a {
     height: 40px;
     background-color: var(--color-white40);
     border-radius: 50%;
-    fill: var(--color-white);    
+    fill: #fff;    
+}
+.find .tab_content .tab_item .list .swiper-slide {
+    width: 297px;
+}
+.find .tab_content .tab_item .list .swiper-slide a {
+    display: block;
+}
+.find .tab_content .tab_item .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 400px;
+    border-radius: 25px;
+}
+.find .tab_content .tab_item .list .swiper-slide a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.find .tab_content .tab_item .list .swiper-slide a .txt h4 {
+    display: flex;
+    gap: 0 11px;
+    align-items: flex-end;
+    margin: 24px 0 0 0;
+}
+.find .tab_content .tab_item .list .swiper-slide a .txt h4 strong {
+    font-size: var(--font-size-tit2);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);    
+
+    /* 1줄 제한*/
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.find .tab_content .tab_item .list .swiper-slide a .txt ul {
+    margin: 11px 0 0 0;
+}
+.find .tab_content .tab_item .list .swiper-slide a .txt ul li {
+    display: flex;
+    gap: 0 11px;
+}
+.find .tab_content .tab_item .list .swiper-slide a .txt ul li span {
+    /* 1줄 제한*/
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .find .tab_content .tab_item .ctrl_btn .prev i,
 .find .tab_content .tab_item .ctrl_btn .next i {
@@ -479,7 +528,65 @@ header.fixed .logo a {
     display: flex;
     width: 14px;
 }
+@media screen and (max-width:768px){
 
+    .find .tab_list {
+        margin: 16px 0 0 0;
+    }
+    .find .tab_list ul {
+        gap: 0 8px;
+    }
+    .find .tab_content {
+        margin: 16px 0 0 0;
+    }
+    .find .tab_content .tab_item .list .swiper-slide a .photo {
+        height: 250px;
+        border-radius: 10px;
+    }
+    .find .tab_content .tab_item .list .swiper-slide a .txt h4 {
+        margin: 16px 0 0 0;
+    }
+    .find .tab_content .tab_item .list .swiper-slide a .txt ul {
+        margin: 8px 0 0 0;
+    }
+    .find .tab_content .tab_item .list .swiper-slide a .txt ul li {
+        display: flex;
+        gap: 0 8px;
+    }
+   
+    .find .tab_content .tab_item .ctrl_btn .prev,
+    .find .tab_content .tab_item .ctrl_btn .next,
+    .find .tab_content .tab_item .ctrl_btn .more {
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        fill: #fff;    
+    }
+    .find .tab_content .tab_item .ctrl_btn .prev,
+    .find .tab_content .tab_item .ctrl_btn .next {
+        display: none;
+    }
+    
+    .find .tab_content .tab_item .ctrl_btn .more i {
+        width: 12px;
+    }
+}/* @media */
+
+.slogan {
+    margin: clamp(75px, 11vw, 141px) 0 clamp(53px, 10vw, 131px) 0;
+    text-align: center;
+}
+.slogan h2 {
+    font-size: clamp(24px, 5vw, 60px);
+    font-weight: var(--font-weight-bold);
+    line-height: 2;
+    color: #1d1d1d;
+}
+.slogan p {
+    margin: 24px 0 0 0;
+    color: #666;
+}
+    
 footer {
     margin: 3000px 0 0 0;
 }
