@@ -945,6 +945,9 @@ header.fixed .logo a {
     margin: 0 0 0 6px;
 }
 @media screen and (max-width:768px){
+    .review .list .swiper-slide p {
+        display: none;
+    }
     .review .prev,
     .review .next {
         display: none;
