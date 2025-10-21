@@ -441,7 +441,7 @@ header.fixed .logo a {
 }
 .find .tab_list ul li.active button {
     background-color: var(--color-sub-01);
-    border-color: var(--color-sub-01);
+    border: 1px solid var(--color-sub-01);
     color: #fff;
 }
 .find .tab_content {
@@ -1004,6 +1004,26 @@ footer .top {
     display: flex;
     justify-content: center;
     align-items: center;
+    mix-blend-mode: difference;
+    z-index: 1;
+}
+footer .top::after {
+    content: "";
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    background-image: url(../images/spin.png);
+    width: clamp(60px, 7vw, 88px);
+    height: clamp(60px, 7vw, 88px);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: spin 15s linear infinite;
+    mix-blend-mode: difference;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% {transform: rotate(360deg);}
 }
 footer .top i {
     display: block;
