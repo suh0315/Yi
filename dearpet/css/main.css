@@ -966,5 +966,58 @@ header.fixed .logo a {
 }/* @media */
 
 footer {
-    margin: 3000px 0 0 0;
+    background-color: #1D1D1D;
+    color: var(--color-white80);
+    padding: clamp(45px, 5vw, 56px) 0 clamp(30px, 5vw, 59px) 0;
+}
+footer .wrapper {
+    position: relative; /* top 정렬의 기준 */
+}
+footer .top {
+    position: absolute; /* wrapper를 기준으로 정렬 */
+    right: 0;
+    top: clamp(-56px, -5vw, -45px);
+    transform: translate(50%, -46%);
+    width: clamp(47px, 6vw ,73px);
+    height: clamp(47px, 6vw ,73px);
+    fill: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer .top i {
+    display: block;
+    width: clamp(14px, 2vw, 24px);
+}
+footer .f_nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3125em 2.823em;
+}
+footer .f_nav ul li {
+    position: relative; /* after 정렬의 기준 */
+}
+footer .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -1.4em;
+    top: 0.38em;
+    width: 1px;
+    height: 0.7058em;
+    background-color: var(--color-white20);
+}
+footer .f_nav ul li:last-child::after {
+    display: none;
+}
+footer .f_info {
+    margin: clamp(8px, 2vw, 24px) 0 16px 0;
+}
+footer .f_info span,
+footer .f_info address {
+    display: inline-block;
+    margin: 0 1em 0.3em 0;
+}
+footer .copyright {
+    color: var(--color-white40);
 }

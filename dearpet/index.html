@@ -8,6 +8,8 @@
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script src="js/aos.js"></script>
+    <link rel="stylesheet" href="css/aos.css">
 
 
     <link rel="stylesheet" href="css/main.css">
@@ -153,8 +155,8 @@
             </section>
             <section class="find">
                 <div class="wrapper">
-                    <h2>찾습니다</h2>
-                    <div class="tab_list">
+                    <h2 data-aos="fade-up">찾습니다</h2>
+                    <div class="tab_list" data-aos="fade-up">
                         <ul>
                             <!-- 선택된 탭에는 active 클래스 추가
                                  button안에 span태그한테 선택됨이라고 글자를 써줌
@@ -167,7 +169,7 @@
                             <li class="item2" data-tab="item2"><button>주인을 <span class="blind"></span></button></li>
                         </ul>
                     </div><!--tab_list-->
-                    <div class="tab_content">
+                    <div class="tab_content" data-aos="fade-up">
                         <!-- 선택된 tab_item은 active 클래스가 추가 title에 선택됨 이라고 써줌 -->
                         <div class="tab_item item1 active" title="선택됨">
                             <h3 class="blind">가족을</h3>
@@ -677,19 +679,19 @@
             </section><!--find-->
             <section class="slogan">
                 <div class="wrapper">
-                    <h2>공공장소<strong class="place"></strong>에서 주인 없이 <br class="mo_only"> 떠도는<br class="pc_only"> 
+                    <h2 data-aos="fade-left">공공장소<strong class="place"></strong>에서 주인 없이 <br class="mo_only"> 떠도는<br class="pc_only"> 
                         동물<strong class="animal"></strong>을 발견한 경우<br> 
                         관할 시군구청 또는 <br class="mo_only"> 동물보호센터<strong class="center"></strong>에<br> 
                         신고<strong class="call"></strong>하시기 바랍니다</h2>
-                    <p>※소유자를 알 수 없는 동물을 신고하지 않고 알선·구매하는 경우, 포획하여 팔거나 판매하거나 죽일 목적으로 포획하는 경우에는 
+                    <p data-aos="fade-left">※소유자를 알 수 없는 동물을 신고하지 않고 알선·구매하는 경우, 포획하여 팔거나 판매하거나 죽일 목적으로 포획하는 경우에는 
                         동물보호법 제10조제3항제1호·제3호·제4호를 위반하여 2년 이하 징역이나 2천만원 이하 벌금이 부과됩니다.</p>
                 </div><!--wrapper-->
             </section>
             <section class="adopt">
                 <div class="tit">
-                    <div class="wrapper"><h2>가족이 되어주세요</h2></div>
+                    <div class="wrapper"><h2 data-aos="fade-up">가족이 되어주세요</h2></div>
                 </div><!--tit-->
-                <div class="list">
+                <div class="list" data-aos="fade-up">
                     <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
                         <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
                             <li class="swiper-slide">
@@ -823,7 +825,7 @@
                         </i>
                     </button>
                 </div><!--ctrl_btn-->
-                <div class="more">
+                <div class="more" data-aos="fade-up">
                     <a href="#n">
                         <span>더보기</span>
                         <i>
@@ -841,8 +843,8 @@
             </section>
             <section class="review">
                 <div class="wrapper">
-                    <h2><span>다시,</span> 함께</h2>
-                    <div class="list">
+                    <h2 data-aos="fade-up"><span>다시,</span> 함께</h2>
+                    <div class="list" data-aos="fade-up">
                         <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
                             <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
                                 <li class="swiper-slide">
@@ -919,7 +921,7 @@
                             </svg>
                         </i>
                     </button>
-                    <div class="more">
+                    <div class="more" data-aos="fade-up">
                         <a href="#n">
                             <strong>3,832</strong>
                             <span>건의 후기</span>
@@ -933,7 +935,38 @@
                 </div><!--wrapper-->
             </section>
         </div><!--container-->
-        <footer></footer>
+        <footer>
+            <div class="wrapper">
+                <button class="top">
+                    <i>
+                        <svg viewBox="0 0 23 24" xmlns="http://www.w3.org/2000/svg">
+                            <g style="mix-blend-mode:difference">
+                                <path d="M9.99301 5.23917L2.56044 12.7897C2.25707 13.0979 1.90314 13.2456 1.49865 13.2327C1.09415 13.2199 0.740223 13.0594 0.436853 12.7512C0.158764 12.443 0.0133991 12.0835 0.000757217 11.6726C-0.0118828 11.2616 0.133482 10.9021 0.436853 10.5939L10.4481 0.423756C10.5997 0.269662 10.7641 0.160513 10.941 0.0963077C11.118 0.0321022 11.3076 -5.1109e-07 11.5099 -5.0225e-07C11.7121 -4.9341e-07 11.9017 0.0321022 12.0787 0.0963077C12.2556 0.160513 12.42 0.269662 12.5717 0.423756L22.5829 10.5939C22.861 10.8764 23 11.2295 23 11.6533C23 12.077 22.861 12.443 22.5829 12.7512C22.2795 13.0594 21.9192 13.2135 21.5021 13.2135C21.085 13.2135 20.7247 13.0594 20.4214 12.7512L13.0267 5.23917L13.0267 22.4591C13.0267 22.8957 12.8813 23.2616 12.5906 23.557C12.2999 23.8523 11.9396 24 11.5099 24C11.0801 24 10.7198 23.8523 10.4291 23.557C10.1384 23.2616 9.99301 22.8957 9.99301 22.4591L9.99301 5.23917Z">
+                            </g>
+                        </svg>
+                    </i>
+                    <span class="blind">TOP</span>
+                </button>
+                <div class="f_nav">
+                    <ul>
+                        <li><a href="#n">개인정보처리방침</a></li>
+                        <li><a href="#n">회원가입</a></li>
+                        <li><a href="#n">로그인</a></li>
+                        <li><a href="#n">이용약관</a></li>
+                    </ul>
+                </div><!--f_nav-->
+                <div class="f_info">
+                    <span>(주)상상유니버스 유기견보호센터</span> <br>
+                    <address>주소 : 서울특별시 마포구 독막로28길 10</address>  
+                    <span>대표자 : 정민수</span> <br>
+                    <span>사업자번호 : 898 -87-00897</span>   
+                    <span>동물판매업 등록번호 : 제3130000-045-2018-0050호</span> <br>
+                    <span>통신판매업 등록번호 : 제2020-서울마포-0181호</span>
+                    <span>E-mail : master@zooseyo.com</span>
+                </div><!--f_info-->
+                <div class="copyright">ⓒ 종합유기견보호센터 All Rights Reserved</div><!--copyright-->
+            </div><!--wrapper-->
+        </footer>
     </div>
 </body>
 </html>

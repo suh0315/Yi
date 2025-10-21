@@ -280,4 +280,23 @@ $(document).ready(function(){
 
     // 끝 :: 후기 swiper
 
+    // 시작 :: TOP 버튼
+    $('footer .top').on('click', function(){
+        // $(window).scrollTop(0)
+        $('html, body').animate({
+            scrollTop : 0
+        }, 300)
+    })
+
+    //끝 :: TOP 버튼
+
+    // 시작 :: 애니메이션 효과
+    AOS.init({
+        offset: 150, // 해당 콘텐츠가 하단에서 몇 px 위로 올라와에 나타나는 효과가 나타날지 셋팅하는 값
+        duration: 500, // 애니메이션 효과가 작동되는 시간
+        easing: 'ease', // 가속도
+    });
+    // 끝 :: 애니메이션 효과
+
+
 })//맨끝
