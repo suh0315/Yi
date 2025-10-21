@@ -576,11 +576,22 @@ header.fixed .logo a {
     margin: clamp(75px, 11vw, 141px) 0 clamp(53px, 10vw, 131px) 0;
     text-align: center;
 }
+.slogan span {
+    font-size: var(--font-size-tit);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tit);
+    text-align: center;
+    background-color: #1B609B;
+    color: #fff;
+    border-radius: 200px;
+    padding: 21px 51px 17px 51px;
+}
 .slogan h2 {
     font-size: clamp(24px, 5vw, 60px);
     font-weight: var(--font-weight-bold);
     line-height: 2;
     color: #1d1d1d;
+    margin: clamp(9px, 7vw, 86px) 0 0 0;
 }
 .slogan h2 br.mo_only {
     display: none;
@@ -634,6 +645,15 @@ header.fixed .logo a {
     margin: 24px 0 0 0;
     color: #666;
 }
+@media screen and (max-width:768px){
+    .slogan span {
+        text-align: center;
+        background-color: transparent;
+        color: var(--color-sub-02);
+        border-radius: 0;
+        padding: 0;
+    }
+} /* @media */
 @media screen and (max-width:640px){
     .slogan h2 br.mo_only {
         display: block;
@@ -795,7 +815,6 @@ header.fixed .logo a {
 .review {
     background-color: #ededed;
     padding: clamp(60px, 10vw, 128px) 0 clamp(48px, 7vw, 87px) 0;
-    overflow-x: hidden;
 }
 .review .wrapper {
     position: relative; /* prev / next / more 정렬의 기준 */
