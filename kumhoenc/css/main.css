@@ -1,0 +1,143 @@
+/***********************
+* 파일명 : main.css 
+* 작성자 : 이수형
+* 작성일 : 25-10-23
+* 설  명 : index파일 (메인페이지)에서만 호출하는 css
+          메인페이지 (index)의 스타일이 이 페이지에서 선언됨 (header/footer 제외)
+          default.css (태그의 초기화 - 브라우저가 주는 기본 스타일 삭제)
+          common.css (wrapper, blind 처럼 모든 페이지에서 반복되는 기본 스타일 
+          - 변수도 여기서 선언, 변수가 너무 많으면 variable이라는 파일을 분리도 함)
+          layout.css (문서의 구조에 영향을 끼치는 요소 - header/footer가 들어감)
+*********************/
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+
+.visual {
+    position: relative; /* scroll 정렬의 기준 */
+}
+.visual .popup .slide {
+    height: 100dvh;
+    position: relative; /* photo 정렬의 기준 */
+    /* txt를 slide의 하단에 배치 - 넓이가 100% */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.visual .popup .slide .photo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.visual .popup .slide .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale3d(1.2, 1.2, 1);
+    transition: transform 2s;
+}
+.visual .popup .slide.slick-active .photo img {
+    transform: scale3d(1, 1, 1);
+}
+.visual .popup .slide .txt {
+    color: #fff;
+    margin-bottom: 247px;
+}
+.visual .popup .slide .txt h2 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 16px 0;
+}
+@media screen and (min-width:769px){ /* pc버전에서만 동작 */
+    .visual .popup .slide .txt .line {
+        display: block;
+        overflow: hidden;
+    }
+    .visual .popup .slide .txt .line span {
+        transform: translateY(100%);
+        display: block;
+        transition: transform 0.5s;
+        transition-delay: 0.3s;
+    }
+    .visual .popup .slide.slick-active .txt .line span {/* 현재 보이는 팝업에는 */
+        transform: translateY(0);
+    }
+}/*media*/
+
+.visual .scroll {
+    position: absolute;
+    right: 0;
+    bottom: 140px;
+    color: #fff;
+    font-size: 1.5rem;
+    transform: rotate(90deg);
+}
+.visual .scroll::after {
+    content: "";
+    position: absolute;
+    right: -15px;
+    bottom: 9px;
+    width: 8px;
+    height: 8px;
+    border-width: 1px 1px 0 0;
+    border-style: solid;
+    border-color: #fff;
+    /* background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 11' fill='#ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.79578 8.80994L11.5387 5.45084C11.7617 5.29191 12.0404 5.20884 12.3748 5.20162C12.7093 5.19439 12.9981 5.27747 13.2413 5.45084C13.4643 5.60976 13.5758 5.81203 13.5758 6.05764C13.5758 6.30326 13.4643 6.50552 13.2413 6.66445L7.64708 10.652C7.52547 10.7387 7.39372 10.8001 7.25184 10.8362C7.10995 10.8723 6.95794 10.8904 6.79578 10.8904C6.63363 10.8904 6.48162 10.8723 6.33973 10.8362C6.19785 10.8001 6.0661 10.7387 5.94449 10.652L0.350248 6.66445C0.127289 6.50552 0.0107426 6.30687 0.000608069 6.06848C-0.00952642 5.83009 0.10702 5.62421 0.350248 5.45084C0.573207 5.29191 0.856973 5.21245 1.20155 5.21245C1.54612 5.21245 1.82988 5.29191 2.05284 5.45084L6.79578 8.80994ZM6.79578 3.60875L11.5387 0.249657C11.7617 0.0907317 12.0404 0.0076573 12.3748 0.000433432C12.7093 -0.00679043 12.9981 0.076284 13.2413 0.249657C13.4643 0.408582 13.5758 0.61085 13.5758 0.856461C13.5758 1.10207 13.4643 1.30434 13.2413 1.46327L7.64708 5.45084C7.52547 5.53753 7.39372 5.59893 7.25184 5.63505C7.10995 5.67117 6.95794 5.68923 6.79578 5.68923C6.63363 5.68923 6.48162 5.67117 6.33973 5.63505C6.19785 5.59893 6.0661 5.53753 5.94449 5.45084L0.350248 1.46327C0.127289 1.30434 0.0107426 1.10568 0.000608069 0.867297C-0.00952642 0.62891 0.10702 0.42303 0.350248 0.249657C0.573207 0.0907317 0.856973 0.0112692 1.20155 0.0112692C1.54612 0.0112692 1.82988 0.0907317 2.05284 0.249657L6.79578 3.60875Z'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain; */
+    transform: rotate(45deg);
+    animation: scroll 3s linear infinite;
+}
+@keyframes scroll {
+    0% { right: -15px; }
+    50% { right: -30px; }
+    100% { right: -15px; }
+}
+
+@media screen and (max-width:1024px){
+    .visual .popup .slide .txt h2 {
+        font-size: 4.4rem;
+    }
+}
+
+@media screen and (max-width:768px){
+            .visual .popup .slide {
+                height: 600px;
+            }
+            .visual .popup .slide .txt {
+                margin-bottom: 56px;
+            }
+            .visual .popup .slide .txt h2 {
+                font-size: 3.2rem;
+                margin: 0 0 24px 0;
+            }
+            .visual .popup .slide .txt h2,
+            .visual .popup .slide .txt p {
+                transform: translateY(50%);
+                opacity: 0;
+                transition: transform 1s, opacity 1s;
+                transition-delay: 0.3s;
+            }
+            .visual .popup .slide.slick-active .txt h2,
+            .visual .popup .slide.slick-active .txt p {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            .visual .popup .slide .txt h2 .line {
+                display: block; /* 줄바꿈 */
+            }
+            .visual .scroll {
+                display: none;
+            }
+}/*@media*/
+
+footer {
+    margin: 1500px 0 0 0;
+}
