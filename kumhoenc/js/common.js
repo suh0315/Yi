@@ -71,10 +71,10 @@ $(document).ready(function(){
         console.log(diff_scroll)
         if(diff_scroll < 0){ //위로 스크롤 
             $('header').addClass('up')
-            console.log('if냐?')
+            // console.log('if냐?')
         }else{ //아래로 스크롤
             $('header').removeClass('up')
-            console.log('else니?')
+            // console.log('else니?')
         }
         if(scrolling > 0){ //스크롤 내림
             $('header').addClass('fixed')
