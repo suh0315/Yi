@@ -188,6 +188,7 @@ section .tit h2 {
     gap: 0 3px;
 }
 .biz .list ul li {
+    overflow: hidden;
     width: 25%;
     height: 640px;
     background-position: center center;
@@ -513,96 +514,153 @@ section .tit h2 {
     }
 }/* @media */
 
-.service {
-    margin: 153px 0 0 0;
-}
-.service .tit {
-    display: none;
-}
-.service .list {
-    background: url(../images/main/service01.jpg) no-repeat center center / cover;
-    color: #fff;
-    transition: 0.5s;
-}
-/* 속성 선택자
-   <div class="list" data-bg="service01"> 이 요소를 선택 */
-.service .list[data-bg="service01"] {
-    background-image: url(../images/main/service02.jpg);
-}
-.service .list[data-bg="service02"] {
-    background-image: url(../images/main/service03.jpg);
-}
-.service .list[data-bg="service03"] {
-    background-image: url(../images/main/service04.jpg);
-}
-.service .list ul {
-    display: flex;
-}
-.service .list ul li {
-    width: 33.33%;
-    height: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative; /* after 정렬의 기준 */
-}
-.service .list ul li::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 133px;
-    width: 1px;
-    height: 100px;
-    background-color: rgba(255, 255, 255, 0.4);
-}
-.service .list ul li:last-child::after {
-    display: none;
-}
-.service .list ul li a {
-    display: block;
-    transform: translateY(22px);
-    transition: transform 0.5s;
-}
-.service .list ul li:hover a {
-    transform: translateY(0);
-}
-.service .list ul li a strong {
-    font-weight: 700;
-}
-.service .list ul li a h3 {
-    font-size: 2.4rem;
-    font-weight: 700;
-    line-height: 1.3;
-    margin: 8px 0 11px 0;
-}
-.service .list ul li a .more {
-    border: 1px solid #fff;
-    border-radius: 50px;
-    padding: 3px 64px 4px 18px;
-    position: relative; /* after 정렬의 기준 */
-    display: inline-block;
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-.service .list ul li:hover a .more {
-    opacity: 1;
-}
-.service .list ul li a .more::after {
-    content: "";
-    position: absolute; /* a를 기준으로 정렬 */
-    width: 11px;
-    height: 11px;
-    right: 18px;
-    top: 10px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 11 10' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.02941 5.66379H0.6595C0.472642 5.66379 0.31601 5.60058 0.189606 5.47418C0.0632021 5.34778 0 5.19114 0 5.00429C0 4.81743 0.0632021 4.6608 0.189606 4.53439C0.31601 4.40799 0.472642 4.34479 0.6595 4.34479H8.02941L4.79786 1.11324C4.66596 0.981336 4.60276 0.827453 4.60826 0.651586C4.61375 0.475719 4.68245 0.321836 4.81435 0.189936C4.94625 0.0690277 5.10013 0.00582558 5.276 0.00032975C5.45187 -0.00516608 5.60575 0.058036 5.73765 0.189936L10.0904 4.54264C10.1563 4.60859 10.203 4.68003 10.2305 4.75697C10.258 4.83392 10.2717 4.91635 10.2717 5.00429C10.2717 5.09222 10.258 5.17466 10.2305 5.2516C10.203 5.32854 10.1563 5.39999 10.0904 5.46594L5.73765 9.81864C5.61674 9.93955 5.46561 10 5.28424 10C5.10288 10 4.94625 9.93955 4.81435 9.81864C4.68245 9.68674 4.6165 9.53011 4.6165 9.34874C4.6165 9.16738 4.68245 9.01075 4.81435 8.87885L8.02941 5.66379Z' /%3E%3C/svg%3E%0A");
-}
+@media screen and (min-width:1025px) {
 
+    .service {
+        margin: 153px 0 0 0;
+    }
+    .service .tit {
+        display: none;
+    }
+    .service .list {
+        background: url(../images/main/service01.jpg) no-repeat center center / cover;
+        color: #fff;
+        transition: 0.5s;
+    }
+    /* 속성 선택자
+    <div class="list" data-bg="service01"> 이 요소를 선택 */
+    .service .list[data-bg="service01"] {
+        background-image: url(../images/main/service02.jpg);
+    }
+    .service .list[data-bg="service02"] {
+        background-image: url(../images/main/service03.jpg);
+    }
+    .service .list[data-bg="service03"] {
+        background-image: url(../images/main/service04.jpg);
+    }
+    .service .list ul {
+        display: flex;
+    }
+    .service .list ul li {
+        width: 33.33%;
+        height: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative; /* after 정렬의 기준 */
+    }
+    .service .list ul li::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 133px;
+        width: 1px;
+        height: 100px;
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+    .service .list ul li:last-child::after {
+        display: none;
+    }
+    .service .list ul li a {
+        display: block;
+        transform: translateY(22px);
+        transition: transform 0.5s;
+    }
+    .service .list ul li:hover a {
+        transform: translateY(0);
+    }
+    .service .list ul li a strong {
+        font-weight: 700;
+    }
+    .service .list ul li a h3 {
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 1.3;
+        margin: 8px 0 11px 0;
+    }
+    .service .list ul li a .more {
+        border: 1px solid #fff;
+        border-radius: 50px;
+        padding: 3px 64px 4px 18px;
+        position: relative; /* after 정렬의 기준 */
+        display: inline-block;
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+    .service .list ul li:hover a .more {
+        opacity: 1;
+    }
+    .service .list ul li a .more::after {
+        content: "";
+        position: absolute; /* a를 기준으로 정렬 */
+        width: 11px;
+        height: 11px;
+        right: 18px;
+        top: 10px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 11 10' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.02941 5.66379H0.6595C0.472642 5.66379 0.31601 5.60058 0.189606 5.47418C0.0632021 5.34778 0 5.19114 0 5.00429C0 4.81743 0.0632021 4.6608 0.189606 4.53439C0.31601 4.40799 0.472642 4.34479 0.6595 4.34479H8.02941L4.79786 1.11324C4.66596 0.981336 4.60276 0.827453 4.60826 0.651586C4.61375 0.475719 4.68245 0.321836 4.81435 0.189936C4.94625 0.0690277 5.10013 0.00582558 5.276 0.00032975C5.45187 -0.00516608 5.60575 0.058036 5.73765 0.189936L10.0904 4.54264C10.1563 4.60859 10.203 4.68003 10.2305 4.75697C10.258 4.83392 10.2717 4.91635 10.2717 5.00429C10.2717 5.09222 10.258 5.17466 10.2305 5.2516C10.203 5.32854 10.1563 5.39999 10.0904 5.46594L5.73765 9.81864C5.61674 9.93955 5.46561 10 5.28424 10C5.10288 10 4.94625 9.93955 4.81435 9.81864C4.68245 9.68674 4.6165 9.53011 4.6165 9.34874C4.6165 9.16738 4.68245 9.01075 4.81435 8.87885L8.02941 5.66379Z' /%3E%3C/svg%3E%0A");
+    }
+}/* @media */
+@media screen and (min-width:1025px) and (max-width:1280px) {
+    /* 1024 ~ 1280 사이일 경우 */
+    .service .list ul li a h3 {
+        font-size: 2.2rem;
+    }
+}/* @media */
+@media screen and (max-width:1024px) {
+    .service {
+        margin: 92px 0 0 0;
+    }
+    .service .list {
+        margin: 34px var(--wapper-margin) 0 var(--wapper-margin);
+    }
+    /* .service .list {
+       background: url(../images/main/service_mo.jpg) no-repeat center center / cover;
+       color: #1d1d1d;
+       padding: 52px var(--wapper-margin) 52px var(--wapper-margin);
+    } */
 
+    .service .list ul li {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin: 0 0 8px 0;
+    }
+    .service .list ul li:last-child {
+        margin-bottom: 0;
+    }
+    .service .list ul li a {
+        display: block;
+        padding: 18px 16px 16px 16px;
+        position: relative; /* after 정렬의 기준 */
+    }
+    .service .list ul li a::after {
+        content: "";
+        position: absolute;
+        right: 16px;
+        top: 18px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 8px;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 8 8' fill='%231d1d1d' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.0875 4.294H0.5C0.358333 4.294 0.239583 4.24608 0.14375 4.15025C0.0479167 4.05442 0 3.93567 0 3.794C0 3.65233 0.0479167 3.53358 0.14375 3.43775C0.239583 3.34192 0.358333 3.294 0.5 3.294H6.0875L3.6375 0.844C3.5375 0.744 3.48958 0.627333 3.49375 0.494C3.49792 0.360667 3.55 0.244 3.65 0.144C3.75 0.0523333 3.86667 0.00441667 4 0.00025C4.13333 -0.00391667 4.25 0.044 4.35 0.144L7.65 3.444C7.7 3.494 7.73542 3.54817 7.75625 3.6065C7.77708 3.66483 7.7875 3.72733 7.7875 3.794C7.7875 3.86067 7.77708 3.92317 7.75625 3.9815C7.73542 4.03983 7.7 4.094 7.65 4.144L4.35 7.444C4.25833 7.53567 4.14375 7.5815 4.00625 7.5815C3.86875 7.5815 3.75 7.53567 3.65 7.444C3.55 7.344 3.5 7.22525 3.5 7.08775C3.5 6.95025 3.55 6.8315 3.65 6.7315L6.0875 4.294Z'/%3E%3C/svg%3E%0A");
+    }
+    .service .list ul li a h3,
+    .service .list ul li a .more {
+        display: none;
+    }
+    .service .list ul li a strong {
+        font-weight: 700;
+    }
+}/* @media */
 
-footer {
-    margin: 1500px 0 0 0;
-}
+@media screen and (max-width:768px) {
+    .service .list ul li a strong {
+        font-size: 1.6rme;
+    }
+}/* @media */
