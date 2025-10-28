@@ -349,25 +349,132 @@ footer .f_util .family_site {
     width: 190px;
     /* 관련사이트는 여는 버튼, 열린 메뉴등의 넓이가 같음.
        그래서 감싸고 있는 family_site에 넓이를 주고 내부 요소는 witdh 100% 부여 */
+    position: relative; /* family_wrap 정렬의 기준 */
 }
-footer .f_util .family_site .open {
+footer .f_util .family_site .family_open,
+footer .f_util .family_site .family_close {
     display: block;
     width: 100%;
-    height: 43px;
-    line-height: 43px;
+    height: 2.5294em;
     text-align: left;
-    padding-left: 20px;
+    padding-left: 1.1765em;
     border: 1px solid #fff;
+    position: relative; /* after 정렬의 기준 */
+}
+footer .f_util .family_site .family_open::after,
+footer .f_util .family_site .family_close::after {
+    content: "";
+    position: absolute;
+    right: 1.1765em;
+    top: 1em;
+    width: 0.8076em;
+    height: 0.4706em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 7' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.37101 1.82747L1.44186 6.75663C1.2742 6.92428 1.07581 7.00532 0.846674 6.99973C0.617541 6.99414 0.419145 6.90752 0.251487 6.73986C0.0838291 6.5722 0 6.37381 0 6.14467C0 5.91554 0.0838291 5.71714 0.251487 5.54949L5.41536 0.402379C5.54949 0.268253 5.70038 0.167658 5.86804 0.100595C6.0357 0.0335315 6.20335 2.85459e-07 6.37101 2.7813e-07C6.53867 2.70802e-07 6.70633 0.0335315 6.87399 0.100595C7.04164 0.167658 7.19254 0.268253 7.32666 0.402379L12.4905 5.56625C12.6582 5.73391 12.7392 5.92951 12.7336 6.15306C12.7281 6.3766 12.6414 6.5722 12.4738 6.73986C12.3061 6.90752 12.1077 6.99135 11.8786 6.99135C11.6495 6.99135 11.4511 6.90752 11.2834 6.73986L6.37101 1.82747Z'/%3E%3C/svg%3E%0A");
 }
 footer .f_util .family_site .family_wrap {
     display: none;
+    position: absolute;
+    left: 0;
+    bottom:  2.5294em;
+    width: 100%;
+    background-color: #3d3d3d;
+    padding: 1.4118em 1.1765em 1.1765em 1.1765em;
 }
-footer .f_util .family_site .close {
+footer .f_util .family_site .family_wrap ul li a {
+    display: block;
+    padding: 0.1765em 0;
+}
+footer .f_util .family_site .family_wrap ul li a span {
+    position: relative; /* after 정렬의 기준*/
+}
+footer .f_util .family_site .family_wrap ul li a span::after {
+    content: "";
+    position: absolute;
+    right: -0.8824em;
+    top: 0.4118em;
+    width: 0.6176em;
+    height: 0.6176em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 11 11' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.83002 2.83897L1.39861 10.2704C1.24553 10.4235 1.0507 10.5 0.814115 10.5C0.577535 10.5 0.382704 10.4235 0.229622 10.2704C0.0765408 10.1173 0 9.92247 0 9.68589C0 9.4493 0.0765408 9.25447 0.229622 9.10139L7.66103 1.66998H1.31511C1.07853 1.66998 0.880219 1.58996 0.720179 1.42992C0.560139 1.26988 0.480119 1.07157 0.480119 0.83499C0.480119 0.59841 0.560139 0.400099 0.720179 0.24006C0.880219 0.0800199 1.07853 0 1.31511 0H9.66501C9.90159 0 10.0999 0.0800199 10.2599 0.24006C10.42 0.400099 10.5 0.59841 10.5 0.83499V9.18489C10.5 9.42147 10.42 9.61978 10.2599 9.77982C10.0999 9.93986 9.90159 10.0199 9.66501 10.0199C9.42843 10.0199 9.23012 9.93986 9.07008 9.77982C8.91004 9.61978 8.83002 9.42147 8.83002 9.18489V2.83897Z' /%3E%3C/svg%3E%0A");
+}
+footer .f_util .family_site .family_close {
     display: none;
 }
+
+/* 시작:: 열렸을 때 */
+footer .f_util .family_site.open .family_open {
+    display: none;
+}
+footer .f_util .family_site.open .family_close {
+    display: block;
+}
+footer .f_util .family_site.open .family_close::after {
+    animation: family_btn 0.5s 1 forwards;
+}
+@keyframes family_btn {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(180deg);}
+}
+/* 끝:: 열렸을 때 */
 footer .f_util .top {
-    height: 43px;
-    line-height: 43px;
-    padding: 0 12px 0 12px;
+    height: 2.5294em;
+    padding: 0 0.7059em 0 0.7059em;
     background-color: var(--color-main);
+}
+footer .inner {
+    margin: 14px 0 0 0;
+}
+footer .inner .f_nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 3em;
+}
+footer .inner .f_info {
+    margin: 22px 0 12px 0;
+}
+@media screen and (max-width:1280px) {
+    footer .inner .f_nav ul {
+        gap: 0 1.5em;
+    }
+}/* @media */
+@media screen and (max-width:1024px) {
+    footer {
+        padding: 41px 0 41px 0;
+    }
+    footer .wrapper {
+        display: block;
+    }
+    footer .f_logo {
+        width: 87px;
+        height: 29px;
+    }
+    footer .f_util {
+        position: relative;
+        right: auto;
+        top: auto;
+        margin: 32px 0 52px 0;
+    }
+    footer .f_util .family_site {
+        width: calc(100% - 73px);
+        max-width: 500px;
+        /* 관련사이트는 여는 버튼, 열린 메뉴등의 넓이가 같음.
+           그래서 감싸고 있는 family_site에 넓이를 주고 내부 요소는 witdh 100% 부여 */
+        position: relative; /* family_wrap 정렬의 기준 */
+    }
+    footer .inner {
+        margin: 14px 0 0 0;
+    }
+    footer .inner .f_nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 3em;
+    }
+    footer .inner .f_info {
+        margin: 22px 0 12px 0;
+    }
 }
