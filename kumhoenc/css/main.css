@@ -427,7 +427,7 @@ section .tit h2 {
     transition: 0.5s;
 }
 .news .list .swiper-slide a:hover .photo img {
-    transform: scale(1.2, 1.2, 1);
+    transform: scale3d(1.2, 1.2, 1);
 }
 .news .ctrl_wrap {
     margin: 36px 0 0 0;
@@ -661,6 +661,6 @@ section .tit h2 {
 
 @media screen and (max-width:768px) {
     .service .list ul li a strong {
-        font-size: 1.6rme;
+        font-size: 1.6rem;
     }
 }/* @media */
