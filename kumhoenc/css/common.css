@@ -14,6 +14,7 @@
     :root {
         --header-h : 56px;
         --wrapper-margin : 16px;
+         --wrapper-margin-m : -16px;
     }
 }
 html {
