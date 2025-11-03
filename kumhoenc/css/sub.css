@@ -1,6 +1,6 @@
 /***********************
 * 파일명 : sub.css 
-* 작성자 : 이수형
+* 작성자 : 문미영
 * 작성일 : 25-10-23
 * 설  명 : 메인을 제외한 모든 페이지에서 호출되는 css 파일
            서브에 필요한 css를 import하는 역할과 
@@ -40,7 +40,6 @@
     display: flex;
     gap: 0 1.7647em;
     align-items: center; /* 위아래 가운데 */
-    justify-content: center;
 }
 .sub_visual .breadcrumb ol li {
     position: relative; /* after정렬의 기준 */
@@ -62,15 +61,8 @@
     display: none;
 }
 .sub_visual .breadcrumb ol li.home a {
+    margin-top: 0.1176em;
     display: block;
-    position: relative; /* after 정렬의 기준 */
-    padding: 0 0 0 1.1765em;
-}
-.sub_visual .breadcrumb ol li.home a::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 4px;
     width: 0.7647em;
     height: 0.8824em;
     background-position: center center;
@@ -79,54 +71,54 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 15' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.58333 12.6667H3.95833V7.91667H8.70833V12.6667H11.0833V5.54167L6.33333 1.97917L1.58333 5.54167V12.6667ZM0 14.25V4.75L6.33333 0L12.6667 4.75V14.25H7.125V9.5H5.54167V14.25H0Z' /%3E%3C/svg%3E%0A");
 }
 .sub_visual .sub_tit {
-    display: flex;
     margin: 16px 0 45px 0;
     font-size: 5rem;
     font-weight: 700;
     line-height: 1.3;
-    align-items: center;
-    justify-content: center;
 }
 
-.sub_visual .snb {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -30px;
-    max-width: 1260px;
-    width: calc(100% - var(--wrapper-margin) - var(--wrapper-margin));
+.snb {
     height: 61px;
     background-color: var(--color-main);
-    border-radius: 80px;
     color: #fff;
 }
-.sub_visual .snb ul {
+.snb ul {
     display: flex;
     max-width: 1260px;
-    justify-content: center
+    margin: 0 auto;
 }
-.sub_visual .snb ul li a {
+.snb ul li a {
     display: block;
     line-height: 30px;
     /* 높이 61 - 행간 30px 상단여백 20px 하단 11px */
     padding: 18px 26px 13px 26px;
 }
-.sub_visual .snb ul li:first-child a {
+.snb ul li:first-child a {
     padding-left: 0;
 }
-.sub_visual .snb ul li.active a {
+.snb ul li.active a {
     font-weight: 700;
 }
-.sub_visual .snb ul li a span {
+.snb ul li a span {
     position: relative; /* after 정렬의 기준 */
 }
-.sub_visual .snb ul li.active a span::after {
+.snb ul li.active a span::before {
+    content: "";
+    position: absolute;
+    right: -7px;
+    top: -2px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.snb ul li.active a span::after {
     content: "";
     position: absolute;
     left: -5px;
-    bottom: -18px;
+    bottom: -15px;
     width: calc(100% + 10px);
-    height: 5px;
+    height: 3px;
     background-color: #fff;
 }
 .contents {

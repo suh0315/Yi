@@ -3,27 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <!-- 외부 라이브러리 파일 (반드시 먼저 호출해야함) -->
     <script src="../js/jquery-3.7.1.min.js"></script>
     <script src="../js/slick.min.js"></script>
     <link rel="stylesheet" href="../css/slick.css">
     <script src="../js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="../css/swiper-bundle.min.css">
 
-
+    <!-- 내가 작성한 파일 (나중에 호출해야함) -->
     <link rel="stylesheet" href="../css/sub.css">
     <script src="../js/contents.js"></script>
     <script src="../js/sub.js"></script>
     <script src="../js/common.js"></script>
     <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
-    <title>기업정보 | 금호건설</title>
+    <title>기업정보 - 금호건설</title>
 </head>
 <body>
     <div id="wrap">
-        <!-- pc버전에서 메뉴에 마우스를 오버하면 header에 menu_pc 
-             모바일에서는 메뉴를 클릭하면 header에 menu_mo
-             header 상단에 고정 fixed 클래스 
-             스크롤을 아래서 내려서 올라갈때는 up 클래스 추가 -->
         <header class="">
             <h1 class="logo"><a href="../index.html"><span class="blind">금호건설</span></a></h1>
             <nav class="gnb">
@@ -97,14 +93,16 @@
                 <div class="wrapper">
                     <nav class="breadcrumb"><!--브래드크럼-->
                         <ol>
-                            <li class="home"><a href="../index.html"><span>Home</span></a></li>
+                            <li class="home"><a href="../index.html"><span class="blind">첫페이지로</span></a></li>
                             <li><a href="info.html"><span>회사소개</span></a></li><!--1차메뉴명/링크는 첫번째하위메뉴-->
                             <li class="curr"><span>기업정보</span></li><!--현재메뉴명(링크X)-->
                         </ol>
                     </nav>
                     <div class="sub_tit">Think of the people and nature</div>
-                </div><!--wrapper-->
-                <nav class="snb"><!--sub navigation bar-->
+
+                </div>
+            </div><!--sub_visual-->
+            <nav class="snb"><!--sub navigation bar-->
                 <ul>
                     <li class="active"><a href="info.html"><span>기업정보</span></a></li>
                     <!--현재 선택된 메뉴는 active 클래스 줌-->
@@ -115,7 +113,6 @@
                     <li><a href="map.html"><span>찾아오시는길</span></a></li>
                 </ul>
             </nav><!--snb-->
-            </div><!--sub_visual-->
             <div class="contents">
                 <div class="page_tit">
                     <div class="wrapper">
@@ -131,14 +128,14 @@
         </div><!--container-->
         <footer>
             <div class="wrapper">
-                <div class="f_logo"><span class="blind">금호건설</span></div><!--f_logo-->
+                <div class="f_logo"><span class="blind">금호건설</span></div>
                 <div class="f_util">
                     <!--
-                        열기버튼을 클릭하면 family_wrap, close가 보이고 open은 사라짐
-                        닫기버튼을 클릭하면 family_wrap, close가 사라지고 open은 나타남
-                        family_site에 open 클래스 부여 (열렸을 때)
+                        열기버튼을 클릭하면 family_wrap, close 보이고 open은 사라짐
+                        닫기버튼을 클릭하면 family_wrap, close 사라지고 open은 나타남
+                        family_site에 open 클래스를 줌 (열렸을때)
                     -->
-                    <div class="family_site">
+                    <div class="family_site ">
                         <button class="family_open" title="열기"><span>그룹사바로가기</span></button>
                         <div class="family_wrap">
                             <ul>
@@ -146,7 +143,7 @@
                                 <li><a href="#n"><span>U·square</span></a></li>
                                 <li><a href="#n"><span>금호문화재단</span></a></li>
                             </ul>
-                        </div><!--family_wrap-->
+                        </div>
                         <button class="family_close" title="닫기"><span>그룹사바로가기</span></button>
                     </div><!--family_site-->
                     <button class="top"><span>TOP</span></button>
@@ -160,13 +157,13 @@
                             <li><a href="#n">OB사랑방</a></li>
                             <li><a href="#n">Contact us</a></li>
                         </ul>
-                    </div><!--f_nav-->
+                    </div>
                     <div class="f_info">
                         <address>서울특별시 종로구 우정국로 26 센트로폴리스 A동</address>
-                    </div><!--f_info-->
+                    </div>
                     <div class="copyright">ⓒ 금호건설. ALL RIGHTS RESERVED.</div>
                 </div><!--inner-->
-            </div><!--wrapper-->
+            </div>
         </footer>
     </div>
 </body>

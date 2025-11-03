@@ -1,6 +1,6 @@
 /***********************
 * 파일명 : layout.css 
-* 작성자 : 이수형
+* 작성자 : 문미영
 * 작성일 : 25-10-23
 * 설  명 : header/footer 스타일을 선언함
 *********************/
@@ -45,7 +45,7 @@ header .util .lang::before {
 }
 /* header 고정 */
 header.fixed {
-    color: var(--color-basic);
+    color: var(--color-title);
     background-color: #fff;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
 }
@@ -220,7 +220,7 @@ header.up:not(.menu_pc, .menu_mo) {
         z-index: 10;
         height: 100dvh;
         background-color: #fff;
-        color: var(--color-basic);
+        color: var(--color-title);
         width: 70%;
         transition: right 0.5s;
     }
@@ -323,8 +323,7 @@ header.up:not(.menu_pc, .menu_mo) {
     }
 }/*@media*/
 
-
-/* 시작 :: 서브에서 이미 선택되있는 메뉴 디자인하기 */
+/*********** 서브에서 이미 선택되있는 메뉴 디자인하기 *************/
 header .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 > li.active > a {
     color: var(--color-main);
     font-weight: 700;
@@ -368,35 +367,34 @@ header .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 > li.active > a {
 
 
 
-/* 끝:: 서브에서 이미 선택되있는 메뉴 디자인하기 */
-
+/*********** 서브에서 이미 선택되있는 메뉴 디자인하기 *************/
 
 footer {
-    background-color: #1d1d1d;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 66px 0 51px 0;
+    background-color: var(--color-title);
+    color: rgba(255,255,255,0.8);
+    padding: 85px 0 112px 0;
 }
 footer .wrapper {
-    display: flex; /* f_logo - inner 좌우배치 */
-    gap: 0 55px;
+    display: flex; /*f_logo - inner 좌우배치*/
+    gap: 0 54px;
     position: relative; /* f_util 정렬의 기준 */
 }
 footer .f_logo {
     width: 109px;
     height: 36px;
-    background: url(../images/common/logo_w.svg) no-repeat center center / contain; 
+    background: url(../images/common/logo_w.svg) no-repeat center center / contain;
 }
 footer .f_util {
-    position: absolute;
+    position: absolute; /* wrapper를 기준으로 정렬 */
     right: 0;
     top: 0;
-    display: flex; /* family_site - top 좌우 배치 */
-    gap: 0 16px;
+    display: flex; /* family_site - top이랑 좌우로 배치 */
+    gap: 0 6px;
 }
 footer .f_util .family_site {
-    width: 190px;
-    /* 관련사이트는 여는 버튼, 열린 메뉴등의 넓이가 같음.
-       그래서 감싸고 있는 family_site에 넓이를 주고 내부 요소는 witdh 100% 부여 */
+    width: 186px;
+    /* 관련사이트는 여는 버튼, 바로가기 사이트 등의 넓이가 같음
+       그래서 감싸고 있는 family_site에 넓이를 주고 내부요소는 그에 100%를 꽉차게줌 */
     position: relative; /* family_wrap 정렬의 기준 */
 }
 footer .f_util .family_site .family_open,
@@ -405,38 +403,38 @@ footer .f_util .family_site .family_close {
     width: 100%;
     height: 2.5294em;
     text-align: left;
-    padding-left: 1.1765em;
-    border: 1px solid #fff;
-    position: relative; /* after 정렬의 기준 */
+    padding: 0.2941em 0 0 1.1176em;
+    background-color: #3D3D3D;
+    position: relative; /* 정렬의 기준 */
 }
 footer .f_util .family_site .family_open::after,
 footer .f_util .family_site .family_close::after {
     content: "";
     position: absolute;
-    right: 1.1765em;
-    top: 1em;
-    width: 0.8076em;
-    height: 0.4706em;
+    right: 1.1176em;
+    top: 1.15em;
+    width: 0.6865em;
+    height: 0.4041em;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 7' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.37101 1.82747L1.44186 6.75663C1.2742 6.92428 1.07581 7.00532 0.846674 6.99973C0.617541 6.99414 0.419145 6.90752 0.251487 6.73986C0.0838291 6.5722 0 6.37381 0 6.14467C0 5.91554 0.0838291 5.71714 0.251487 5.54949L5.41536 0.402379C5.54949 0.268253 5.70038 0.167658 5.86804 0.100595C6.0357 0.0335315 6.20335 2.85459e-07 6.37101 2.7813e-07C6.53867 2.70802e-07 6.70633 0.0335315 6.87399 0.100595C7.04164 0.167658 7.19254 0.268253 7.32666 0.402379L12.4905 5.56625C12.6582 5.73391 12.7392 5.92951 12.7336 6.15306C12.7281 6.3766 12.6414 6.5722 12.4738 6.73986C12.3061 6.90752 12.1077 6.99135 11.8786 6.99135C11.6495 6.99135 11.4511 6.90752 11.2834 6.73986L6.37101 1.82747Z'/%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 7' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.6667 1.03581L5.83333 6.86914L-2.54983e-07 1.03581L1.03542 0.000390484L5.83333 4.79831L10.6312 0.000390065L11.6667 1.03581Z' /%3E%3C/svg%3E%0A");
 }
 footer .f_util .family_site .family_wrap {
     display: none;
     position: absolute;
     left: 0;
-    bottom:  2.5294em;
+    bottom: calc(2.5294em + 1px); /* 하단에 버튼을 포함한 높이 */
     width: 100%;
-    background-color: #3d3d3d;
-    padding: 1.4118em 1.1765em 1.1765em 1.1765em;
+    background-color: #3D3D3D;
+    padding: 1.1765em 1.1176em 1.0588em 1.1176em;
 }
 footer .f_util .family_site .family_wrap ul li a {
     display: block;
     padding: 0.1765em 0;
 }
 footer .f_util .family_site .family_wrap ul li a span {
-    position: relative; /* after 정렬의 기준*/
+    position: relative; /* after 정렬 */
 }
 footer .f_util .family_site .family_wrap ul li a span::after {
     content: "";
@@ -448,13 +446,13 @@ footer .f_util .family_site .family_wrap ul li a span::after {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 11 11' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.83002 2.83897L1.39861 10.2704C1.24553 10.4235 1.0507 10.5 0.814115 10.5C0.577535 10.5 0.382704 10.4235 0.229622 10.2704C0.0765408 10.1173 0 9.92247 0 9.68589C0 9.4493 0.0765408 9.25447 0.229622 9.10139L7.66103 1.66998H1.31511C1.07853 1.66998 0.880219 1.58996 0.720179 1.42992C0.560139 1.26988 0.480119 1.07157 0.480119 0.83499C0.480119 0.59841 0.560139 0.400099 0.720179 0.24006C0.880219 0.0800199 1.07853 0 1.31511 0H9.66501C9.90159 0 10.0999 0.0800199 10.2599 0.24006C10.42 0.400099 10.5 0.59841 10.5 0.83499V9.18489C10.5 9.42147 10.42 9.61978 10.2599 9.77982C10.0999 9.93986 9.90159 10.0199 9.66501 10.0199C9.42843 10.0199 9.23012 9.93986 9.07008 9.77982C8.91004 9.61978 8.83002 9.42147 8.83002 9.18489V2.83897Z' /%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 11 11' fill='white' fill-opacity='0.6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10.5V0H5.25V1.16667H1.16667V9.33333H9.33333V5.25H10.5V10.5H0ZM3.90833 7.40833L3.09167 6.59167L8.51667 1.16667H6.41667V0H10.5V4.08333H9.33333V1.98333L3.90833 7.40833Z' /%3E%3C/svg%3E%0A");
 }
 footer .f_util .family_site .family_close {
     display: none;
 }
 
-/* 시작:: 열렸을 때 */
+/* 열렸을때 */
 footer .f_util .family_site.open .family_open {
     display: none;
 }
@@ -465,13 +463,13 @@ footer .f_util .family_site.open .family_close::after {
     animation: family_btn 0.5s 1 forwards;
 }
 @keyframes family_btn {
-    0% { transform: rotate(0deg);}
-    100% { transform: rotate(180deg);}
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(180deg); }
 }
-/* 끝:: 열렸을 때 */
+
 footer .f_util .top {
     height: 2.5294em;
-    padding: 0 0.7059em 0 0.7059em;
+    padding: 0.2941em 0.9412em 0 0.9412em;
     background-color: var(--color-main);
 }
 footer .inner {
@@ -480,49 +478,57 @@ footer .inner {
 footer .inner .f_nav ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 0 3em;
+    gap: 0 2.1765em;
 }
 footer .inner .f_info {
-    margin: 22px 0 12px 0;
+    margin: 31px 0 0 0;
 }
-@media screen and (max-width:1280px) {
+
+@media screen and (max-width:1280px){
+    footer .wrapper {
+        gap: 0 20px;
+    }
     footer .inner .f_nav ul {
         gap: 0 1.5em;
     }
-}/* @media */
-@media screen and (max-width:1024px) {
+}
+@media screen and (max-width:1024px){
     footer {
-        padding: 41px 0 41px 0;
+        margin: 64px 0 0 0;
     }
     footer .wrapper {
-        display: block;
+        flex-direction: column;
+        gap: 20px 0;
+    }
+    footer .f_util {
+        top: 52px;  
+    }
+}
+@media screen and (max-width:768px){
+    footer {
+        padding: 51px 0 68px 0;
+    }
+    footer .wrapper {
+        display: block; /*f_logo - inner 좌우배치*/
     }
     footer .f_logo {
         width: 87px;
         height: 29px;
     }
     footer .f_util {
-        position: relative;
+        position: relative; /* absolute 해제 */
         right: auto;
         top: auto;
         margin: 32px 0 52px 0;
     }
     footer .f_util .family_site {
         width: calc(100% - 73px);
-        max-width: 500px;
-        /* 관련사이트는 여는 버튼, 열린 메뉴등의 넓이가 같음.
-           그래서 감싸고 있는 family_site에 넓이를 주고 내부 요소는 witdh 100% 부여 */
-        position: relative; /* family_wrap 정렬의 기준 */
+        max-width: 420px;
     }
     footer .inner {
-        margin: 14px 0 0 0;
-    }
-    footer .inner .f_nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0 3em;
+        margin: 0;
     }
     footer .inner .f_info {
-        margin: 22px 0 12px 0;
+        margin: 22px 0 0 0;
     }
 }

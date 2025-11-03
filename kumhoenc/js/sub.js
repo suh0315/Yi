@@ -1,7 +1,7 @@
 $(document).ready(function(){
     const snbScroll = function() {
-        const $menu_wrap = $(".sub_visual .snb ul");  /* 선택자를 잘 입력해야함 */
-        const $menu_li = $(".sub_visual .snb ul li");
+        const $menu_wrap = $(".snb ul");  /* 선택자를 잘 입력해야함 */
+        const $menu_li = $(".snb ul li");
         function scrollToElement($element) {
             const containerWidth = $menu_wrap.width();
             const itemWidth = $element.outerWidth(true);

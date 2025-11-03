@@ -11,7 +11,7 @@ $(document).ready(function(){
         }else{
             device_status = 'mobile'
         }
-        // console.log(device_status)
+        //console.log(device_status)
     }
 
     device_chk() //문서가 로딩되었을때 1번실행
@@ -37,7 +37,7 @@ $(document).ready(function(){
 		    e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
             gnb_open = $(this).parent().hasClass('open')
             //console.log(gnb_open)
-             if(gnb_open == true){ //열려있다면
+            if(gnb_open == true){ //열려있다면
                 $(this).parent().removeClass('open')
                 $(this).next().slideUp()
             }else{
@@ -48,8 +48,6 @@ $(document).ready(function(){
             }
         }
 	});
-    
-
 
     //header .gnb .gnb_wrap .gnb_close
     //header .gnb .gnb_open
@@ -60,6 +58,7 @@ $(document).ready(function(){
         $('header').removeClass('menu_mo')
     })
 
+
     //스크롤을 내리면 header fixed 
     let scrolling = $(window).scrollTop() //현재 스크롤 된값
     let prev_scroll //이전에 스크롤된값
@@ -68,13 +67,13 @@ $(document).ready(function(){
         prev_scroll = scrolling
         scrolling = $(window).scrollTop()
         diff_scroll = prev_scroll - scrolling
-        // console.log(diff_scroll)
+        //console.log(diff_scroll)
         if(diff_scroll < 0){ //위로 스크롤 
             $('header').addClass('up')
-            // console.log('if냐?')
+            //console.log('if냐?')
         }else{ //아래로 스크롤
             $('header').removeClass('up')
-            // console.log('else니?')
+            //console.log('else니?')
         }
         if(scrolling > 0){ //스크롤 내림
             $('header').addClass('fixed')
@@ -87,21 +86,22 @@ $(document).ready(function(){
         scroll_chk() //스크롤 할때마다 실행
     })
 
+
     /* family_site 열고 닫기
-        footer .f_util .family_site .family_open 열기를 클릭하면
-        footer .f_util .family_site에 open 클래스 부여
+        footer .f_util .family_site .family_open 열기을 클릭하면
+        footer .f_util .family_site 에 open 클래스 추가
         footer .f_util .family_site .family_close 닫기를 클릭하면
     */
-   $('footer .f_util .family_site .family_open').on('click', function(){
+    $('footer .f_util .family_site .family_open').on('click', function(){
         $('footer .f_util .family_site').addClass('open')
         $('footer .f_util .family_site .family_wrap').slideDown()
-   })
-   $('footer .f_util .family_site .family_close').on('click', function(){
+    })
+    $('footer .f_util .family_site .family_close').on('click', function(){
         $('footer .f_util .family_site').removeClass('open')
         $('footer .f_util .family_site .family_wrap').slideUp()
     })
 
-    /* top버튼 클릭하면 상단으로 이동 */
+    /* top버튼을 클릭하면 상단으로 이동 */
     $('footer .f_util .top').on('click', function(){
         $('html, body').animate({
             scrollTop : 0

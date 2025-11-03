@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 외부 라이브러리 파일 (반드시 먼저 호출해야함) -->
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/slick.min.js"></script>
+    <link rel="stylesheet" href="../css/slick.css">
+    <script src="../js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+
+    <!-- 내가 작성한 파일 (나중에 호출해야함) -->
+    <link rel="stylesheet" href="../css/sub.css">
+    <script src="../js/contents.js"></script>
+    <script src="../js/sub.js"></script>
+    <script src="../js/common.js"></script>
+    <link rel="shortcut icon" href="../favicon.svg" type="image/x-icon">
+    <title>연혁 - 금호건설</title>
+</head>
+<body>
+    <div id="wrap">
+        <header class="">
+            <h1 class="logo"><a href="../index.html"><span class="blind">금호건설</span></a></h1>
+            <nav class="gnb">
+                <button class="gnb_open"><span class="blind">메뉴 열기</span></button>
+                <div class="gnb_wrap"><!-- 모바일에서 gnb_wrap 전체가 움직임 -->
+                    <div class="gnb_logo"><span class="blind">금호건설</span></div>
+                    <ul class="depth1">
+                        <!-- 모바일일때 메뉴가 열리면 open 클래스 줌 -->
+                        <li>
+                            <a href="info.html"><span>회사소개</span></a><!--기업정보로 이동-->
+                            <ul class="depth2">
+                                <li><a href="info.html"><span>기업정보</span></a></li>
+                                <li><a href="ceo.html"><span>CEO인사말</span></a></li>
+                                <li class="active"><a href="history.html"><span>연혁</span></a></li>
+                                <li><a href="org.html"><span>조직도</span></a></li>
+                                <li><a href="tech.html"><span>기술혁신</span></a></li>
+                                <li><a href="map.html"><span>찾아오시는길</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="esg01.html"><span>ESG</span></a><!--첫번째 하위메뉴로 이동-->
+                            <ul class="depth2">
+                                <li><a href="esg01.html"><span>윤리경영</span></a></li>
+                                <li><a href="esg02.html"><span>품질경영</span></a></li>
+                                <li><a href="esg03.html"><span>안전경영</span></a></li>
+                                <li><a href="esg04.html"><span>환경경영</span></a></li>
+                                <li><a href="esg05.html"><span>상생경영</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="biz01.html"><span>사업분야</span></a><!--첫번째 하위메뉴로 이동-->
+                            <ul class="depth2">
+                                <li><a href="biz01.html"><span>건축사업</span></a></li>
+                                <li><a href="biz02.html"><span>토목사업</span></a></li>
+                                <li><a href="biz03.html"><span>주택사업</span></a></li>
+                                <li><a href="biz04.html"><span>플랜트/환경사업</span></a></li>
+                                <li><a href="biz05.html"><span>사업실적검색</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="ir01.html"><span>IR</span></a><!--첫번째 하위메뉴로 이동-->
+                            <ul class="depth2">
+                                <li><a href="ir01.html"><span>기업지배구조</span></a></li>
+                                <li><a href="ir02.html"><span>경영정보</span></a></li>
+                                <li><a href="ir03.html"><span>재무정보</span></a></li>
+                                <li><a href="ir04.html"><span>주가정보</span></a></li>
+                                <li><a href="ir05.html"><span>IR Contact</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="pr01.html"><span>홍보센터</span></a><!--첫번째 하위메뉴로 이동-->
+                            <ul class="depth2">
+                                <li><a href="pr01.html"><span>금호뉴스</span></a></li>
+                                <li><a href="pr02.html"><span>분양뉴스</span></a></li>
+                                <li><a href="pr03.html"><span>CI/BI</span></a></li>
+                                <li><a href="pr04.html"><span>PR갤러리</span></a></li>
+                                <li><a href="pr05.html"><span>금호역사관</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <button class="gnb_close"><span class="blind">메뉴 닫기</span></button>
+                </div><!--gnb_wrap-->
+                <div class="gnb_bg"></div><!--메뉴 배경-->
+            </nav><!--gnb-->
+            <div class="util">
+                <a href="#n" class="lang"><span>ENG</span></a>
+            </div><!--util-->
+        </header>
+        <div class="container">
+            <div class="sub_visual">
+                <div class="wrapper">
+                    <nav class="breadcrumb"><!--브래드크럼-->
+                        <ol>
+                            <li class="home"><a href="../index.html"><span class="blind">첫페이지로</span></a></li>
+                            <li><a href="info.html"><span>회사소개</span></a></li><!--1차메뉴명/링크는 첫번째하위메뉴-->
+                            <li class="curr"><span>연혁</span></li><!--현재메뉴명(링크X)-->
+                        </ol>
+                    </nav>
+                    <div class="sub_tit">Think of the people and nature</div>
+
+                </div>
+            </div><!--sub_visual-->
+            <nav class="snb"><!--sub navigation bar-->
+                <ul>
+                    <li><a href="info.html"><span>기업정보</span></a></li>
+                    <!--현재 선택된 메뉴는 active 클래스 줌-->
+                    <li><a href="ceo.html"><span>CEO인사말</span></a></li>
+                    <li class="active"><a href="history.html"><span>연혁</span></a></li>
+                    <li><a href="org.html"><span>조직도</span></a></li>
+                    <li><a href="tech.html"><span>기술혁신</span></a></li>
+                    <li><a href="map.html"><span>찾아오시는길</span></a></li>
+                </ul>
+            </nav><!--snb-->
+            <div class="contents">
+                <div class="page_tit">
+                    <div class="wrapper">
+                        <h2>연혁</h2> <!--현재메뉴명-->
+                    </div>
+                </div><!--page_tit-->
+                <div class="ctn_history"><!--ctn_ 뒤에 현재 파일명을 줘서 절대 중복되지않는 클래스명을 만듬-->
+                    <!--################  콘텐츠 시작 #####################################-->
+                    <div class="his_wrap" id="history01">
+                        <div class="his_head bg1">
+                            <h3>
+                                글로벌 도약기 <!--바닥에 깔려있는 글자-->
+                                <strong>글로벌 도약기</strong> <!-- 나중에 나타날 글자 -->
+                            </h3>
+                        </div><!--his_head-->
+                        <div class="his_cont tit_left">
+                            <div class="wrapper">
+                                <div class="his_tit">
+                                    <strong>현재 ~ 2011</strong>
+                                    <h4>국내 건설시장을 넘어 <br>
+                                        해외 진출과 신사업 구축으로 <br>
+                                        글로벌 기업으로 전환한 시기</h4>
+                                </div><!--his_tit-->
+                                <div class="his_year">
+                                    <div class="year_tit"><h5>2024 ~ 2021</h5></div>
+                                    <div class="year_list">
+                                        <dl>
+                                            <dt>2024. 06.</dt>
+                                            <dd>조경특화 브랜드 '아트시스' 출시 금호건설 주거 브랜드 아테라 런칭  금호건설 주거 브랜드 아테라 런칭</dd>
+                                            <dt>2024. 05.</dt>
+                                            <dd>금호건설 주거 브랜드 아테라 런칭</dd>
+                                            <dt>2023. 12.</dt>
+                                            <dd>조완석 사장 체제로 조직 개편</dd>
+                                            <dt>2023. 09.</dt>
+                                            <dd>임직원 기부활동 "DOVE's (Do Love, Sustainable)" 전개</dd>
+                                            <dt>2022. 09.</dt>
+                                            <dd>금호건설 안전보건기술자문단 출범</dd>
+                                            <dt>2022. 07.</dt>
+                                            <dd>부패방지 경영방침 ISO37001 인증</dd>
+                                            <dt>2021. 06.</dt>
+                                            <dd>ISO45001 (안전보건경영시스템) 인증</dd>
+                                            <dt>2021. 05.</dt>
+                                            <dd>KOSHA-MS (안전보건경영시스템) 인증</dd>
+                                            <dt>2021. 03.</dt>
+                                            <dd>금호건설(주)로 상호변경</dd>
+                                        </dl>
+                                    </div><!--year_list-->
+                                    <div class="year_tit"><h5>2020 ~ 2013</h5></div>
+                                    <div class="year_list">
+                                        <dl>
+                                            <dt>2024. 06.</dt>
+                                            <dd>조경특화 브랜드 '아트시스' 출시</dd>
+                                            <dt>2024. 05.</dt>
+                                            <dd>금호건설 주거 브랜드 아테라 런칭</dd>
+                                            <dt>2023. 12.</dt>
+                                            <dd>조완석 사장 체제로 조직 개편</dd>
+                                            <dt>2023. 09.</dt>
+                                            <dd>임직원 기부활동 "DOVE's (Do Love, Sustainable)" 전개</dd>
+                                            <dt>2022. 09.</dt>
+                                            <dd>금호건설 안전보건기술자문단 출범</dd>
+                                            <dt>2022. 07.</dt>
+                                            <dd>부패방지 경영방침 ISO37001 인증</dd>
+                                            <dt>2021. 06.</dt>
+                                            <dd>ISO45001 (안전보건경영시스템) 인증</dd>
+                                            <dt>2021. 05.</dt>
+                                            <dd>KOSHA-MS (안전보건경영시스템) 인증</dd>
+                                            <dt>2021. 03.</dt>
+                                            <dd>금호건설(주)로 상호변경</dd>
+                                        </dl>
+                                    </div><!--year_list-->
+                                    <div class="year_tit"><h5>2012 ~ 2011</h5></div>
+                                    <div class="year_list">
+                                        <dl>
+                                            <dt>2024. 06.</dt>
+                                            <dd>조경특화 브랜드 '아트시스' 출시</dd>
+                                            <dt>2024. 05.</dt>
+                                            <dd>금호건설 주거 브랜드 아테라 런칭</dd>
+                                            <dt>2023. 12.</dt>
+                                            <dd>조완석 사장 체제로 조직 개편</dd>
+                                            <dt>2023. 09.</dt>
+                                            <dd>임직원 기부활동 "DOVE's (Do Love, Sustainable)" 전개</dd>
+                                            <dt>2022. 09.</dt>
+                                            <dd>금호건설 안전보건기술자문단 출범</dd>
+                                            <dt>2022. 07.</dt>
+                                            <dd>부패방지 경영방침 ISO37001 인증</dd>
+                                        </dl>
+                                    </div><!--year_list-->
+                                </div><!--his_year-->
+                            </div><!--wrapper-->
+                        </div><!--his_cont-->
+                    </div>
+                    <div class="his_wrap" id="history02">
+                        <div class="his_head bg2">
+                            <h3>
+                                브랜드 구축 & 시장 확장기 <!--바닥에 깔려있는 글자-->
+                                <strong>브랜드 구축 & 시장 확장기</strong> <!-- 나중에 나타날 글자 -->
+                            </h3>
+                        </div><!--his_head-->
+                        <div class="his_cont tit_right">
+                            <div class="wrapper">
+                                <div class="his_tit">
+                                    <strong>2010 ~ 2001</strong>
+                                    <h4>주택·복합개발 브랜드 론칭과<br>
+                                        국내외 사업영역 확대로 본격적인 <br>
+                                        시장 확대를 실행한 시기</h4>
+                                </div><!--his_tit-->
+                                <div class="his_year">
+                                    <div class="year_tit"><h5>2010 ~ 2009</h5></div>
+                                    <div class="year_list">
+                                        <dl>
+                                            <dt>2024. 06.</dt>
+                                            <dd>조경특화 브랜드 '아트시스' 출시</dd>
+                                            <dt>2024. 05.</dt>
+                                            <dd>금호건설 주거 브랜드 아테라 런칭</dd>
+                                            <dt>2023. 12.</dt>
+                                            <dd>조완석 사장 체제로 조직 개편</dd>
+                                            <dt>2023. 09.</dt>
+                                            <dd>임직원 기부활동 "DOVE's (Do Love, Sustainable)" 전개</dd>
+                                            <dt>2022. 09.</dt>
+                                            <dd>금호건설 안전보건기술자문단 출범</dd>
+                                            <dt>2022. 07.</dt>
+                                            <dd>부패방지 경영방침 ISO37001 인증</dd>
+                                            <dt>2021. 06.</dt>
+                                            <dd>ISO45001 (안전보건경영시스템) 인증</dd>
+                                            <dt>2021. 05.</dt>
+                                            <dd>KOSHA-MS (안전보건경영시스템) 인증</dd>
+                                            <dt>2021. 03.</dt>
+                                            <dd>금호건설(주)로 상호변경</dd>
+                                        </dl>
+                                    </div><!--year_list-->
+                                    <div class="year_tit"><h5>2008 ~ 2005</h5></div>
+                                    <div class="year_list">
+                                        <dl>
+                                            <dt>2024. 06.</dt>
+                                            <dd>조경특화 브랜드 '아트시스' 출시</dd>
+                                            <dt>2024. 05.</dt>
+                                            <dd>금호건설 주거 브랜드 아테라 런칭</dd>
+                                            <dt>2023. 12.</dt>
+                                            <dd>조완석 사장 체제로 조직 개편</dd>
+                                            <dt>2023. 09.</dt>
+                                            <dd>임직원 기부활동 "DOVE's (Do Love, Sustainable)" 전개</dd>
+                                            <dt>2022. 09.</dt>
+                                            <dd>금호건설 안전보건기술자문단 출범</dd>
+                                            <dt>2022. 07.</dt>
+                                            <dd>부패방지 경영방침 ISO37001 인증</dd>
+                                            <dt>2021. 06.</dt>
+                                            <dd>ISO45001 (안전보건경영시스템) 인증</dd>
+                                            <dt>2021. 05.</dt>
+                                            <dd>KOSHA-MS (안전보건경영시스템) 인증</dd>
+                                            <dt>2021. 03.</dt>
+                                            <dd>금호건설(주)로 상호변경</dd>
+                                        </dl>
+                                    </div><!--year_list-->
+                                    <div class="year_tit"><h5>2004 ~ 2001</h5></div>
+                                    <div class="year_list">
+                                        <dl>
+                                            <dt>2024. 06.</dt>
+                                            <dd>조경특화 브랜드 '아트시스' 출시</dd>
+                                            <dt>2024. 05.</dt>
+                                            <dd>금호건설 주거 브랜드 아테라 런칭</dd>
+                                            <dt>2023. 12.</dt>
+                                            <dd>조완석 사장 체제로 조직 개편</dd>
+                                        </dl>
+                                    </div><!--year_list-->
+                                </div><!--his_year-->
+                            </div><!--wrapper-->
+                        </div><!--his_cont-->
+                    </div>
+                    <div class="his_wrap" id="history03">
+                        <div class="his_head bg3">
+                            <h3>
+                                기술혁신 & 조직정비기 <!--바닥에 깔려있는 글자-->
+                                <strong>기술혁신 & 조직정비기</strong> <!-- 나중에 나타날 글자 -->
+                            </h3>
+                        </div><!--his_head-->
+                        <div class="his_cont tit_left">
+                            <div class="wrapper">
+                                <div class="his_tit">
+                                    <strong>2000 ~ 1991</strong>
+                                    <h4>신공법 개발, 품질‧환경경영 <br>
+                                        시스템 도입 등 내부 역량을 <br>
+                                        강화하고 체계를 정비한 시기</h4>
+                                </div><!--his_tit-->
+                                <div class="his_year">
+                                    <div class="year_tit"><h5>2000 ~ 1998</h5></div>
+                                    <div class="year_list">
+                                        <dl>
+                                            <dt>2024. 06.</dt>
+                                            <dd>조경특화 브랜드 '아트시스' 출시</dd>
+                                            <dt>2024. 05.</dt>
+                                            <dd>금호건설 주거 브랜드 아테라 런칭</dd>
+                                            <dt>2023. 12.</dt>
+                                            <dd>조완석 사장 체제로 조직 개편</dd>
+                                            <dt>2023. 09.</dt>
+                                            <dd>임직원 기부활동 "DOVE's (Do Love, Sustainable)" 전개</dd>
+                                            <dt>2022. 09.</dt>
+                                            <dd>금호건설 안전보건기술자문단 출범</dd>
+                                            <dt>2022. 07.</dt>
+                                            <dd>부패방지 경영방침 ISO37001 인증</dd>
+                                            <dt>2021. 06.</dt>
+                                            <dd>ISO45001 (안전보건경영시스템) 인증</dd>
+                                            <dt>2021. 05.</dt>
+                                            <dd>KOSHA-MS (안전보건경영시스템) 인증</dd>
+                                            <dt>2021. 03.</dt>
+                                            <dd>금호건설(주)로 상호변경</dd>
+                                        </dl>
+                                    </div><!--year_list-->
+                                    <div class="year_tit"><h5>1997 ~ 1996</h5></div>
+                                    <div class="year_list">
+                                        <dl>
+                                            <dt>2024. 06.</dt>
+                                            <dd>조경특화 브랜드 '아트시스' 출시</dd>
+                                            <dt>2024. 05.</dt>
+                                            <dd>금호건설 주거 브랜드 아테라 런칭</dd>
+                                            <dt>2023. 12.</dt>
+                                            <dd>조완석 사장 체제로 조직 개편</dd>
+                                            <dt>2023. 09.</dt>
+                                            <dd>임직원 기부활동 "DOVE's (Do Love, Sustainable)" 전개</dd>
+                                            <dt>2022. 09.</dt>
+                                            <dd>금호건설 안전보건기술자문단 출범</dd>
+                                            <dt>2022. 07.</dt>
+                                            <dd>부패방지 경영방침 ISO37001 인증</dd>
+                                            <dt>2021. 06.</dt>
+                                            <dd>ISO45001 (안전보건경영시스템) 인증</dd>
+                                            <dt>2021. 05.</dt>
+                                            <dd>KOSHA-MS (안전보건경영시스템) 인증</dd>
+                                            <dt>2021. 03.</dt>
+                                            <dd>금호건설(주)로 상호변경</dd>
+                                        </dl>
+                                    </div><!--year_list-->
+                                    <div class="year_tit"><h5>1995 ~ 1991</h5></div>
+                                    <div class="year_list">
+                                        <dl>
+                                            <dt>2024. 06.</dt>
+                                            <dd>조경특화 브랜드 '아트시스' 출시</dd>
+                                            <dt>2024. 05.</dt>
+                                            <dd>금호건설 주거 브랜드 아테라 런칭</dd>
+                                            <dt>2023. 12.</dt>
+                                            <dd>조완석 사장 체제로 조직 개편</dd>
+                                            <dt>2023. 09.</dt>
+                                            <dd>임직원 기부활동 "DOVE's (Do Love, Sustainable)" 전개</dd>
+                                            <dt>2022. 09.</dt>
+                                            <dd>금호건설 안전보건기술자문단 출범</dd>
+                                            <dt>2022. 07.</dt>
+                                            <dd>부패방지 경영방침 ISO37001 인증</dd>
+                                        </dl>
+                                    </div><!--year_list-->
+                                </div><!--his_year-->
+                            </div><!--wrapper-->
+                        </div><!--his_cont-->
+                    </div>
+                    <div class="his_wrap" id="history04">
+                        <div class="his_head bg4">
+                            <h3>
+                                창립기 및 국내 기반 확립기 <!--바닥에 깔려있는 글자-->
+                                <strong>창립기 및 국내 기반 확립기</strong> <!-- 나중에 나타날 글자 -->
+                            </h3>
+                        </div><!--his_head-->
+                        <div class="his_cont tit_right">
+                            <div class="wrapper">
+                                <div class="his_tit">
+                                    <strong>1990 ~ 1960</strong>
+                                    <h4>1960년대 창립 이후 국내 <br>
+                                        토목·건축 분야에서 기초를 <br>
+                                        다지며 기업으로서 출발한 시기</h4>
+                                </div><!--his_tit-->
+                                <div class="his_year">
+                                    <div class="year_tit"><h5>1980</h5></div>
+                                    <div class="year_list">
+                                        <dl>
+                                            <dt>2024. 06.</dt>
+                                            <dd>조경특화 브랜드 '아트시스' 출시 금호건설 주거 브랜드 아테라 런칭 금호건설 주거 브랜드 아테라 런칭</dd>
+                                            <dt>2024. 05.</dt>
+                                            <dd>금호건설 주거 브랜드 아테라 런칭</dd>
+                                            <dt>2023. 12.</dt>
+                                            <dd>조완석 사장 체제로 조직 개편</dd>
+                                            <dt>2023. 09.</dt>
+                                            <dd>임직원 기부활동 "DOVE's (Do Love, Sustainable)" 전개</dd>
+                                            <dt>2022. 09.</dt>
+                                            <dd>금호건설 안전보건기술자문단 출범</dd>
+                                            <dt>2022. 07.</dt>
+                                            <dd>부패방지 경영방침 ISO37001 인증</dd>
+                                            <dt>2021. 06.</dt>
+                                            <dd>ISO45001 (안전보건경영시스템) 인증</dd>
+                                            <dt>2021. 05.</dt>
+                                            <dd>KOSHA-MS (안전보건경영시스템) 인증</dd>
+                                            <dt>2021. 03.</dt>
+                                            <dd>금호건설(주)로 상호변경</dd>
+                                        </dl>
+                                    </div><!--year_list-->
+                                    <div class="year_tit"><h5>1970</h5></div>
+                                    <div class="year_list">
+                                        <dl>
+                                            <dt>2024. 06.</dt>
+                                            <dd>조경특화 브랜드 '아트시스' 출시</dd>
+                                            <dt>2024. 05.</dt>
+                                            <dd>금호건설 주거 브랜드 아테라 런칭</dd>
+                                            <dt>2023. 12.</dt>
+                                            <dd>조완석 사장 체제로 조직 개편</dd>
+                                            <dt>2023. 09.</dt>
+                                            <dd>임직원 기부활동 "DOVE's (Do Love, Sustainable)" 전개</dd>
+                                            <dt>2022. 09.</dt>
+                                            <dd>금호건설 안전보건기술자문단 출범</dd>
+                                            <dt>2022. 07.</dt>
+                                            <dd>부패방지 경영방침 ISO37001 인증</dd>
+                                            <dt>2021. 06.</dt>
+                                            <dd>ISO45001 (안전보건경영시스템) 인증</dd>
+                                            <dt>2021. 05.</dt>
+                                            <dd>KOSHA-MS (안전보건경영시스템) 인증</dd>
+                                            <dt>2021. 03.</dt>
+                                            <dd>금호건설(주)로 상호변경</dd>
+                                        </dl>
+                                    </div><!--year_list-->
+                                    <div class="year_tit"><h5>1960</h5></div>
+                                    <div class="year_list">
+                                        <dl>
+                                            <dt>2024. 06.</dt>
+                                            <dd>조경특화 브랜드 '아트시스' 출시</dd>
+                                            <dt>2024. 05.</dt>
+                                            <dd>금호건설 주거 브랜드 아테라 런칭</dd>
+                                            <dt>2023. 12.</dt>
+                                            <dd>조완석 사장 체제로 조직 개편</dd>
+                                            <dt>2023. 09.</dt>
+                                            <dd>임직원 기부활동 "DOVE's (Do Love, Sustainable)" 전개</dd>
+                                            <dt>2022. 09.</dt>
+                                            <dd>금호건설 안전보건기술자문단 출범</dd>
+                                            <dt>2022. 07.</dt>
+                                            <dd>부패방지 경영방침 ISO37001 인증</dd>
+                                        </dl>
+                                    </div><!--year_list-->
+                                </div><!--his_year-->
+                            </div><!--wrapper-->
+                        </div><!--his_cont-->
+                    </div>
+                    <aside class="his_bar hide">
+                        <ul>
+                            <li class="active"><a href="#history01"><span>현재 ~ 2011</span></a></li>
+                            <li><a href="#history02"><span>2010 ~ 2001</span></a></li>
+                            <li><a href="#history03"><span>2000 ~ 1991</span></a></li>
+                            <li><a href="#history04"><span>1990 ~ 1960</span></a></li>
+                        </ul>
+                    </aside>
+                    <!--################  콘텐츠 종료 #####################################-->
+                </div><!--ctn_history-->
+            </div><!--contents-->
+        </div><!--container-->
+        <footer>
+            <div class="wrapper">
+                <div class="f_logo"><span class="blind">금호건설</span></div>
+                <div class="f_util">
+                    <!--
+                        열기버튼을 클릭하면 family_wrap, close 보이고 open은 사라짐
+                        닫기버튼을 클릭하면 family_wrap, close 사라지고 open은 나타남
+                        family_site에 open 클래스를 줌 (열렸을때)
+                    -->
+                    <div class="family_site ">
+                        <button class="family_open" title="열기"><span>그룹사바로가기</span></button>
+                        <div class="family_wrap">
+                            <ul>
+                                <li><a href="#n"><span>금호고속</span></a></li>
+                                <li><a href="#n"><span>U·square</span></a></li>
+                                <li><a href="#n"><span>금호문화재단</span></a></li>
+                            </ul>
+                        </div>
+                        <button class="family_close" title="닫기"><span>그룹사바로가기</span></button>
+                    </div><!--family_site-->
+                    <button class="top"><span>TOP</span></button>
+                </div><!--f_util-->
+                <div class="inner">
+                    <div class="f_nav">
+                        <ul>
+                            <li><a href="#n">개인정보처리방침</a></li>
+                            <li><a href="#n">제보실</a></li>
+                            <li><a href="#n">고객센터</a></li>
+                            <li><a href="#n">OB사랑방</a></li>
+                            <li><a href="#n">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="f_info">
+                        <address>서울특별시 종로구 우정국로 26 센트로폴리스 A동</address>
+                    </div>
+                    <div class="copyright">ⓒ 금호건설. ALL RIGHTS RESERVED.</div>
+                </div><!--inner-->
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
