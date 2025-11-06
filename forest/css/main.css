@@ -283,6 +283,7 @@ body #fp-nav ul li .fp-tooltip.fp-left {
     position: relative; /* img 정렬의 기준 */
     width: 60%; 
     max-width: 725px;
+    min-width: 300px;
     padding-left: 2%;
 }
 .tree .photo .tree_img {
