@@ -6,6 +6,9 @@
     <script src="js/fullpage.min.js"></script>
     <link rel="stylesheet" href="css/fullpage.min.css">
     <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script src="js/count.js"></script>
 
 
     <link rel="stylesheet" href="css/main.css">
@@ -42,13 +45,88 @@
              fp-auto-height 클래스를 주면 footer 처럼 콘텐츠 높이만큼만 나타남
              fp-auto-height-responsive 모바일에서 fullpage 안할꺼면 줘야함   -->
         <section class="visual section fp-auto-height-responsive">
-            <h2>visual</h2>
+            <h2 class="blind">팝업</h2>
+            <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                    <li class="swiper-slide">
+                        <div class="video">
+                            <video autoplay loop muted>
+                                <source src="images/main/visual_01.mp4">
+                            </video>
+                        </div><!--video-->
+                        <div class="txt">
+                            <div class="wrapper">
+                                <h3>2025 생명의숲 후원의달</h3>
+                                <p>지금지구와 우리를 위한 힘 모으기<br>
+                                    2025.11.1 ~ 11.30</p>
+                                <a href="#n">자세히보기</a>
+                            </div><!--wrapper-->
+                        </div><!--txt-->
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="photo"><img src="images/main/visual_02.jpg"></div>
+                        <div class="txt">
+                            <div class="wrapper">
+                                <h3>특별한 날을 기념하는<br>
+                                    새로운 방법</h3>
+                                <p>기념하고 싶은 날! 서울 곳곳에<br>
+                                    나무 한 그루 심어보는 건 어떠세요?</p>
+                                <a href="#n">자세히보기</a>
+                            </div><!--wrapper-->
+                        </div><!--txt-->
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="photo"><img src="images/main/visual_03.jpg"></div>
+                        <div class="txt">
+                            <div class="wrapper">
+                                <h3>생명의 숲에서 만난 사람들.<br>
+                                    숲을 위한 나눔이야기</h3>
+                                <p>숲의 회복을 꿈꾸는 모든 이들과 소중한 이야기를<br>
+                                    담아내며 함께 걸어가겠습니다.</p>
+                                <a href="#n">자세히보기</a>
+                            </div><!--wrapper-->
+                        </div><!--txt-->
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="photo"><img src="images/main/visual_04.jpg"></div>
+                        <div class="txt">
+                            <div class="wrapper">
+                                <h3>우리가 지켜야 할<br>
+                                    고목나무 이야기</h3>
+                                <p>생명의숲과 나무 할아버지 박상진 교수의 <br>
+                                    흥미로운 고목나무 이야기</p>
+                                <a href="#n">자세히보기</a>
+                            </div><!--wrapper-->
+                        </div><!--txt-->
+                    </li>
+                </ul>
+            </div><!--swiper-->
+            <div class="paging">
+                <ul>
+                    <!-- <li><span>문구</span></li> -->
+                </ul>
+            </div><!--paging-->
         </section>
         <section class="tree section fp-auto-height-responsive">
-            <h2>tree</h2>
+            <div class="wrapper">
+                <div class="tit">
+                    <h2>
+                        <strong data-start="0" data-end="102302">102,302</strong>
+                        <span>그루</span>
+                    </h2>
+                    <p>2024년 생명의 숲은 지구의 숨결을 되살리고  푸른 내일을<br>
+                        만들기 위해 102,302그루의 나무를 심었습니다.</p>
+                </div><!--tit-->
+                <div class="photo">
+                    <img src="images/main/tree.png" alt="나무" class="tree_img">
+                    <img src="images/main/cloud_01.png" alt="구름" class="cloud_01">
+                    <img src="images/main/cloud_02.png" alt="구름" class="cloud_02">
+                    <img src="images/main/sun.png" alt="태양" class="sun">
+                </div><!--photo-->
+            </div><!--wrapper-->
         </section>
         <section class="work section fp-auto-height-responsive">
-            <h2>work<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>2work<br>1<br>2work<br>1<br>2work<br>1<br>2work<br>1<br>2work<br>1<br>2work<br>1<br>2</h2>
+            <h2>work</h2>
         </section>
         <section class="news section fp-auto-height-responsive">
             <h2>news</h2>
@@ -57,5 +135,17 @@
             <h2>footer</h2>
         </footer>
     </div><!--fullpage-->
+    <aside class="quick">
+        <button class="quick_open"><span class="blind">퀵메뉴 열기</span></button>
+        <div class="quick_wrap">
+            <ul>
+                <li class="kakao"><a href="#n"><span>같이가치</span></a></li>
+                <li class="naver"><a href="#n"><span>해피빈</span></a></li>
+                <li class="green"><a href="#n"><span>그린짐</span></a></li>
+                <li class="top"><a href="#Main"><span>TOP</span></a></li>
+            </ul>
+        </div><!--quick_wrap-->
+        <button class="quick_close"><span class="blind">퀵메뉴 닫기</span></button>
+    </aside>
 </body>
 </html>
