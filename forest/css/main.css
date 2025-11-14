@@ -173,7 +173,7 @@ body #fp-nav ul li .fp-tooltip.fp-left {
 }
 .visual .paging ul {
     display: flex;
-    gap: 0 4px;
+    gap: 0 8px;
 }
 .visual .paging ul li.swiper-pagination-bullet {
     margin: 0;
