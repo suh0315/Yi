@@ -33,6 +33,13 @@ const showing_swiper = new Swiper('.showing .swiper', { /* 팝업을 감싼는 �
 	//centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
 });
 
+const event_swiper = new Swiper('.event .swiper', { /* 팝업을 감싼는 요소의 class명 */
+
+	autoplay: {  /* 팝업 자동 실행 */
+		delay: 2500,
+		disableOnInteraction: true,
+	},
+});
 
 
 
