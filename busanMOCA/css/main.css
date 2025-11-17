@@ -101,8 +101,8 @@
     content: "";
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 100vw;              /* 전체 화면 너비 */
+    left: var(--wrapper-margin);
+    width: calc(100vw - var(--wrapper-margin));
     height: 3px;
     background: #333;
 
@@ -193,7 +193,7 @@
     margin-left: auto;
 }
 }
-@media screen and (min-width:768px max-width:1024px){
+@media screen and (max-width:1024px){
     .showing .show_wrap .tit {
         margin-left: auto;
         width: auto;
@@ -296,14 +296,12 @@
 .midcont::after {
     content: "";
     position: absolute;
+    left: 0; /* 브라우저 왼쪽에서 시작 */
     bottom: 0;
-    left: 0;
-
     height: 3px;
-    background: #333;
-
-    width: calc(100vw - (100% - 1260px) / 2); 
-    /* 전체 화면 너비 - wrapper 오른쪽 여백 */
+    width: calc(100vw - var(--wrapper-margin));
+    max-width: 1590px;
+    background-color: #333;
 }
 .midcont .wrapper {
     display: flex;
@@ -571,7 +569,9 @@
 }
 
 
-
+* {
+  outline: 1px solid red;
+}
 footer {
     margin: 3000px 0 0 0;
 }
