@@ -6,6 +6,9 @@
     --header-h : 100px;
     --wrapper-margin : 3%;
     --wrapper-margin-m : -3%;
+    /* --wrapper-max-width: 1260px; */
+    /* --wrap-left: max(calc((100% - var(--wrapper-max-width)) / 2), 0); */
+    --wrap-left: calc((100% - 1260px) / 2);
 }
 @media screen and (max-width:1024px){
     :root {
