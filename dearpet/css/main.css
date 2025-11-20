@@ -785,7 +785,7 @@ header.fixed .logo a {
     position: absolute;
     left: 0;
     bottom: 0;
-    animation: adopt_roll 60s linear infinite;
+    /* animation: adopt_roll 60s linear infinite; */
 }
 @keyframes adopt_roll {
     0% { transform: translateX(0);}

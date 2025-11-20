@@ -14,6 +14,11 @@
 @import url(common.css);
 @import url(layout.css);
 
+/* 메뉴 오픈 시, 스크롤 막기 */
+html.no-scroll {
+    overflow: hidden;
+}
+
 .visual {
     position: relative; /* scroll 정렬의 기준 */
 }
@@ -154,7 +159,7 @@
     vertical-align: top;
 }
 .showing .show_wrap .list .swiper-slide a:hover .photo img {
-    transform: scale3d(1.2, 1.2, 1);
+    transform: scale3d(1.1, 1.1, 1);
     transition: 0.3s;
 }
 .showing .show_wrap .list .swiper-slide a h3 {
@@ -344,7 +349,7 @@
     object-fit: cover;
 }
 .midcont .event .list li a:hover .photo img {
-    transform: scale3d(1.2, 1.2, 1);
+    transform: scale3d(1.1, 1.1, 1);
     transition: 0.3s;
 }
 .midcont .event .list li a h3 {
@@ -414,6 +419,9 @@
 .midcont .notice .list ul li a {
     display: flex;
     justify-content: space-between;
+}
+.midcont .notice .list ul li:hover a {
+    font-weight: 700;
 }
 .midcont .notice .list ul li a h3 {
     width: calc(100% - 150px);
@@ -594,7 +602,7 @@
     vertical-align: top;
 }
 .collection .collec_wrap .list .swiper-slide a:hover .photo img {
-    transform: scale3d(1.2, 1.2, 1);
+    transform: scale3d(1.1, 1.1, 1);
     transition: 0.3s;
 }
 .collection .collec_wrap .ctrl_btn {
@@ -701,6 +709,7 @@
     }
     .collection .collec_wrap .more a::after {
         top: 6px;
+        right: 0;
         width: 21px;
         height: 21px;
     }
