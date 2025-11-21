@@ -383,6 +383,7 @@ header  .gnb_wrap {
     }
     header.menu_mo .gnb_bg{
         opacity: 1;
+        pointer-events: auto;  /* ← 메뉴 열리면 클릭 가능 */
     }
     header.menu_mo .util .lang .lang_open {
         display: none;
