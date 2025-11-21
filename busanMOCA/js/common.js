@@ -1,50 +1,129 @@
 $(document).ready(function(){
-    //시작 :: 디바이스 상태 체크
-    let mobile_size = 1024 //모바일 메뉴 시작 사이즈
-    let window_w //브라우저 넓이
-    let device_status //현재 pc인지 mobile인지 구분하는 값
+
+    /* -----------------------------
+        1. 디바이스 체크
+    ----------------------------- */
+    let mobile_size = 1024;
+    let device_status = 'pc';
 
     function device_chk(){
-        window_w = $(window).width()
-        if(window_w > mobile_size){
-            device_status = 'pc'
-        }else{
-            device_status = 'mobile'
-        }
-        // console.log(device_status)
+        device_status = ($(window).width() > mobile_size) ? 'pc' : 'mobile';
     }
-    //끝 :: 디바이스 상태 체크
+
+    device_chk();
+    $(window).on('resize', device_chk);
 
 
-    //시작 :: 메뉴 열기 & 닫기
-    $('header .gnb .gnb_open').on('click focusin', function(){
-        if(device_status == 'pc'){
-            $('header').addClass('menu_pc')
-            $('html').addClass('no-scroll');
+    /* -----------------------------
+        2. 메뉴 열기 (PC & MOBILE 공통)
+    ----------------------------- */
+    $('header .gnb_open').on('click focusin', function(){
+
+        if(device_status === 'pc'){
+            $('header').addClass('menu_pc');
+        } else {
+            $('header').addClass('menu_mo');
         }
-    })
-    $('header .gnb .gnb_bg').on('mouseenter', function(){
-        $('header').removeClass('menu_pc')
-        $('html').removeClass('no-scroll');
-    })
-    $('header .util .lang').on('focusin', function(){
-        $('header').removeClass('menu_pc')
-        $('html').removeClass('no-scroll');
-    })
 
-    device_chk() //문서가 로딩되었을때 1번실행
-    $(window).resize(function(){
-        device_chk() //브라우저가 리사이즈 할때마다 1번씩 실행
-    })
+        $('html').addClass('no-scroll');
+    });
 
-    $('header .gnb .gnb_wrap .gnb_close, header .gnb .gnb_bg').on('click', function(){
-        $('header').removeClass('menu_pc')
+
+    /* -----------------------------
+        3. 메뉴 닫기 (PC & MOBILE 공통)
+    ----------------------------- */
+    function closeMenu(){
+        $('header').removeClass('menu_pc menu_mo');
         $('html').removeClass('no-scroll');
-    })
-    $('header .gnb .gnb_wrap .gnb_close').on('focusout', function(){
-        $('header').removeClass('menu_pc')
-        $('html').removeClass('no-scroll');
-    })
+    }
+
+    $('header .gnb_close, header .gnb_bg').on('click', closeMenu);
+
+      /* -----------------------------
+        모바일: depth2 아코디언
+    ----------------------------- */
+    $('header .depth1 > li > a').on('click', function(e){
+
+        if(device_status !== 'mobile') return; // PC면 작동 X
+
+        e.preventDefault(); // 링크 이동 방지
+
+        let li = $(this).parent('li');
+
+        if(li.hasClass('active')){
+            li.removeClass('active');
+        } else {
+            $('header .depth1 > li').removeClass('active');
+            li.addClass('active');
+        }
+    });
+
+
+
+    /* -----------------------------
+        4. PC 전용: 포커스 벗어날 때 닫기
+    ----------------------------- */
+    $('header .gnb_close').on('focusout', closeMenu);
+
+
+    //시작 :: 디바이스 상태 체크
+    // let mobile_size = 1024 //모바일 메뉴 시작 사이즈
+    // let window_w //브라우저 넓이
+    // let device_status //현재 pc인지 mobile인지 구분하는 값
+
+    // function device_chk(){
+    //     window_w = $(window).width()
+    //     if(window_w > mobile_size){
+    //         device_status = 'pc'
+    //     }else{
+    //         device_status = 'mobile'
+    //     }
+    //     // console.log(device_status)
+    // }
+    // //끝 :: 디바이스 상태 체크
+
+
+    // //시작 :: 메뉴 열기 & 닫기
+    // $('header .gnb .gnb_open').on('click focusin', function(){
+    //     if(device_status == 'pc'){
+    //         $('header').addClass('menu_pc')
+    //         $('html').addClass('no-scroll');
+    //     }
+    // })
+    // $('header .gnb .gnb_bg').on('mouseenter', function(){
+    //     $('header').removeClass('menu_pc')
+    //     $('html').removeClass('no-scroll');
+    // })
+    // $('header .util .lang').on('focusin', function(){
+    //     $('header').removeClass('menu_pc')
+    //     $('html').removeClass('no-scroll');
+    // })
+
+    // device_chk() //문서가 로딩되었을때 1번실행
+    // $(window).resize(function(){
+    //     device_chk() //브라우저가 리사이즈 할때마다 1번씩 실행
+    // })
+
+    // $('header .gnb .gnb_wrap .gnb_close, header .gnb .gnb_bg').on('click', function(){
+    //     $('header').removeClass('menu_pc')
+    //     $('html').removeClass('no-scroll');
+    // })
+    // $('header .gnb .gnb_wrap .gnb_close').on('focusout', function(){
+    //     $('header').removeClass('menu_pc')
+    //     $('html').removeClass('no-scroll');
+    // })
+
+
+    // $('header .gnb .gnb_open').on('click focusin', function(){
+    //     if(device_status == 'mobile'){
+    //         $('header').addClass('menu_mo')
+    //         $('html').addClass('no-scroll');
+    //     }
+    //     $('header .gnb .gnb_wrap .gnb_close, header .gnb .gnb_bg').on('click', function(){
+    //         $('header').removeClass('menu_mo')
+    //     })
+    //     $('html').removeClass('no-scroll');
+    // })
     //시작 :: 메뉴 열기 & 닫기
 
 
