@@ -193,15 +193,21 @@ header  .gnb_wrap {
     header.menu_pc .gnb .gnb_wrap ul.depth1 > li {
         position: relative;
     }
-    header.menu_pc .gnb .gnb_wrap ul.depth1 > li:hover > a {
-        border-bottom: 3px solid green;
-    }
     header .gnb .gnb_wrap ul.depth1 > li > a {
         display: block;
         font-size: 2.2rem;
         font-weight: 700;
         line-height: var(--header-h);
         padding: 0 39px;
+        position: relative; /* after 정렬의 기준 */
+    }
+    header.menu_pc .gnb .gnb_wrap ul.depth1 > li:hover > a::after {
+        content: "";
+        position: absolute; /* a를 기준으로 정렬 */
+        left: 0;
+        bottom: 0;
+        border-bottom: 3px solid var(--color-main);
+        width: 100%;
     }
     header.menu_pc .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
         display: block;
@@ -228,6 +234,7 @@ header  .gnb_wrap {
         height: 100vh;
         opacity: 1;
     }
+    
 }
 @media screen and (max-width:1024px){ /* 1024보다 작을 때 - mobile 버전  */
     header .gnb_wrap{
@@ -248,7 +255,7 @@ header  .gnb_wrap {
         display: block;
         left: 0;
     }
-    header.menu_mo .gnb_wrap .gnb_logo {
+    header.menu_mo .gnb_wrap .gnb_logo a {
         position: absolute;
         left: var(--wrapper-margin);
         top: 19px;
@@ -271,14 +278,14 @@ header  .gnb_wrap {
         font-size: 2.1rem;
         font-weight: 700;
         line-height: 1.3;
-        position: relative;
+        position: relative; /* after 정렬의 기준 */
     }
     header.menu_mo .gnb .gnb_wrap ul.depth1 > li.active > a {
         color: var(--color-main);
     }
     header.menu_mo .gnb .gnb_wrap ul.depth1 > li > a::after {
         content: "";
-        position: absolute;
+        position: absolute; /* a를 기준으로 정렬 */
         right: 16px;
         top: 23px;
         background-position: center center;
@@ -315,10 +322,10 @@ header  .gnb_wrap {
         top: 0;
     }
     header.menu_mo .gnb .gnb_wrap .gnb_util .gnb_lang {
-        position: relative;
+        position: relative; /* gnb_lang_open 정렬의 기준 */
     }
     header.menu_mo .gnb .gnb_wrap .gnb_util .gnb_lang .gnb_lang_open {
-        position: absolute;
+        position: absolute; /* gnb_lang 기준으로 정렬 */
         right: var(--header-h);
         top: 0;
         width: var(--header-h);
@@ -371,10 +378,13 @@ header  .gnb_wrap {
     header.menu_mo .gnb_bg{
         opacity: 1;
     }
+    header.menu_mo .util .lang .lang_open {
+        display: none;
+    }
 }
 @media screen and (max-width:769px){
     /* 모바일 메뉴가 열렸을 때 */
-    header.menu_mo .gnb_wrap .gnb_logo {
+    header.menu_mo .gnb_wrap .gnb_logo a{
         top: 13px;
     }
     header.menu_mo .gnb .gnb_wrap ul.depth1 > li > a {
@@ -399,10 +409,10 @@ footer {
 footer .wrapper {
     display: flex;
     gap: 0 78px;
-    position: relative;
+    position: relative; /* top 정렬의 기준 */
 }
 footer .wrapper .top {
-    position: absolute;
+    position: absolute; /* wrapper를 기준으로 정렬 */
     right: 0;
     top: 0;
     width: 43px;
@@ -446,11 +456,11 @@ footer .f_info .f_sns ul li a {
     border-radius: 50%;
     width: 30px;
     height: 30px;
-    position: relative;
+    position: relative; /* after 정렬의 기준 */
 }
 footer .f_info .f_sns ul li a::before {
     content: "";
-    position: absolute;
+    position: absolute; /* a를 기준으로 정렬 */
     left: 6px;
     top: 0;
     height: 100%;
