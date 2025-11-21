@@ -237,6 +237,12 @@ header  .gnb_wrap {
     
 }
 @media screen and (max-width:1024px){ /* 1024보다 작을 때 - mobile 버전  */
+    header .logo {
+        top: 15px;
+    }
+    header .util .lang .lang_open {
+        top: 9px;
+    }
     header .gnb_wrap{
         position: fixed;
         top: 0;
@@ -383,6 +389,13 @@ header  .gnb_wrap {
     }
 }
 @media screen and (max-width:769px){
+    header .logo {
+        top: 12px;
+    }
+    header .util .lang .lang_open {
+        top: 4px;
+    }
+
     /* 모바일 메뉴가 열렸을 때 */
     header.menu_mo .gnb_wrap .gnb_logo a{
         top: 13px;

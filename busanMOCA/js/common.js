@@ -38,6 +38,8 @@ $(document).ready(function(){
     }
 
     $('header .gnb_close, header .gnb_bg').on('click', closeMenu);
+    $('header .gnb_bg').on('mouseenter', closeMenu);
+    $('header .gnb .gnb_close').on('foucusout', closeMenu);
 
       /* -----------------------------
         모바일: depth2 아코디언
