@@ -26,6 +26,17 @@ html.no-scroll {
     font-size: 0;
     line-height: 0;
     overflow: hidden;
+    position: relative;
+}
+.visual .swiper .swiper-slide .photo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, #333, transparent);
+    width: 100%;
+    height: 40%;
+    opacity: 0.2;
 }
 .visual .swiper .swiper-slide .photo img {
     width: 100%;
