@@ -27,6 +27,7 @@ header .logo a {
     width: 80px;
     height: 51px;
     background: url(../images/common/logo_w.svg) no-repeat center center / contain;
+    margin-left: 8px;
 }
 header .gnb .gnb_open {
     height: var(--header-h);

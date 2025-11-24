@@ -41,6 +41,9 @@ html.no-scroll {
 .visual .swiper .swiper-slide .photo img {
     width: 100%;
 }
+.visual .swiper .swiper-slide .photo img.mo {
+    display: none;
+}
 .visual .paging {
     position: absolute;
     left: 50%;
@@ -89,6 +92,14 @@ html.no-scroll {
 @keyframes paging {
     0% { width: 0%;}
     100% { width: 100%;}
+}
+@media screen and (max-width:768px){
+    .visual .swiper .swiper-slide .photo img.pc {
+        display: none;
+    }
+    .visual .swiper .swiper-slide .photo img.mo {
+        display: block;
+    }
 }
 
 .showing {
