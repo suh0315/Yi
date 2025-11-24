@@ -201,6 +201,9 @@ header  .gnb_wrap {
         padding: 0 39px;
         position: relative; /* after 정렬의 기준 */
     }
+    header .gnb .gnb_wrap ul.depth1 > li:hover > a {
+        color: var(--color-main);
+    }
     header.menu_pc .gnb .gnb_wrap ul.depth1 > li:hover > a::after {
         content: "";
         position: absolute; /* a를 기준으로 정렬 */
@@ -217,6 +220,9 @@ header  .gnb_wrap {
     }
     header.menu_pc .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li {
         padding: 5px 0;
+    }
+    header.menu_pc .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li:hover > a {
+        color: var(--color-main);
     }
     header .gnb .gnb_bg {
         position: absolute; /* header를 기준으로 정렬 */
