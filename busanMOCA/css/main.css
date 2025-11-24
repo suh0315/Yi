@@ -22,26 +22,13 @@ html.no-scroll {
 .visual {
     position: relative; /* scroll 정렬의 기준 */
 }
-.visual .swiper .swiper-slide {
-    height: 100dvh;
-    min-height: 400px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 .visual .swiper .swiper-slide .photo {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
+    font-size: 0;
+    line-height: 0;
     overflow: hidden;
 }
 .visual .swiper .swiper-slide .photo img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 .visual .paging {
     position: absolute;
@@ -92,11 +79,6 @@ html.no-scroll {
     0% { width: 0%;}
     100% { width: 100%;}
 }
-@media screen and (max-width:768px){
-    .visual .swiper .swiper-slide {   
-    height: 600px;          
-    }
-}
 
 .showing {
     padding: 114px 0 0 0;
@@ -108,7 +90,7 @@ html.no-scroll {
     bottom: 0;
     left: var(--wrap-left);
     right: 0;
-    height: 3px;
+    height: 1px;
     background: #333;
 
 }
@@ -230,7 +212,7 @@ html.no-scroll {
         right: 0;
         bottom: 0;
         width: calc(100% + 417px);
-        height: 3px;
+        height: 1px;
         background-color: #333;
     }
 }
@@ -303,7 +285,7 @@ html.no-scroll {
     left: 0; /* 브라우저 왼쪽에서 시작 */
     right: var(--wrap-left);
     bottom: 0;
-    height: 3px;
+    height: 1px;
     background-color: #333;
     max-width: 100%;
 }
@@ -397,8 +379,8 @@ html.no-scroll {
     line-height: 1.3;
 }
 .midcont .notice .list {
-    border-top: 2px solid #333;
-    border-bottom: 2px solid #333;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
     padding: 18px 0 18px 0;
     margin: 36px 0 0 0;
 }
@@ -483,8 +465,8 @@ html.no-scroll {
         left: var(--wrapper-margin-m);
         right: var(--wrapper-margin-m);
         bottom: 0;
-        border-bottom: 3px solid #333;
-        height: 3px;
+        border-bottom: 1px solid #333;
+        height: 1px;
     }
     .midcont .event .tit h2 {
         font-size: 3.2rem;
@@ -516,6 +498,9 @@ html.no-scroll {
     }
     .midcont .notice .tit h2 {
         font-size: 3.2rem;
+    }
+    .midcont .notice .list {
+        border-bottom: none;
     }
     .midcont .notice .list ul {
         padding-right: 0;
@@ -550,7 +535,7 @@ html.no-scroll {
     position: absolute;
     left: 0;
     bottom: 0;
-    border-bottom: 3px solid #333;
+    border-bottom: 1px solid #333;
     width: 100%;
 }
 .collection .collec_wrap {
@@ -664,6 +649,7 @@ html.no-scroll {
 @media screen and (max-width:768px){
     .collection {
         padding: 0 0 140px 0;
+        margin: 97px 0 0 0;
     }
     .collection .collec_wrap {
         width: auto;
@@ -723,7 +709,7 @@ html.no-scroll {
     left: 0;
     bottom: 0;
     width: 100%;
-    border-bottom: 3px solid #333;
+    border-bottom: 1px solid #333;
 }
 .service .list ul {
     display: flex;
