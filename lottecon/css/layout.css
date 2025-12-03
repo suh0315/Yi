@@ -1,0 +1,35 @@
+/***********************
+* 파일명 : layout.css 
+* 작성자 : 이수형
+* 작성일 : 25-12-03
+* 설  명 : header/footer 스타일을 선언함
+*********************/
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    z-index: 999;
+    width: 100%;
+    height: var(--header-h);
+}
+header .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+header .logo a {
+    display: block;
+}
+header .gnb ul.depth1 {
+    display: flex;
+    gap: 0 31px;
+}
+header .gnb ul.depth1 li a {
+    display: block;
+    line-height: var(--header-h);
+    font-size: clamp()
+}
+header .gnb ul.depth1 > li > ul.depth2 {
+    display: none;
+}

@@ -1,0 +1,15 @@
+/***********************
+* 파일명 : main.css 
+* 작성자 : 이수형
+* 작성일 : 25-10-23
+* 설  명 : index파일 (메인페이지)에서만 호출하는 css
+          메인페이지 (index)의 스타일이 이 페이지에서 선언됨 (header/footer 제외)
+          default.css (태그의 초기화 - 브라우저가 주는 기본 스타일 삭제)
+          common.css (wrapper, blind 처럼 모든 페이지에서 반복되는 기본 스타일 
+          - 변수도 여기서 선언, 변수가 너무 많으면 variable이라는 파일을 분리도 함)
+          layout.css (문서의 구조에 영향을 끼치는 요소 - header/footer가 들어감)
+*********************/
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
