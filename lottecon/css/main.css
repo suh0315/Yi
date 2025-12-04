@@ -13,3 +13,249 @@
 @import url(fonts.css);
 @import url(common.css);
 @import url(layout.css);
+
+.visual {
+    position: relative; /* scroll 정렬의 기준 */
+}
+.visual .swiper {
+    height: 100dvh;
+    position: relative; /* photo 정렬의 기준 */
+}
+.visual .swiper::after {
+    content: "";
+    position: absolute;
+    right: -1px;
+    bottom: -1px;
+    width: 75px;
+    height: 251px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 25px 0 0 0;
+    z-index: 1;
+}
+.visual .swiper .swiper-slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.visual .swiper .swiper-slide::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 250px;
+    width: 50px;
+    height: 50px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-image: url(../images/main/round50.svg);
+}
+.visual .swiper .swiper-slide::after {
+    content: "";
+    position: absolute;
+    right: 74px;
+    bottom: -1px;
+    width: 50px;
+    height: 50px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-image: url(../images/main/round50.svg);
+}
+.visual .swiper .swiper-slide .photo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.visual .swiper .swiper-slide .photo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 45%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), transparent);
+    z-index: 1;
+}
+.visual .swiper .swiper-slide .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.visual .swiper .swiper-slide .txt {
+    margin-bottom: clamp(19.6rem, 21.3vw ,31.1rem);
+    color: #fff;
+}
+.visual .swiper .swiper-slide .txt h3 {
+    font-size: clamp(4rem, 4.3vw, 6rem);
+    font-weight: 400;
+    line-height: 1.3;
+    position: relative;
+}
+.visual .swiper .swiper-slide .txt h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -22px;
+    border-bottom: 1px solid #fff;
+    width: clamp(170px, 18vw , 250px);
+}
+.visual .swiper .swiper-slide .txt p {
+    margin: 11px 0 0 clamp(141px, 18.4vw, 267px);
+}
+.visual .swiper .ctrl_btn {
+    position: absolute;
+    left: 50%;
+    bottom: 2vw;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0 15px;
+    z-index: 1;
+    align-items: center;
+}
+.visual .swiper .ctrl_btn .btn_prev {
+    width: 18px;
+    height: 18px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 8 13' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.5 13L0 6.5L6.5 0L7.4556 0.9556L1.91103 6.5L7.4556 12.0444L6.5 13Z' /%3E%3C/svg%3E%0A");
+}
+.visual .swiper .ctrl_btn .paging {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.visual .paging .swiper-pagination-bullet {
+    width: auto; 
+    height: auto; 
+    background: transparent; 
+    margin: 0; 
+    opacity: 1; 
+    position: relative; 
+    cursor: pointer; 
+    border-radius: 50%;
+    display:flex; 
+    justify-content:center; 
+    align-items:center; /* 가운데 동그라미와 svg선을 가운데 정렬하기 위한 스타일 */
+}
+.visual .paging .swiper-pagination-bullet:after {
+    content:""; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    width: 7px; 
+    height: 7px; 
+    border-radius: 50%; 
+    background-color: #fff; /* 가운데 동그라미 스타일 */
+}
+.visual .paging .swiper-pagination-bullet svg {
+    width:16px;
+    height:16px; 
+    overflow:visible; /* 원을 그리는 동그라미의 크기 */
+    transform:rotate(-90deg); /* 12시 방향에서 시작하기 위해서 회전 */
+}
+.visual .paging .swiper-pagination-bullet svg .circle {
+    fill: transparent; stroke-linecap: round;
+    stroke: #fff; stroke-width: 5; /* 동그라미를 그리는 선의 색상/두께 */
+    stroke-dasharray: 270; stroke-dashoffset: 270; /* 선 총 길이인데 너무 길면 애니메이션이 빨리 끝나고 짧으면 다 안그려짐 */
+}
+.visual .paging .swiper-pagination-bullet.swiper-pagination-bullet-active svg .circle {
+    animation: progress 4.8s ease 1 forwards; /* 애니메이션이름, 시간, 가속도, 1번실행, 마지막상태유지 */
+}
+@keyframes progress{
+    0% { stroke-dashoffset: 270 }
+    100% { stroke-dashoffset: 0 }
+}
+.visual .swiper .ctrl_btn .btn_pause {
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 11' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.55769 11V0H9.73077V11H6.55769ZM0 11V0H3.17308V11H0Z'/%3E%3C/svg%3E%0A");
+}
+.visual .swiper .ctrl_btn .btn_play {
+    display: none;
+    width: 20px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 13' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.000397682 12.192L9.57715 6.096L0.000397682 0V12.192Z'/%3E%3C/svg%3E%0A");
+}
+.visual .swiper .ctrl_btn .btn_next {
+    width: 18px;
+    height: 18px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 8 13' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.5 13L0 6.5L6.5 0L7.4556 0.9556L1.91103 6.5L7.4556 12.0444L6.5 13Z' /%3E%3C/svg%3E%0A");
+    transform: rotate(180deg);
+}
+.visual .scroll {
+    position: absolute;
+    right: -20px;
+    bottom: 130px;
+    rotate: 90deg;
+    font-size: 1.5rem;
+    z-index: 1;
+    animation: scroll 6s linear infinite;
+}
+.visual .scroll::after{ 
+    content: "";
+    position: absolute;
+    right: -16px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 10' fill='%231c1c1c' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.27826e-07 0L5 3.57556L10 4.37114e-07V1.35889L5 4.93444L3.27826e-07 1.35889V0ZM3.27826e-07 4.35037L5 7.92593L10 4.35037V5.70945L5 9.28482L3.27826e-07 5.70945V4.35037Z'/%3E%3C/svg%3E ");
+    rotate: -90deg;
+}
+@keyframes scroll {
+    0% { bottom: 130px; }
+    50% { bottom: 115px; }
+    100% { bottom: 130px; }
+}
+
+.biz {
+    position: relative;
+    margin: 171px 0 0 0;
+}
+.biz .tit strong {
+    color: var(--color-main);
+    line-height: 1.3;
+}
+.biz .tit h2 {
+    font-size: clamp(2.8rem, 3vw, 4rem);
+    font-weight: 700;
+    line-height: 1.3;
+}
+.biz .list {
+    margin: 30px 0 0 0;
+    position: relative;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../images/main/biz_01.jpg);
+}
+.biz .list ul {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.biz .list ul li {
+
+}
