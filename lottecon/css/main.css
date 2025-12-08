@@ -248,7 +248,7 @@
     margin: clamp(8.6rem, 7.6vw, 11rem) 0 0 0;
     position: relative;
     width: 100%;
-
+    overflow: hidden;
 }
 .biz .list ul {
     display: flex;
@@ -258,30 +258,61 @@
 }
 .biz .list ul li {
     width: 20%;
-    padding-top: 41.1%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.biz .list ul li:nth-child(1) {
+    background-image: url(../images/main/biz_01.jpg);
+    background-position: 0% center;
+}
+.biz .list ul li:nth-child(2) {
+    background-image: url(../images/main/biz_02.jpg);
+    background-position: 25% center; 
+}
+.biz .list ul li:nth-child(3) {
+    background-image: url(../images/main/biz_03.jpg);
+    background-position: 50% center; 
+}
+.biz .list ul li:nth-child(4) {
+    background-image: url(../images/main/biz_04.jpg);
+    background-position: 75% center; 
+}
+.biz .list ul li:nth-child(5) {
+    background-image: url(../images/main/biz_05.jpg);
+    background-position: 100% center; 
 }
 .biz .list ul li:nth-child(even) {
     transform: translateY(-70px);
 }
-.biz .list ul li:nth-child(odd):before {
+.biz .list ul li:nth-child(odd)::before {
     content: "";
     position: absolute;
     left: 0;
-    top: -70px;
+    top: 0;
     width: 100%;
     height: 70px;
     background: #fff;
 }
-.biz .list ul li:nth-child(even):before {
+.biz .list ul li:nth-child(even)::before {
     content: "";
     position: absolute;
     left: 0;
-    top: -70px;
+    top: 0;
     width: 100%;
     height: 70px;
     background: #fff;  
 }
-.biz .list ul li::after {
+.biz .list ul li:nth-child(odd)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -70px;
+    width: 100%;
+    height: 70px;
+    background: #fff;
+}
+.biz .list ul li:nth-child(even)::after {
     content: "";
     position: absolute;
     left: 0;
@@ -292,10 +323,41 @@
 }
 .biz .list ul li a {
     display: block;
-    font-size: 3.2rem;
+    font-size: clamp(2.4rem, 2.3vw, 3.2rem);
     font-weight: 700;
-    color: #fff;
-    padding: 0 0 40px 30px;
+    color: #c4c4c4;
+    padding: 0 0 clamp(16px, 2.8vw, 40px) clamp(16px, 2.1vw, 30px);
+    padding-top: 215.4%;
+    position: relative;
+}
+.biz .list ul li a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: #fff;
+}
+.biz .list ul li:first-child a::after,
+.biz .list ul li:last-child a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 70px;
+    width: clamp(30px, 3.6vw, 50px);
+    height: clamp(30px, 3.6vw, 50px);
+    background-image: url(../images/main/biz_first.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.biz .list ul li:last-child a::after {
+    top: auto;
+    left: auto;
+    right: 0;
+    bottom: 0;
+    rotate: 180deg;
 }
 .biz .bgBox {
     content: "";
@@ -303,10 +365,55 @@
     left: 0;
     top: -70px;
     width: 100%;
-    height: calc(100% + 140px);
+    height: calc(100% + 70px);
     background-position: center center;
     background-repeat: no-repeat;
-    background-image: url(../images/main/biz_01.jpg);
+    background-color: #000;
+    /* background-image: url(../images/main/biz_01.jpg); */
     background-size: cover;
     z-index: -1;
+}
+.biz .bgBox::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: calc(100% + 70px);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: cover;
+}
+.biz .bgBox .bgLayer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+.biz .bgBox .bgLayer.active {
+    opacity: 1;
+}
+.biz .bgBox .bgLayer.item01 { 
+    background-image: url(../images/main/biz_01.jpg);
+}
+.biz .bgBox .bgLayer.item02 { 
+    background-image: url(../images/main/biz_02.jpg);
+}
+.biz .bgBox .bgLayer.item03 { 
+    background-image: url(../images/main/biz_03.jpg); 
+}
+.biz .bgBox .bgLayer.item04 { 
+    background-image: url(../images/main/biz_04.jpg); 
+}
+.biz .bgBox .bgLayer.item05 { 
+    background-image: url(../images/main/biz_05.jpg); 
+}
+.biz .bgBox .bgLayer.active {
+    opacity: 1; /* 보이면서 fade-in */
 }

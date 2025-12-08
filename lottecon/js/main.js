@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    //시작 :: visual_swiper
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싸는 요소의 class명 */
 
 	autoplay: {  /* 팝업 자동 실행 */
@@ -96,5 +97,100 @@ $(document).ready(function(){
                 .css("animation", "progress 4.8s linear forwards");
         }
     });
+    //끝 :: visual_swiper
+
+    //시작 :: biz 이미지 변경
+    $('.biz .list ul li').each(function () {
+        let bg = $(this).css('background-image');
+        $(this).attr('data-original-bg', bg);
+    });
+    
+    
+    // mouseenter (hover)
+    $('.biz .list ul li').on('mouseenter focusin', function () {
+        let bgClass = $(this).data('bg');
+    
+        // 모든 bgLayer 비활성화
+        $('.biz .bgBox .bgLayer').removeClass('active');
+    
+        // 해당 bgLayer 활성화
+        $('.biz .bgBox .' + bgClass).addClass('active');
+    
+        // li 배경 제거 (문법 고침)
+        $('.biz .list ul li').css('background-image', 'none');
+    });
+    
+    
+    // mouseleave (전체 ul 벗어날 때)
+    $('.biz .list ul').on('mouseleave', function () {
+    
+        // bgLayer fade-out
+        $('.biz .bgBox .bgLayer').removeClass('active');
+    
+        // fade-out 끝난 뒤 복구
+        setTimeout(function () {
+    
+            $('.biz .list ul li').each(function () {
+                let original = $(this).attr('data-original-bg');
+                $(this).css('background-image', original);
+            });
+    
+        }, 300); // CSS transition 시간과 동일하게
+    });
+    //끝 :: biz 이미지 변경
+
+    //시작 :: biz 스크롤
+    $(window).on('scroll', function () {
+
+        // --- 모바일 비활성 ---
+        if (window.innerWidth <= 1024) {
+            $('.biz .list ul li:nth-child(odd)').css({ transform: 'translateY(0px)' });
+            $('.biz .list ul li:nth-child(even)').css({ transform: 'translateY(-70px)' });
+            return;
+        }
+    
+        let maxMove = 70;
+    
+        let winH = $(window).height();
+        let ScrollTop = $(window).scrollTop();
+    
+        let list = $('.biz .list');
+        let ul = $('.biz .list ul');
+    
+        let listTop = list.offset().top;
+        let ulTop = ul.offset().top;
+        let ulHeight = ul.outerHeight();
+    
+    
+        // --- 기준점을 중앙에 맞추기 위한 계산 ---
+        let ulCenter = ulTop + ulHeight * 0.3;         // ul의 중심 Y좌표
+        let winCenter = ScrollTop + winH * 0.7;        // 화면 중앙 Y좌표
+    
+        // --- progress 계산: 화면 중앙과의 거리 기반 ---
+        let distance = Math.abs(ulCenter - winCenter);  // 둘의 거리
+        let maxDistance = winH / 2;                     // 최대 거리 범위
+    
+        let progress = 1 - (distance / maxDistance);    // 중앙에서 1, 멀어질수록 0
+        progress = Math.min(Math.max(progress, 0), 1);   // 0~1로 제한
+    
+    
+        // --- odd/even 이동값 ---
+        let oddMove  = -maxMove * progress;             // 0 → -70
+        let evenMove = -maxMove + maxMove * progress;   // -70 → 0
+    
+    
+        // --- 적용 ---
+        ul.find('li:nth-child(odd)').css({
+            transform: `translateY(${oddMove}px)`
+        });
+    
+        ul.find('li:nth-child(even)').css({
+            transform: `translateY(${evenMove}px)`
+        });
+    
+    });
+    //끝 :: biz 스크롤
+
+
 	
 })//맨끝
