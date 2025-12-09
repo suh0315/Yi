@@ -233,7 +233,6 @@
 .biz {
     position: relative;
     margin: clamp(7.1rem,  11.6vw, 17.1rem) 0 0 0;
-    padding-bottom: 70px;
 }
 .biz .tit strong {
     color: var(--color-main);
@@ -243,6 +242,7 @@
     font-size: clamp(2.8rem, 3vw, 4rem);
     font-weight: 700;
     line-height: 1.3;
+    color: var(--color-title);
 }
 .biz .list {
     margin: clamp(8.6rem, 7.6vw, 11rem) 0 0 0;
@@ -330,6 +330,9 @@
     padding-top: 215.4%;
     position: relative;
 }
+.biz .list ul li:hover a {
+    color: #fff;
+}
 .biz .list ul li a::before {
     content: "";
     position: absolute;
@@ -344,7 +347,7 @@
     content: "";
     position: absolute;
     left: 0;
-    top: 70px;
+    top: 69px;
     width: clamp(30px, 3.6vw, 50px);
     height: clamp(30px, 3.6vw, 50px);
     background-image: url(../images/main/biz_first.svg);
@@ -356,7 +359,7 @@
     top: auto;
     left: auto;
     right: 0;
-    bottom: 0;
+    bottom: -1px;
     rotate: 180deg;
 }
 .biz .bgBox {
@@ -416,4 +419,92 @@
 }
 .biz .bgBox .bgLayer.active {
     opacity: 1; /* 보이면서 fade-in */
+}
+
+
+.tech {
+    position: relative;
+    margin: clamp(7.1rem,  11.6vw, 17.1rem) 0 0 0;  
+}
+.tech .tit strong {
+    color: var(--color-main);
+    line-height: 1.3;
+}
+.tech .tit h2 {
+    font-size: clamp(2.8rem, 3vw, 4rem);
+    font-weight: 700;
+    line-height: 1.3;
+}
+.tech .tab_list {
+    margin-top: clamp(40px, 6.7vw, 88px);
+    position: relative;
+}
+.tech .tab_list ul {
+    position: absolute;
+    right: 0;
+    top: -56px;
+    font-size: clamp(3rem, 5.4vw, 7rem);
+    line-height: 1.3;
+    text-align: right;
+    z-index: 1;
+    color: #c4c4c4;
+}
+.tech .tab_list ul li.active {
+    color: var(--color-title);
+}
+.tech .tab_content {
+    margin: 0 0 0 clamp(16px, 8.2vw, 107px);
+    position: relative;
+}
+.tech .tab_content .photo {
+    width: 100%;
+    max-width: 1046px;
+}
+.tech .tab_content .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: clamp(10px, 1.6vw, 20px);
+    vertical-align: top;
+}
+.tech .tab_content .txt {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: clamp(176px, 23vw, 297px);
+    height: clamp(41px, 5.4vw, 71px);
+    background-color: #fff;
+    border-radius: 0 10px 0 0;
+    display: flex;
+    align-items: center;
+}
+.tech .tab_content .txt::before,
+.tech .tab_content .txt::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../images/main/round20.svg);
+    width: 20px;
+    height: 20px;
+}
+.tech .tab_content .txt::after {
+    left: auto;
+    top: auto;
+    right: -20px;
+    bottom: 0;
+}
+.tech .tab_content .txt span {
+    font-size: clamp(1.6rem, 1.9vw, 2.4rem);
+    margin-left: clamp(16px, 2.3vw, 30px);
+}
+.tech .tab_content .tab_item.item02,
+.tech .tab_content .tab_item.item03,
+.tech .tab_content .tab_item.item04 {
+    display: none;
+}
+.tech .tab_content .tab_item.active {
+    display: block;
 }

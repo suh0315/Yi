@@ -140,57 +140,115 @@ $(document).ready(function(){
     //끝 :: biz 이미지 변경
 
     //시작 :: biz 스크롤
-    $(window).on('scroll', function () {
+    $(function(){
 
-        // --- 모바일 비활성 ---
-        if (window.innerWidth <= 1024) {
-            $('.biz .list ul li:nth-child(odd)').css({ transform: 'translateY(0px)' });
-            $('.biz .list ul li:nth-child(even)').css({ transform: 'translateY(-70px)' });
-            return;
-        }
+        if ($(window).width() < 769) return;
     
-        let maxMove = 70;
+        let lastProgress = 0;
     
-        let winH = $(window).height();
-        let ScrollTop = $(window).scrollTop();
+        $(window).on("scroll", function(){
     
-        let list = $('.biz .list');
-        let ul = $('.biz .list ul');
+            let winH = $(window).height();
+            let scrollTop = $(window).scrollTop();
     
-        let listTop = list.offset().top;
-        let ulTop = ul.offset().top;
-        let ulHeight = ul.outerHeight();
+            const $ul = $(".biz .list ul");
+            const ulTop = $ul.offset().top;
+            const ulH = $ul.outerHeight();
+            const ulCenter = ulTop + ulH / 2;
     
+            // 화면 중앙 기준
+            const screenCenter = scrollTop + winH / 2;
     
-        // --- 기준점을 중앙에 맞추기 위한 계산 ---
-        let ulCenter = ulTop + ulHeight * 0.3;         // ul의 중심 Y좌표
-        let winCenter = ScrollTop + winH * 0.7;        // 화면 중앙 Y좌표
+            // 시작점: ul이 화면 아래에서 진입할 때
+            const startTrigger = scrollTop + winH > ulTop;
     
-        // --- progress 계산: 화면 중앙과의 거리 기반 ---
-        let distance = Math.abs(ulCenter - winCenter);  // 둘의 거리
-        let maxDistance = winH / 2;                     // 최대 거리 범위
+            // 종료점: ul이 화면 위로 모두 사라졌을 때
+            const endTrigger = scrollTop > ulTop + ulH;
     
-        let progress = 1 - (distance / maxDistance);    // 중앙에서 1, 멀어질수록 0
-        progress = Math.min(Math.max(progress, 0), 1);   // 0~1로 제한
+            // --- 종료: 화면에서 벗어나면 progress 초기화 ---
+            if (!startTrigger || endTrigger) {
     
+                lastProgress = 0;
     
-        // --- odd/even 이동값 ---
-        let oddMove  = -maxMove * progress;             // 0 → -70
-        let evenMove = -maxMove + maxMove * progress;   // -70 → 0
+                $(".biz .list ul li").each(function(i){
+                    if ((i + 1) % 2 === 1) {
+                        $(this).css("transform","translateY(0px)");        // odd
+                    } else {
+                        $(this).css("transform","translateY(-70px)");      // even
+                    }
+                });
     
+                return;
+            }
     
-        // --- 적용 ---
-        ul.find('li:nth-child(odd)').css({
-            transform: `translateY(${oddMove}px)`
+            // --- progress 계산 ---
+            const distance = Math.abs(ulCenter - screenCenter);
+            const maxDistance = winH * 0.85;
+    
+            let progress = 1 - (distance / maxDistance);
+            progress = Math.max(0, Math.min(1, progress));
+    
+            // ===== 핵심: progress가 감소하면 업데이트하지 않음 =====
+            if (progress < lastProgress) {
+                progress = lastProgress;
+            }
+            lastProgress = progress;
+    
+            // 이제 translate에 반영
+            let maxY = 70;
+            let oddY = -maxY * progress;
+            let evenY = -maxY + (maxY * progress);
+    
+            $(".biz .list ul li").each(function(i){
+                if ((i + 1) % 2 === 1) {
+                    $(this).css("transform","translateY(" + oddY + "px)");
+                } else {
+                    $(this).css("transform","translateY(" + evenY + "px)");
+                }
+            });
+    
         });
-    
-        ul.find('li:nth-child(even)').css({
-            transform: `translateY(${evenMove}px)`
-        });
-    
     });
     //끝 :: biz 스크롤
 
+    //시작 :: tech tab
+    $(function(){
+
+        // 초기값 - 첫 번째 탭 활성화
+        $('.tech .tab_list ul li:first-child').addClass('active');
+        $('.tech .tab_content .tab_item:first-child')
+            .addClass('active')
+            .attr('title','선택됨')
+            .show();
+    
+        // 클릭 이벤트
+        $('.tech .tab_list ul li button').on('click', function(){
+    
+            const $li = $(this).parent();
+    
+            // 이미 활성화된 탭이면 실행 중단
+            if ($li.hasClass('active')) return;
+    
+            const className = $li.attr('class'); // item01 등
+    
+            // li active 갱신
+            $li.addClass('active').siblings().removeClass('active');
+    
+            // tab_item 활성화
+            $('.tech .tab_content .tab_item')
+                .removeClass('active')
+                .attr('title','')
+                .hide();
+    
+            $('.tech .tab_content .tab_item.' + className)
+                .addClass('active')
+                .attr('title','선택됨')
+                .fadeIn(500);
+    
+        });
+    
+    });
+    //끝 :: tech tab
 
 	
 })//맨끝
