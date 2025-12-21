@@ -234,9 +234,6 @@
     position: relative;
     margin: clamp(7.1rem,  11.6vw, 17.1rem) 0 0 0;
 }
-.biz .tit {
-    margin-bottom: clamp(1.6rem, 2.3vw, 3rem);
-}
 .biz .tit strong {
     color: var(--color-main);
     line-height: 1.3;
@@ -248,13 +245,10 @@
     color: var(--color-title);
 }
 .biz .list {
+    margin: clamp(8.6rem, 7.6vw, 11rem) 0 0 0;
     position: relative;
     width: 100%;
     overflow: hidden;
-<<<<<<< HEAD
-
-=======
->>>>>>> a4bf01084661f4753ea06e41af43ee248e1f1c35
 }
 .biz .list ul {
     display: flex;
@@ -264,8 +258,6 @@
 }
 .biz .list ul li {
     width: 20%;
-<<<<<<< HEAD
-=======
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
@@ -289,24 +281,17 @@
 .biz .list ul li:nth-child(5) {
     background-image: url(../images/main/biz_05.jpg);
     background-position: 100% center; 
->>>>>>> a4bf01084661f4753ea06e41af43ee248e1f1c35
 }
 .biz .list ul li:nth-child(even) {
     transform: translateY(-70px);
 }
-<<<<<<< HEAD
-.biz .list ul li:nth-child(odd) {
-    transform: translateY(70px);
-}
-=======
->>>>>>> a4bf01084661f4753ea06e41af43ee248e1f1c35
 .biz .list ul li:nth-child(odd)::before {
     content: "";
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
-    height: clamp(30px, 5.4vw, 70px);
+    height: 70px;
     background: #fff;
 }
 .biz .list ul li:nth-child(even)::before {
@@ -338,11 +323,7 @@
 }
 .biz .list ul li a {
     display: block;
-<<<<<<< HEAD
-    font-size: clamp(2rem, 2.6vw, 3.2rem);
-=======
     font-size: clamp(2.4rem, 2.3vw, 3.2rem);
->>>>>>> a4bf01084661f4753ea06e41af43ee248e1f1c35
     font-weight: 700;
     color: #c4c4c4;
     padding: 0 0 clamp(16px, 2.8vw, 40px) clamp(16px, 2.1vw, 30px);
@@ -351,36 +332,11 @@
 }
 .biz .list ul li:hover a {
     color: #fff;
-<<<<<<< HEAD
-    padding: 0 0 40px 30px;
-    position: relative;
-=======
->>>>>>> a4bf01084661f4753ea06e41af43ee248e1f1c35
 }
 .biz .list ul li a::before {
     content: "";
     position: absolute;
     left: 0;
-<<<<<<< HEAD
-    top: -10%;
-    width: 1px;
-    height: 120%;
-    background-color: #fff;
-}
-.biz .list ul li a::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: -10%;
-    width: 100%;
-    height: 120%;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: -1;
-}
-.biz .list ul li a .txt {
-    padding-top: 252.2%;
-    
-=======
     top: 0;
     width: 1px;
     height: 100%;
@@ -405,7 +361,6 @@
     right: 0;
     bottom: -1px;
     rotate: 180deg;
->>>>>>> a4bf01084661f4753ea06e41af43ee248e1f1c35
 }
 .biz .bgBox {
     content: "";
