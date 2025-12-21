@@ -235,6 +235,9 @@
     margin: clamp(7.1rem,  11.6vw, 17.1rem) 0 0 0;
     padding-bottom: 70px;
 }
+.biz .tit {
+    margin-bottom: clamp(1.6rem, 2.3vw, 3rem);
+}
 .biz .tit strong {
     color: var(--color-main);
     line-height: 1.3;
@@ -245,9 +248,9 @@
     line-height: 1.3;
 }
 .biz .list {
-    margin: clamp(8.6rem, 7.6vw, 11rem) 0 0 0;
     position: relative;
     width: 100%;
+    overflow: hidden;
 
 }
 .biz .list ul {
@@ -258,21 +261,23 @@
 }
 .biz .list ul li {
     width: 20%;
-    padding-top: 41.1%;
 }
 .biz .list ul li:nth-child(even) {
     transform: translateY(-70px);
 }
-.biz .list ul li:nth-child(odd):before {
+.biz .list ul li:nth-child(odd) {
+    transform: translateY(70px);
+}
+.biz .list ul li:nth-child(odd)::before {
     content: "";
     position: absolute;
     left: 0;
     top: -70px;
     width: 100%;
-    height: 70px;
+    height: clamp(30px, 5.4vw, 70px);
     background: #fff;
 }
-.biz .list ul li:nth-child(even):before {
+.biz .list ul li:nth-child(even)::before {
     content: "";
     position: absolute;
     left: 0;
@@ -281,7 +286,16 @@
     height: 70px;
     background: #fff;  
 }
-.biz .list ul li::after {
+.biz .list ul li:nth-child(odd)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -70px;
+    width: 100%;
+    height: 70px;
+    background: #fff;
+}
+.biz .list ul li:nth-child(even)::after {
     content: "";
     position: absolute;
     left: 0;
@@ -292,10 +306,34 @@
 }
 .biz .list ul li a {
     display: block;
-    font-size: 3.2rem;
+    font-size: clamp(2rem, 2.6vw, 3.2rem);
     font-weight: 700;
     color: #fff;
     padding: 0 0 40px 30px;
+    position: relative;
+}
+.biz .list ul li a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -10%;
+    width: 1px;
+    height: 120%;
+    background-color: #fff;
+}
+.biz .list ul li a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -10%;
+    width: 100%;
+    height: 120%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+.biz .list ul li a .txt {
+    padding-top: 252.2%;
+    
 }
 .biz .bgBox {
     content: "";
