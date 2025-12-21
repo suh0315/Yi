@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    //시작 :: visual_swiper
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싸는 요소의 class명 */
 
 	autoplay: {  /* 팝업 자동 실행 */
@@ -96,5 +97,158 @@ $(document).ready(function(){
                 .css("animation", "progress 4.8s linear forwards");
         }
     });
+    //끝 :: visual_swiper
+
+    //시작 :: biz 이미지 변경
+    $('.biz .list ul li').each(function () {
+        let bg = $(this).css('background-image');
+        $(this).attr('data-original-bg', bg);
+    });
+    
+    
+    // mouseenter (hover)
+    $('.biz .list ul li').on('mouseenter focusin', function () {
+        let bgClass = $(this).data('bg');
+    
+        // 모든 bgLayer 비활성화
+        $('.biz .bgBox .bgLayer').removeClass('active');
+    
+        // 해당 bgLayer 활성화
+        $('.biz .bgBox .' + bgClass).addClass('active');
+    
+        // li 배경 제거 (문법 고침)
+        $('.biz .list ul li').css('background-image', 'none');
+    });
+    
+    
+    // mouseleave (전체 ul 벗어날 때)
+    $('.biz .list ul').on('mouseleave', function () {
+    
+        // bgLayer fade-out
+        $('.biz .bgBox .bgLayer').removeClass('active');
+    
+        // fade-out 끝난 뒤 복구
+        setTimeout(function () {
+    
+            $('.biz .list ul li').each(function () {
+                let original = $(this).attr('data-original-bg');
+                $(this).css('background-image', original);
+            });
+    
+        }, 300); // CSS transition 시간과 동일하게
+    });
+    //끝 :: biz 이미지 변경
+
+    //시작 :: biz 스크롤
+    $(function(){
+
+        if ($(window).width() < 769) return;
+    
+        let lastProgress = 0;
+    
+        $(window).on("scroll", function(){
+    
+            let winH = $(window).height();
+            let scrollTop = $(window).scrollTop();
+    
+            const $ul = $(".biz .list ul");
+            const ulTop = $ul.offset().top;
+            const ulH = $ul.outerHeight();
+            const ulCenter = ulTop + ulH / 2;
+    
+            // 화면 중앙 기준
+            const screenCenter = scrollTop + winH / 2;
+    
+            // 시작점: ul이 화면 아래에서 진입할 때
+            const startTrigger = scrollTop + winH > ulTop;
+    
+            // 종료점: ul이 화면 위로 모두 사라졌을 때
+            const endTrigger = scrollTop > ulTop + ulH;
+    
+            // --- 종료: 화면에서 벗어나면 progress 초기화 ---
+            if (!startTrigger || endTrigger) {
+    
+                lastProgress = 0;
+    
+                $(".biz .list ul li").each(function(i){
+                    if ((i + 1) % 2 === 1) {
+                        $(this).css("transform","translateY(0px)");        // odd
+                    } else {
+                        $(this).css("transform","translateY(-70px)");      // even
+                    }
+                });
+    
+                return;
+            }
+    
+            // --- progress 계산 ---
+            const distance = Math.abs(ulCenter - screenCenter);
+            const maxDistance = winH * 0.85;
+    
+            let progress = 1 - (distance / maxDistance);
+            progress = Math.max(0, Math.min(1, progress));
+    
+            // ===== 핵심: progress가 감소하면 업데이트하지 않음 =====
+            if (progress < lastProgress) {
+                progress = lastProgress;
+            }
+            lastProgress = progress;
+    
+            // 이제 translate에 반영
+            let maxY = 70;
+            let oddY = -maxY * progress;
+            let evenY = -maxY + (maxY * progress);
+    
+            $(".biz .list ul li").each(function(i){
+                if ((i + 1) % 2 === 1) {
+                    $(this).css("transform","translateY(" + oddY + "px)");
+                } else {
+                    $(this).css("transform","translateY(" + evenY + "px)");
+                }
+            });
+    
+        });
+    });
+    //끝 :: biz 스크롤
+
+    //시작 :: tech tab
+    $(function(){
+
+        // 초기값 - 첫 번째 탭 활성화
+        $('.tech .tab_list ul li:first-child').addClass('active');
+        $('.tech .tab_content .tab_item:first-child')
+            .addClass('active')
+            .attr('title','선택됨')
+            .show();
+    
+        // 클릭 이벤트
+        $('.tech .tab_list ul li button').on('click', function(){
+    
+            const $li = $(this).parent();
+    
+            // 이미 활성화된 탭이면 실행 중단
+            if ($li.hasClass('active')) return;
+    
+            const className = $li.attr('class'); // item01 등
+    
+            // li active 갱신
+            $li.addClass('active').siblings().removeClass('active');
+    
+            // tab_item 활성화
+            $('.tech .tab_content .tab_item')
+                .removeClass('active')
+                .attr('title','')
+                .hide();
+    
+            $('.tech .tab_content .tab_item.' + className)
+                .addClass('active')
+                .attr('title','선택됨')
+                .fadeIn(500);
+    
+        });
+    
+    });
+    //끝 :: tech tab
+
 	
 })//맨끝
