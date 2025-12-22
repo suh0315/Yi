@@ -53,8 +53,8 @@ header .gnb_lang .gnb_lang_open span {
 }
 header .gnb_lang .gnb_lang_open i {
     position: absolute;
-    left: 10px;
-    top: 7px;
+    left: 5px;
+    top: 8px;
     display: block;
     width: 20px;
     height: 20px;
@@ -86,5 +86,7 @@ header .gnb_lang .gnb_lang_open i {
 }
 
 footer {
-    margin: 1000px 0 0 0;
+    margin: clamp(7.1rem, 8.8vw, 17.1rem) 0 0 0;
+    padding-bottom: clamp(2.9rem, 4.8vw, 9.2rem);
+    background-color: #1c1c1c;
 }

@@ -250,5 +250,25 @@ $(document).ready(function(){
     });
     //끝 :: tech tab
 
+    //시작 :: youtube 영상
+    $('.youtube-play').on('click', function () {
+    const wrap = $(this).closest('.youtube-wrap');
+    const videoId = 'UZPg-HP6Z0o';
+
+    const iframe = `
+        <iframe
+            src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
+    `;
+
+    wrap.html(iframe);
+    });
+
+
+    //끝 :: youtube 영상
+
 	
 })//맨끝
