@@ -89,4 +89,19 @@ footer {
     margin: clamp(7.1rem, 8.8vw, 17.1rem) 0 0 0;
     padding-bottom: clamp(2.9rem, 4.8vw, 9.2rem);
     background-color: #1c1c1c;
+    color: #fff;
+    position: relative;
+}
+footer .wrapper {
+    display: flex;
+}
+footer .family_site {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+footer .top {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
