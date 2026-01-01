@@ -87,21 +87,198 @@ header .gnb_lang .gnb_lang_open i {
 
 footer {
     margin: clamp(7.1rem, 8.8vw, 17.1rem) 0 0 0;
-    padding-bottom: clamp(2.9rem, 4.8vw, 9.2rem);
+    padding: clamp(2.9rem, 4.8vw, 9.2rem) 0;
     background-color: #1c1c1c;
     color: #fff;
     position: relative;
 }
 footer .wrapper {
     display: flex;
+    gap: 0 30px;
 }
 footer .family_site {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 87px;
+    right: 84px;
+    width: 186px;
+    color: var(--color-title);
 }
-footer .top {
+footer .family_site .family_open,
+footer .family_site .family_close {
+    display: block;
+    width: 100%;
+    height: 30px;
+    text-align: left;
+    padding: 3px 0 3px clamp(1rem, 1.3vw, 2rem);
+    background-color: #fff;
+    position: relative; /* 정렬의 기준 */
+}
+footer .family_site .family_open::before,
+footer .family_site .family_close::before {
+    content: "";
     position: absolute;
-    top: 0;
     right: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-main);
+}
+footer .family_site .family_open::after,
+footer .family_site .family_close::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    top: 11px;
+    width: 8px;
+    height: 4px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 8 4' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 4L4 0L8 4H0Z'/%3E%3C/svg%3E%0A");
+
+}
+footer .family_site .family_wrap {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: calc(30px + 1px); /* 하단에 버튼을 포함한 높이 */
+    width: 100%;
+    background-color: #fff;
+    padding: clamp(1rem, 1.2vw, 1.8rem) clamp(1rem, 1.3vw, 2rem) clamp(1rem, 1.2vw, 1.8rem) clamp(1rem, 1.3vw, 2rem);
+    border: 1px solid #ccc;
+    border-bottom: none;
+}
+footer .family_site .family_wrap ul li a {
+    display: block;
+    padding: 6px 0;
+    position: relative; /* after 정렬 */
+}
+footer .family_site .family_wrap ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #ccc;
+}
+footer .family_site .family_wrap ul li:last-child a::after {
+    display: none;
+}
+footer .family_site .family_close {
+    display: none;
+}
+
+/* 열렸을때 */
+footer .family_site.open .family_open {
+    display: none;
+}
+footer .family_site.open .family_close {
+    display: block;
+}
+footer .family_site.open .family_close::after {
+    animation: family_btn 0.5s 1 forwards;
+}
+@keyframes family_btn {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(180deg); }
+}
+
+footer .top {
+    position: absolute; 
+    top: -25px;
+    right: 0;
+    width: clamp(3.2rem, 3.8vw, 5.8rem);
+    height: clamp(3.2rem, 3.8vw, 5.8rem);
+    border: 1px solid var(--color-main);
+    border-radius: 50%;
+    background-color: var(--color-main);
+}
+footer .top::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: clamp(1rem, 1vw, 1.5rem);
+    width: clamp(1.4rem, 1.7vw, 2.5rem);
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 25 25' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.0103 24.4673V4.6863L1.71882 13.9777L0 12.2336L12.2336 0L24.4672 12.2336L22.7484 13.9777L13.457 4.6863V24.4673H11.0103Z'/%3E%3C/svg%3E%0A");
+}
+footer .inner .f_info {
+    display: flex;
+    gap: 0 45px;
+}
+footer .inner .f_info address {
+    position: relative;
+}
+footer .inner .f_info address::after {
+    content: "";
+    position: absolute;
+    right: -22px;
+    top: 9px;
+    width: 1px;
+    height: 11px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+footer .inner .f_nav ul {
+    display: flex;
+    gap: 0 45px;
+    margin: 9px 0 11px 0;
+}
+footer .inner .f_nav ul li {
+    position: relative;
+}
+footer .inner .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -22px;
+    top: 9px;
+    width: 1px;
+    height: 11px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+footer .inner .f_nav ul li:last-child::after {
+    display: none;
+} 
+footer .inner .f_nav ul li a {
+    display: block;
+}
+footer .inner .copyright {
+    color: rgba(255, 255, 255, 0.8);
+}
+@media screen and (max-width:1024px){
+    footer .wrapper {
+        display: block;
+    }
+    footer .family_site {
+        position: absolute;
+        top: auto;
+        bottom: 60px;
+        right: auto;
+        left: calc(50% - 93px);
+    }
+    footer .top {
+        position: absolute; 
+        top: -15px;
+        right: var(--wrapper-margin);
+    }
+    footer .inner .copyright {
+        margin-bottom: 81px;
+    }
+}
+@media screen and (max-width:768px){
+    footer .inner .f_info {
+        display: block;
+    }
+    footer .inner .f_info address::after {
+        display: none;
+    }
+    footer .inner .f_nav ul {
+        display: block;
+    }
+    footer .inner .f_nav ul li::after {
+        display: none;
+    }
 }

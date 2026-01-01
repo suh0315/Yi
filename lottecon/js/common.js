@@ -28,4 +28,23 @@ $(document).ready(function(){
             $('html').removeClass('no-scroll');
         }
     });
+    // 시작 :: family_site 오픈
+    $('footer .family_site .family_open').on('click', function(){
+        $('footer .family_site').addClass('open')
+        $('footer .family_site .family_wrap').slideDown()
+    })
+    $('footer .family_site .family_close').on('click', function(){
+        $('footer .family_site').removeClass('open')
+        $('footer .family_site .family_wrap').slideUp()
+    })
+    // 끝 :: family_site 오픈
+
+    // 시작 :: top 버튼
+    $('footer .f_util .top').on('click', function(){
+        $('html, body').animate({
+            scrollTop : 0
+        }, 500)
+    })
+    // 끝 :: top 버튼
+
 })//맨끝
